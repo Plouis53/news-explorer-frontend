@@ -1,4 +1,6 @@
 @import url(./vendor/fonts/fonts.css);
+@import url(./blocks/App.css);
+@import url(./blocks/preloader.css);
 
 body {
   margin: 0;
