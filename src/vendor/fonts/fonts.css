@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./Roboto-Web/Roboto-Regular.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-400-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./Roboto-Web/Roboto-Medium.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-500-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./Roboto-Web/Roboto-Bold.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-700-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./Roboto-Web/RobotoSlab-Regular.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-slab-400-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -35,7 +35,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./Roboto-Web/RobotoSlab-Medium.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-500-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -43,5 +43,5 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./Roboto-Web/RobotoSlab-Bold.woff") format("woff2");
+  src: url("./Inter-Roboto-Web/Roboto-slab-700-Regular.woff2") format("woff2");
 }
