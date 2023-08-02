@@ -8,9 +8,9 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .header {
+    background-image: url(../images/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.svg);
     max-width: 320px;
     height: 536px;
-    background-image: url(../images/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.svg);
   }
 }
 
