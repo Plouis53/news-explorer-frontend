@@ -58,11 +58,11 @@
   font-weight: 500;
 }
 
-.card__popout-inactive {
+.card__modal-inactive {
   display: none;
 }
 
-.card__popout-active {
+.card__modal-active {
   display: flex;
   width: 182px;
   height: 40px;
@@ -272,7 +272,7 @@
     left: 8px;
   }
 
-  .card__popout-active {
+  .card__modal-active {
     top: 8px;
     left: 8px;
     width: 160px;
