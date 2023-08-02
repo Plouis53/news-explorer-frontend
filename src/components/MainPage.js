@@ -24,7 +24,7 @@ const MainPage = ({
       />
       {activeSearch && (
         <NewsCardList
-          card={cards}
+          cards={cards}
           isLoading={isSearchLoading}
           isLoggedIn={isLoggedIn}
         />
