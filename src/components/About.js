@@ -1,15 +1,16 @@
+import React from "react";
 import aboutImage from "../images/about.jpeg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
     <section className="about">
-      <Link
+      <NavLink
         to="https://www.linkedin.com/in/phillippe-pmpisintech/"
         target="_blank"
       >
         <img className="about__image" src={aboutImage} alt="Phillippe Louis" />
-      </Link>
+      </NavLink>
       <div className="about__container">
         <h2 className="about__title">About the author</h2>
         <p className="about__paragraph">

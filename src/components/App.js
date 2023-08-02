@@ -1,8 +1,8 @@
-import React from "react";
-import "../blocks/App.css";
+// import React from "react";
+// import "../blocks/App.css";
 
-function App() {
-  return <header className="header"></header>;
-}
+// function App() {
+//   return <header className="header"></header>;
+// }
 
-export default App;
+// export default App;
