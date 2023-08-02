@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NewsCard = ({ card, isLoggedIn }) => {
   const [isShown, setIsShown] = React.useState(false);
@@ -15,7 +15,7 @@ const NewsCard = ({ card, isLoggedIn }) => {
   return (
     <div className="card">
       <div className="card__container">
-        <Link to={card.url} className="card__link">
+        <NavLink to={card.url} className="card__link">
           {!card.urlToImage ? (
             <h3 className="card__placeholder">Image could not be found</h3>
           ) : (
@@ -25,12 +25,10 @@ const NewsCard = ({ card, isLoggedIn }) => {
               className="card__image"
             />
           )}
-        </Link>
+        </NavLink>
         {isLoggedIn ? null : (
           <p
-            className={
-              isShown ? "card__modal-active" : "card__modal-inactive "
-            }
+            className={isShown ? "card__modal-active" : "card__modal-inactive "}
           >
             Sign in to save articles
           </p>
