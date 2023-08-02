@@ -2,10 +2,15 @@
 @import url(./blocks/about.css);
 @import url(./blocks/footer.css);
 @import url(./blocks/header.css);
+@import url(./blocks/menu.css);
+@import url(./blocks/modalform.css);
+@import url(./blocks/modalforms.css);
+@import url(./blocks/newcard.css);
+@import url(./blocks/newcardlist.css);
 @import url(./blocks/navigation.css);
 @import url(./blocks/page.css);
-@import url(./blocks/searchform.css);
 @import url(./blocks/preloader.css);
+@import url(./blocks/searchform.css);
 
 body {
   margin: 0;
