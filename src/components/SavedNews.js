@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./Navigation";
-import NewsCardListSaved from "./NewCardListSaved";
+import NewsCardListSaved from "./NewsCardListSaved";
 
 const SavedNews = ({ onLoginClick, isLoggedIn, handleMobileClick }) => {
   return (
