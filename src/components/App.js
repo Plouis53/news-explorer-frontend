@@ -4,9 +4,9 @@ import "../blocks/App.css";
 
 function App() {
   return (
-    <div>
-      <header className="header"></header>
-    </div>
+    <header className="header">
+      <div className="header__left"></div>
+    </header>
   );
 }
 
