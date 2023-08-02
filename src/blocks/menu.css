@@ -1,0 +1,129 @@
+.menu {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 102%;
+  height: 103%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menu__container-loggedin {
+  margin: 16px 6px 0 0;
+  width: 320px;
+  height: 285px;
+  background-color: #1a1b22;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__container-loggedout {
+  margin: 16px 6px 0 0;
+  width: 320px;
+  height: 230px;
+  background-color: #1a1b22;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__over {
+  height: 56px;
+  width: 320px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  display: flex;
+}
+
+.menu__link {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.menu__logo {
+  margin: 16px 16px 16px 16px;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5em;
+  user-select: none;
+}
+
+.menu__button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  align-self: flex-end;
+  display: flex;
+}
+
+.menu__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+}
+
+.menu__home {
+  margin: 16px 0 0 16px;
+  line-height: 3em;
+}
+
+.menu__signin {
+  width: 288px;
+  height: 56px;
+  margin: 22px 0 24px 16px;
+  border-radius: 100px;
+  color: inherit;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.menu__articles {
+  margin: 15px 0 0 16px;
+  line-height: 3em;
+}
+
+.menu__logout-button {
+  display: flex;
+  border-radius: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin: 20px 16px 0 16px;
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33em;
+  color: inherit;
+  padding: 0 19px 0 19px;
+  color: #fff;
+}
+
+.menu__logout-image {
+  margin: 0 0 0 5px;
+  width: 24px;
+  height: 24px;
+}
