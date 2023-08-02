@@ -103,7 +103,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1440px) {
   .footer {
     max-width: 768px;
     height: 64px;

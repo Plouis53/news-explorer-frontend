@@ -10,6 +10,7 @@
 @import url(./blocks/navigation.css);
 @import url(./blocks/page.css);
 @import url(./blocks/preloader.css);
+@import url(./blocks/savednews.css);
 @import url(./blocks/searchform.css);
 
 body {
