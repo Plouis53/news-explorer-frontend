@@ -5,10 +5,10 @@ import logout from "../images/logoutWhite.svg";
 
 const MobileMenu = ({
   closeModal,
-  handleClick,
+  // handleClick,
   handleOutClick,
-  handleLoginClick,
-  handleRegister,
+  handleSigninClick,
+  // handleRegister,
   isLoggedIn,
 }) => {
   return (
@@ -53,7 +53,7 @@ const MobileMenu = ({
             </button>
           </>
         ) : (
-          <button className={`menu__signin`} onClick={handleLoginClick}>
+          <button className={`menu__signin`} onClick={handleSigninClick}>
             Sign in
           </button>
         )}

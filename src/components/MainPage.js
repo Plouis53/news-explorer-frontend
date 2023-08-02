@@ -1,9 +1,10 @@
+import React from "react";
 import Header from "./Header";
 import Main from "./Main";
 import NewsCardList from "./NewsCardList";
 
 const MainPage = ({
-  handleLoginClick,
+  handleSigninClick,
   handleSearchSubmit,
   activeSearch,
   cards,
@@ -14,7 +15,7 @@ const MainPage = ({
   return (
     <>
       <Header
-        onLoginClick={handleLoginClick}
+        onLoginClick={handleSigninClick}
         theme="light"
         handleSearchSubmit={handleSearchSubmit}
         isLoggedIn={isLoggedIn}
@@ -23,7 +24,7 @@ const MainPage = ({
       />
       {activeSearch && (
         <NewsCardList
-          cards={cards}
+          card={cards}
           isLoading={isSearchLoading}
           isLoggedIn={isLoggedIn}
         />

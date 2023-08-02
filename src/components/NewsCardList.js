@@ -1,47 +1,49 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import NewsCard from "./NewsCard";
+import Preloader from "./Preloader";
 
-const NewsCardSaved = ({ card, isLoggedIn }) => {
-  const [isShown, setIsShown] = React.useState(false);
+const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
+  const [amountShown, setAmountShown] = React.useState(3);
+  const [isLarge, setIsLarge] = React.useState(false);
 
-  const onEnter = () => {
-    setIsShown(true);
+  const showMore = () => {
+    setAmountShown(amountShown + 3);
+    checkIsLarge();
   };
 
-  const onLeave = () => {
-    setIsShown(false);
+  const checkIsLarge = () => {
+    if (amountShown >= 99) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
   };
 
   return (
-    <div className="card">
-      <div className="card__container">
-        <NavLink to={card.url}>
-          {!card.urlToImage ? (
-            <h3 className="card__placeholder">Image could not be found</h3>
-          ) : (
-            <img
-              src={card.urlToImage}
-              alt={`${card.title}`}
-              className="card__image"
-            />
+    <section className="news">
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <>
+          <h2 className="news__header">Search Results</h2>
+          <ul className="news__cards">
+            {cards.slice(0, amountShown).map((card) => (
+              <NewsCard
+                card={card}
+                key={Math.random()}
+                isLoggedIn={isLoggedIn}
+              />
+            ))}
+          </ul>
+          {isLarge ? null : (
+            <button className="news__show" onClick={showMore}>
+              Show more
+            </button>
           )}
-        </NavLink>
-        <p className="card__keyword">Keyword</p>
-        <p className={isShown ? "card__modal-active" : "card__modal-inactive "}>
-          Remove from saved
-        </p>
-        <button
-          className="card__delete"
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-        />
-      </div>
-      <p className="card__date">{card.publishedAt.slice(0, 10)}</p>
-      <h3 className="card__title">{card.title}</h3>
-      <p className="card__description">{card.description}</p>
-      <h4 className="card__publisher">{card.source.name}</h4>
-    </div>
+        </>
+      )}
+    </section>
   );
 };
 
-export default NewsCardSaved;
+export default NewsCardList;

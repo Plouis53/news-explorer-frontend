@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 const LoginModal = ({
   closeModal,
   handleOutClick,
-  handleLogin,
+  // handleLogin,
   handleSignupClick,
   isLoading,
 }) => {

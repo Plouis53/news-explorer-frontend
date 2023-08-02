@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 const RegisterModal = ({
   closeModal,
   handleOutClick,
-  handleLoginClick,
-  handleSignup,
+  handleSigninClick,
+  // handleSignup,
   isLoading,
 }) => {
   const buttonTexts = {
@@ -31,7 +31,7 @@ const RegisterModal = ({
       onClose={closeModal}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
-      otherButtonClick={handleLoginClick}
+      otherButtonClick={handleSigninClick}
       handleSubmit={handleSubmit(onSubmit)}
       isValid={isValid}
     >
