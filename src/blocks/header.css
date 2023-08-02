@@ -1,8 +1,11 @@
 .header {
-  background-image: url(../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg);
+  /* background-image: url(../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg); */
+  background: url(../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg),
+    lightgray 50% / cover no-repeat;
   max-width: 1440px;
   height: 576px;
-  display: flex;
+  /* display: flex; */
+  flex-shrink: 0;
   flex-direction: column;
 }
 
