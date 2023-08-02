@@ -32,7 +32,7 @@ const Navigation = ({
         News Explorer
       </NavLink>
       <button
-        className={`nav__burger nav__burger-${theme}`}
+        className={`nav__mobile nav__mobile-${theme}`}
         onClick={handleMobileClick}
       />
       <div className="nav__right">
