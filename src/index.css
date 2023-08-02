@@ -1,8 +1,10 @@
 @import url(./vendor/fonts/fonts.css);
 @import url(./blocks/about.css);
-@import url(./blocks/App.css);
+/* @import url(./blocks/App.css); */
 @import url(./blocks/header.css);
+@import url(./blocks/navigationbar.css);
 @import url(./blocks/page.css);
+@import url(./blocks/searchform.css);
 @import url(./blocks/preloader.css);
 
 body {
