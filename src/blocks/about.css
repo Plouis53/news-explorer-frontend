@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1440px) {
   .about {
     max-width: 768px;
     margin: 40px 0 0 0;
