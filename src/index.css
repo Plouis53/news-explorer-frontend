@@ -11,7 +11,7 @@
 @import url(./blocks/page.css);
 @import url(./blocks/preloader.css);
 @import url(./blocks/savednews.css);
-@import url(./blocks/searchform.css);
+@import url(./blocks/search.css);
 
 body {
   margin: 0;
