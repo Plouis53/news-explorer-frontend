@@ -71,15 +71,6 @@
   transition: 0.3s;
 }
 
-.modal__close {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
 .modal__header {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -106,7 +97,7 @@
   width: 358px;
   height: 64px;
   background-color: #2f71e5;
-  margin: 0px 35px 0 35px;
+  margin: 20px 35px 0 35px;
   padding: 0;
   border: none;
   border-radius: 4px;
