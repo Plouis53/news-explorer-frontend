@@ -9,7 +9,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    handleSearchSubmit(data.searchs);
+    handleSearchSubmit(data.searches);
   };
 
   return (
@@ -20,12 +20,12 @@ const SearchForm = ({ handleSearchSubmit }) => {
             className="search__input"
             type="text"
             placeholder="Enter topic"
-            {...register("searchs", {
+            {...register("searches", {
               required: "Please enter a keyword",
             })}
           />
-          {errors.searchs && (
-            <span className="search__errors">{errors.searchs.message}</span>
+          {errors.searches && (
+            <span className="search__errors">{errors.searches.message}</span>
           )}
         </div>
         <button className="search__search">Search</button>

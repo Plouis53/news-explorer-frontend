@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./Navigation";
-import Search from "./SearchForm";
+import Search from "./Search";
 
 const Header = ({
   onLoginClick,

@@ -31,7 +31,7 @@ const LoginModal = ({
       onClose={closeModal}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
-      otherButtonClick={handleSignupClick}
+      altButtonClick={handleSignupClick}
       handleSubmit={handleSubmit(onSubmit)}
       isValid={isValid}
     >
