@@ -1,21 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.3fdec9b5.css",
-    "main.js": "/static/js/main.e640592b.js",
+    "main.css": "/static/css/main.3d0686b2.css",
+    "main.js": "/static/js/main.3fba52cb.js",
     "static/js/787.ed0d862c.chunk.js": "/static/js/787.ed0d862c.chunk.js",
-    "static/media/Roboto-Medium.woff": "/static/media/Roboto-Medium.2e8a75432e577e4aa546.woff",
-    "static/media/Roboto-Bold.woff": "/static/media/Roboto-Bold.f706d6ca22893a62d3c8.woff",
-    "static/media/Roboto-Regular.woff": "/static/media/Roboto-Regular.a3cfa1da9af6de7449f2.woff",
-    "static/media/RobotoSlab-Medium.woff": "/static/media/RobotoSlab-Medium.8f7b9717da3fa20626bf.woff",
-    "static/media/RobotoSlab-Bold.woff": "/static/media/RobotoSlab-Bold.79b78e83d42b8c451f5b.woff",
-    "static/media/RobotoSlab-Regular.woff": "/static/media/RobotoSlab-Regular.86897ebda6f03dedd53e.woff",
+    "static/media/georgia-de-lotz--UsJoNxLaNo-unsplash.svg": "/static/media/georgia-de-lotz--UsJoNxLaNo-unsplash.17c3714ec88b386f637b.svg",
+    "static/media/georgia-de-lotz--UsJoNxLaNo-unsplash-tablet.svg": "/static/media/georgia-de-lotz--UsJoNxLaNo-unsplash-tablet.8fabc4d3d3344b7a5585.svg",
+    "static/media/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.svg": "/static/media/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.604dbf037b0a775060f9.svg",
+    "static/media/about.jpeg": "/static/media/about.f07c811fa4b6ad5bf81e.jpeg",
+    "static/media/Roboto-slab-700-Regular.woff2": "/static/media/Roboto-slab-700-Regular.934d56e4123b970a7c16.woff2",
+    "static/media/Roboto-slab-400-Regular.woff2": "/static/media/Roboto-slab-400-Regular.c3cd9be60ab77224000b.woff2",
+    "static/media/Roboto-500-Medium.woff2": "/static/media/Roboto-500-Medium.f5b74d7ffcdf85b9dd60.woff2",
+    "static/media/Roboto-700-Regular.woff2": "/static/media/Roboto-700-Regular.c18ee39fb002ad58b6dc.woff2",
+    "static/media/Roboto-400-Regular.woff2": "/static/media/Roboto-400-Regular.176f8f5bd5f02b3abfcf.woff2",
+    "static/media/github.svg": "/static/media/github.5ddca9f763c6e0f32490bad670d1a50a.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.04993f123f9b09416c3951ebda6586b7.svg",
     "index.html": "/index.html",
-    "main.3fdec9b5.css.map": "/static/css/main.3fdec9b5.css.map",
-    "main.e640592b.js.map": "/static/js/main.e640592b.js.map",
+    "static/media/close.svg": "/static/media/close.4304b1ddb98905af4679708f357ee620.svg",
+    "static/media/logout.svg": "/static/media/logout.e6943779e430e96392152c07f496bd29.svg",
+    "static/media/logoutWhite.svg": "/static/media/logoutWhite.96d43996818a260d2207578d7e6f97cc.svg",
+    "static/media/trash.svg": "/static/media/trash.b9abe9fbfff17050d036.svg",
+    "static/media/blackBookmark.svg": "/static/media/blackBookmark.0eb689edc04637d3fd02.svg",
+    "static/media/bookmark.svg": "/static/media/bookmark.5ffc3f808d901ec61c0c.svg",
+    "static/media/mobileWhite.svg": "/static/media/mobileWhite.e36517e53a511b70bfb8.svg",
+    "static/media/filledBookmark.svg": "/static/media/filledBookmark.6e67e4c3b62a1a651d2c.svg",
+    "main.3d0686b2.css.map": "/static/css/main.3d0686b2.css.map",
+    "main.3fba52cb.js.map": "/static/js/main.3fba52cb.js.map",
     "787.ed0d862c.chunk.js.map": "/static/js/787.ed0d862c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fdec9b5.css",
-    "static/js/main.e640592b.js"
+    "static/css/main.3d0686b2.css",
+    "static/js/main.3fba52cb.js"
   ]
 }
