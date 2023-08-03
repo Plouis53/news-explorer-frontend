@@ -159,10 +159,13 @@
     align-items: flex-end;
   }
 
+  .modal__container-form {
+    align-items: center;
+  }
+
   .modal__fieldset {
     width: 320px;
     height: 545px;
-    border-radius: 0px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border: none;
