@@ -8,7 +8,7 @@ const ModalWithForm = ({
   children,
   onOutClick,
   handleSubmit,
-  otherButtonClick,
+  altButtonClick,
   isValid,
 }) => {
   if (!buttonText.other) {
@@ -46,7 +46,7 @@ const ModalWithForm = ({
           <button
             className="modal__other"
             type="button"
-            onClick={otherButtonClick}
+            onClick={altButtonClick}
           >
             or <span className="modal__color">{buttonText.other}</span>
           </button>
