@@ -165,10 +165,10 @@
 
   .modal__fieldset {
     width: 320px;
-    height: 545px;
+    height: 445px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    border: none;
+    /* border: none; */
     display: flex;
   }
 
@@ -177,7 +177,7 @@
     right: 16px;
     width: 24px;
     height: 24px;
-    background-size: 100%;
+    /* background-size: 100%; */
   }
 
   .modal__header {
@@ -192,10 +192,10 @@
   .modal__main {
     width: 288px;
     height: 44px;
-    margin: 5px 16px 16px 16px;
+    margin: 15px 16px 16px 16px;
   }
 
   .modal__other {
-    margin: 16px auto 0 auto;
+    margin: 6px auto 0 auto;
   }
 }
