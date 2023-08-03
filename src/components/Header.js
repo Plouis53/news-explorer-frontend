@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "./Navigation";
-import SearchForm from "./SearchForm";
+import Search from "./SearchForm";
 
 const Header = ({
   onLoginClick,
@@ -19,7 +19,7 @@ const Header = ({
         isHomeActive={isHomeActive}
         handleMobileClick={handleMobileClick}
       />
-      <SearchForm handleSearchSubmit={handleSearchSubmit} />
+      <Search handleSearchSubmit={handleSearchSubmit} />
     </header>
   );
 };
