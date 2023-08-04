@@ -13,4 +13,4 @@ Welcome to our news app! With our powerful search function, you can easily find 
 - CSS
 - Responsive web design
 
-[Front-End Link to Project](https://github.com/Plouis53/news-explorer-frontend.git)
+[Front-End Link to Project](https://github.com/Plouis53/news-explorer-frontend.git) 
