@@ -22,8 +22,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest",
-      "airbnb-base"
+      "react-app/jest"
     ]
   },
   "browserslist": {
@@ -40,11 +39,6 @@
   },
   "description": "## About The Project:",
   "main": "index.js",
-  "devDependencies": {
-    "eslint": "^8.46.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.28.0"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC"
