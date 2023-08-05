@@ -68,7 +68,6 @@ const NewsCard = ({ card, isLoggedIn, isSaved }) => {
             onClick={isLoggedIn ? onBookClick : null}
           />
         )}
-
         <button
           className={`card__book ${isLoggedIn ? "card__book-active" : null}`}
           onMouseEnter={onEnter}
