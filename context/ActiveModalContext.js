@@ -1,5 +1,5 @@
 import React from "react";
 
-const ActivePopupContext = React.createContext();
+const ActiveModalContext = React.createContext();
 
-export default ActivePopupContext;
+export default ActiveModalContext;
