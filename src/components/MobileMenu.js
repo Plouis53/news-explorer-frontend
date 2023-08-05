@@ -11,52 +11,68 @@ const MobileMenu = ({
   // handleRegister,
   isLoggedIn,
 }) => {
+  const [loggedIn, setLoggedIn] = React.useState("");
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      setLoggedIn("loggedin");
+    } else {
+      setLoggedIn("loggedout");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="menu" onClick={handleOutClick}>
-      <div className="menu__container">
-        <div className="menu__over">
-          <NavLink
-            to="/"
-            className="menu__logo menu__link"
-            onClick={closeModal}
-          >
-            News Explorer
-          </NavLink>
-          <button type="button" className="menu__button" aria-label="Close">
-            <img
-              className="menu__close"
-              alt="Close button"
-              src={closeIcon}
-              onClick={closeModal}
-            />
-          </button>
-        </div>
-        <NavLink to="/" className="menu__home menu__link" onClick={closeModal}>
-          Home
-        </NavLink>
-        {isLoggedIn ? (
-          <>
+      <div className={`menu__container-${loggedIn}`}>
+        <div className="menu__container">
+          <div className="menu__over">
             <NavLink
-              to="/saved-articles"
-              className="menu__articles menu__link"
+              to="/"
+              className="menu__logo menu__link"
               onClick={closeModal}
             >
-              Saved articles
+              News Explorer
             </NavLink>
-            <button className="menu__logout-button" onClick={closeModal}>
-              Username
+            <button type="button" className="menu__button" aria-label="Close">
               <img
-                src={logout}
-                alt="Logout Button"
-                className="menu__logout-image"
+                className="menu__close"
+                alt="Close button"
+                src={closeIcon}
+                onClick={closeModal}
               />
             </button>
-          </>
-        ) : (
-          <button className={`menu__signin`} onClick={handleSigninClick}>
-            Sign in
-          </button>
-        )}
+          </div>
+          <NavLink
+            to="/"
+            className="menu__home menu__link"
+            onClick={closeModal}
+          >
+            Home
+          </NavLink>
+          {isLoggedIn ? (
+            <>
+              <NavLink
+                to="/saved-articles"
+                className="menu__articles menu__link"
+                onClick={closeModal}
+              >
+                Saved articles
+              </NavLink>
+              <button className="menu__logout-button" onClick={closeModal}>
+                Username
+                <img
+                  src={logout}
+                  alt="Logout Button"
+                  className="menu__logout-image"
+                />
+              </button>
+            </>
+          ) : (
+            <button className={`menu__signin`} onClick={handleSigninClick}>
+              Sign in
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

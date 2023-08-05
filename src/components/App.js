@@ -13,8 +13,8 @@ import MobileMenu from "./MobileMenu";
 function App() {
   const [activeModal, setActiveModal] = React.useState("");
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  const [currentUser, setCurrentUser] = React.useState({});
-  const [token, setToken] = React.useState("");
+  // const [currentUser, setCurrentUser] = React.useState({});
+  // const [token, setToken] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [activeSearch, setActiveSearch] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
@@ -70,6 +70,14 @@ function App() {
     return () => {
       window.removeEventListener("keydown", closeWithEsc);
     };
+  }, []);
+
+  React.useEffect(() => {
+    setIsLoggedIn(false);
+  }, []);
+
+  React.useEffect(() => {
+    setIsLoading(false);
   }, []);
 
   return (
