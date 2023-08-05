@@ -1,5 +1,4 @@
 import React from "react";
-import closeIcon from "../images/close.svg";
 
 const ModalWithForm = ({
   title,
@@ -23,15 +22,12 @@ const ModalWithForm = ({
     <div className="modal__container-form" onClick={onOutClick}>
       <form className="modal__form" onSubmit={handleSubmit}>
         <fieldset className="modal__fieldset">
-          <button type="button" className="modal__button" aria-label="Close">
-            <img
-              className="modal__close"
-              alt="Close button"
-              src={closeIcon}
-              id="addModal-close"
-              onClick={onClose}
-            />
-          </button>
+          <button
+            className="modal__button"
+            type="button"
+            aria-label="Close"
+            onClick={onClose}
+          />
           <h2 className="modal__header">{title}</h2>
           {children}
           <button
