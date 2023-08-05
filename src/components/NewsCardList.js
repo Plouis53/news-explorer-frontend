@@ -1,10 +1,12 @@
 import React from "react";
 import NewsCard from "./NewsCard";
 import Preloader from "./Preloader";
+import NotFound from "./NotFound";
 
 const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
   const [amountShown, setAmountShown] = React.useState(3);
   const [isLarge, setIsLarge] = React.useState(false);
+  const [isEmpty, setIsEmpty] = React.useState(false);
 
   const showMore = () => {
     setAmountShown(amountShown + 3);
@@ -19,10 +21,19 @@ const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
     }
   };
 
+  React.useEffect(() => {
+    if (cards.length === 0) {
+      setIsEmpty(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="news">
       {isLoading ? (
         <Preloader />
+      ) : isEmpty ? (
+        <NotFound />
       ) : (
         <>
           <h2 className="news__header">Search Results</h2>
@@ -32,6 +43,7 @@ const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
                 card={card}
                 key={Math.random()}
                 isLoggedIn={isLoggedIn}
+                isSaved={false}
               />
             ))}
           </ul>
