@@ -39,9 +39,9 @@
   display: flex;
 }
 
-.nav__link-active:visited {
+/* .nav__link-active:visited {
   color: inherit;
-}
+} */
 
 .nav__link-inactive:visited {
   color: #b6bcbf;

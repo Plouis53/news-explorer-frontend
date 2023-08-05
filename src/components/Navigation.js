@@ -28,7 +28,7 @@ const Navigation = ({
 
   return (
     <div className={`nav nav__${theme}`}>
-      <NavLink to="/" className="nav__logo nav__link">
+      <NavLink to="/" className="nav__logo nav__link-active">
         News Explorer
       </NavLink>
       <button
@@ -38,7 +38,7 @@ const Navigation = ({
       <div className="nav__right">
         <NavLink
           to="/"
-          className={`nav__home nav__link nav__highlight-${homeClass}-${theme}`}
+          className={`nav__home nav__link nav__highlight-${homeClass}_${theme} nav__link-active`}
         >
           Home
         </NavLink>
@@ -46,11 +46,11 @@ const Navigation = ({
           <>
             <NavLink
               to="/saved-articles"
-              className={`nav__articles nav__link nav__highlight-${articleClass}-${theme}`}
+              className={`nav__articles nav__link nav__highlight-${articleClass}_${theme} nav__link-${articleClass}`}
             >
               Saved articles
             </NavLink>
-            <button className={`nav__logout-button nav__button-${theme}`}>
+            <button className={`nav__logout-button nav__button_${theme}`}>
               Username
               <img
                 src={color}
@@ -61,7 +61,7 @@ const Navigation = ({
           </>
         ) : (
           <button
-            className={`nav__signin nav__button-${theme} nav__button`}
+            className={`nav__signin nav__button_${theme} nav__button`}
             onClick={onLoginClick}
           >
             Sign in

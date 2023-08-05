@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NewsCard = ({ card, isLoggedIn }) => {
+const NewsCard = ({ card, isLoggedIn, isSaved }) => {
   const [isShown, setIsShown] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false);
 
   const onEnter = () => {
     setIsShown(true);
@@ -10,6 +11,10 @@ const NewsCard = ({ card, isLoggedIn }) => {
 
   const onLeave = () => {
     setIsShown(false);
+  };
+
+  const onBookClick = () => {
+    setIsClicked(!isClicked);
   };
 
   return (
@@ -33,6 +38,37 @@ const NewsCard = ({ card, isLoggedIn }) => {
             Sign in to save articles
           </p>
         )}
+        {isSaved ? (
+          <>
+            <p className="card__keyword">Keyword</p>
+            <p
+              className={
+                isShown ? "card__modal-active" : "card__modal-inactive "
+              }
+            >
+              Remove from saved
+            </p>
+            <button
+              className="card__delete"
+              onMouseEnter={onEnter}
+              onMouseLeave={onLeave}
+            />
+          </>
+        ) : (
+          <button
+            className={`card__book  ${
+              isClicked
+                ? "card__book-clicked"
+                : isLoggedIn
+                ? "card__book-active"
+                : null
+            }`}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave}
+            onClick={isLoggedIn ? onBookClick : null}
+          />
+        )}
+
         <button
           className={`card__book ${isLoggedIn ? "card__book-active" : null}`}
           onMouseEnter={onEnter}
