@@ -36,7 +36,7 @@ const Navigation = ({
       </NavLink>
       {activeModal === "signup" || activeModal === "login" ? null : (
         <button
-          className={`nav__burger nav__burger_${theme}`}
+          className={`nav__mobile nav__mobile_${theme}`}
           onClick={handleMobileClick}
         />
       )}
