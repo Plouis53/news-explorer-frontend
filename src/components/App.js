@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 import ModalWithSuccess from "./ModalWithSuccess";
@@ -10,6 +10,9 @@ import MainPage from "./MainPage";
 import { getNews } from "../utils/newsApi";
 import MobileMenu from "./MobileMenu";
 import ActiveModalContext from "../contexts/ActiveModalContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import * as auth from "../utils/auth";
+import { addArticle, removeArticle } from "../utils/mainApi";
 
 function App() {
   const [activeModal, setActiveModal] = React.useState("");
