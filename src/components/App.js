@@ -9,6 +9,7 @@ import SavedNews from "./SavedNews";
 import MainPage from "./MainPage";
 import { getNews } from "../utils/newsApi";
 import MobileMenu from "./MobileMenu";
+import ActiveModalContext from "../contexts/ActiveModalContext"
 
 function App() {
   const [activeModal, setActiveModal] = React.useState("");
@@ -81,6 +82,7 @@ function App() {
   }, []);
 
   return (
+    <ActiveModalContext.Provider value={activeModal}>
     <>
       <Routes>
         <Route
@@ -142,6 +144,7 @@ function App() {
           isLoggedIn={isLoggedIn}
         />
       )}
+      </ActiveModalContext.Provider>
     </>
   );
 }
