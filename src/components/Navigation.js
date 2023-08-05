@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import logout from "../images/logout.svg";
 import logoutWhite from "../images/logoutWhite.svg";
+import ActiveModalContext from "../contexts/ActiveModalContext";
 
 const Navigation = ({
   onLoginClick,
@@ -13,6 +14,8 @@ const Navigation = ({
   const [homeClass, setHomeClass] = React.useState("");
   const [articleClass, setArticleClass] = React.useState("");
   const [color, setColor] = React.useState("");
+
+  const activeModal = useContext(ActiveModalContext);
 
   React.useEffect(() => {
     if (isHomeActive) {
@@ -27,14 +30,16 @@ const Navigation = ({
   }, []);
 
   return (
-    <div className={`nav nav__${theme}`}>
+    <div className={`nav nav_${theme}`}>
       <NavLink to="/" className="nav__logo nav__link-active">
         News Explorer
       </NavLink>
-      <button
-        className={`nav__mobile nav__mobile-${theme}`}
-        onClick={handleMobileClick}
-      />
+      {activeModal === "signup" || activeModal === "login" ? null : (
+        <button
+          className={`nav__burger nav__burger_${theme}`}
+          onClick={handleMobileClick}
+        />
+      )}
       <div className="nav__right">
         <NavLink
           to="/"
