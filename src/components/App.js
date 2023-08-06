@@ -209,7 +209,7 @@ function App() {
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <SavedNews
                   isLoggedIn={isLoggedIn}
-                  handleSigninClick={handleSigninClick}
+                  handleSigninClick={handleSigninClick} //review this later
                   handleMobileClick={handleMobileClick}
                   handleSignout={handleSignout}
                   token={token}

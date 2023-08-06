@@ -61,7 +61,7 @@ const Navigation = ({
               Saved articles
             </NavLink>
             <button
-              className={`nav__Signout-button nav__button_${theme}`}
+              className={`nav__signout-button nav__button_${theme}`}
               onClick={handleSignout}
             >
               {userData.name}

@@ -6,8 +6,10 @@ const RegisterModal = ({
   closeModal,
   handleOutClick,
   handleSigninClick,
-  // handleSignup,
+  handleSignup,
   isLoading,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const buttonTexts = {
     button: isLoading ? "Saving..." : "Sign up",
@@ -20,9 +22,8 @@ const RegisterModal = ({
     formState: { errors, isValid },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    closeModal();
+  const onSubmit = ({ email, password, name }) => {
+    handleSignup(email, password, name);
   };
 
   return (
@@ -31,9 +32,11 @@ const RegisterModal = ({
       onClose={closeModal}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
-      otherButtonClick={handleSigninClick}
+      altButtonClick={handleSigninClick}
       handleSubmit={handleSubmit(onSubmit)}
       isValid={isValid}
+      errorMessage={errorMessage}
+      setErrorMessage={setErrorMessage}
     >
       <label className="modal__label">
         Email
@@ -82,7 +85,7 @@ const RegisterModal = ({
           className="modal__input"
           placeholder="Enter your username"
           type="text"
-          {...register("username", {
+          {...register("name", {
             required: "This field is required",
             minLength: {
               value: 2,
@@ -95,8 +98,8 @@ const RegisterModal = ({
           })}
         />
       </label>
-      {errors.username && (
-        <span className="modal__errors">{errors.username.message}</span>
+      {errors.name && (
+        <span className="modal__errors">{errors.name.message}</span>
       )}
     </ModalWithForm>
   );
