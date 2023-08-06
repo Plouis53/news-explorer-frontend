@@ -1,7 +1,11 @@
 import React from "react";
 import closeIcon from "../images/close.svg";
 
-const ModalWithSuccess = ({ closeModal, handleOutClick, handleLoginClick }) => {
+const ModalWithSuccess = ({
+  closeModal,
+  handleOutClick,
+  handleSigninClick,
+}) => {
   return (
     <div className="modal__container-confirm" onClick={handleOutClick}>
       <div className="modal__confirm">
@@ -16,7 +20,7 @@ const ModalWithSuccess = ({ closeModal, handleOutClick, handleLoginClick }) => {
         <h3 className="modal__confirm-title">
           Registration successfully completed!
         </h3>
-        <button className="modal__confirm-signin" onClick={handleLoginClick}>
+        <button className="modal__confirm-signin" onClick={handleSigninClick}>
           Sign in
         </button>
       </div>

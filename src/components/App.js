@@ -237,12 +237,16 @@ function App() {
             handleOutClick={handleOutClick}
             isLoading={isLoading}
             handleSigninClick={handleSigninClick}
+            handleSignup={handleRegister}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
           />
         )}
         {activeModal === "success" && (
           <ModalWithSuccess
             closeModal={closeModal}
             handleOutClick={handleOutClick}
+            handleSigninClick={handleSigninClick}
           />
         )}
         {activeModal === "mobile" && (
