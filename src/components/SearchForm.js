@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const SearchForm = ({ handleSearchSubmit }) => {
+const SearchForm = ({ handleSearchSubmit, setKeyword }) => {
   const {
     register,
     handleSubmit,
@@ -11,6 +11,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
   const [buttonColor, setButtonColor] = React.useState({});
 
   const onSubmit = (data) => {
+    setKeyword(data.searchs);
     handleSearchSubmit(data.searches);
     setButtonColor({
       backgroundColor: "#2a65cc",

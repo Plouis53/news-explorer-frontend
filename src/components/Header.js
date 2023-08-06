@@ -9,6 +9,8 @@ const Header = ({
   isLoggedIn,
   isHomeActive,
   handleMobileClick,
+  handleSignout,
+  setKeyword,
 }) => {
   return (
     <header className="header">
@@ -18,8 +20,9 @@ const Header = ({
         isLoggedIn={isLoggedIn}
         isHomeActive={isHomeActive}
         handleMobileClick={handleMobileClick}
+        handleSignout={handleSignout}
       />
-      <Search handleSearchSubmit={handleSearchSubmit} />
+      <Search handleSearchSubmit={handleSearchSubmit} setKeyword={setKeyword} />
     </header>
   );
 };

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logout from "../images/logout.svg";
 import logoutWhite from "../images/logoutWhite.svg";
 import ActiveModalContext from "../contexts/ActiveModalContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const Navigation = ({
   onLoginClick,
@@ -10,12 +11,16 @@ const Navigation = ({
   isHomeActive,
   isLoggedIn,
   handleMobileClick,
+  handleSignout,
 }) => {
   const [homeClass, setHomeClass] = React.useState("");
   const [articleClass, setArticleClass] = React.useState("");
   const [color, setColor] = React.useState("");
 
   const activeModal = useContext(ActiveModalContext);
+  const currentUser = useContext(CurrentUserContext);
+
+  const userData = currentUser.data ? currentUser.data : { name: "" };
 
   React.useEffect(() => {
     if (isHomeActive) {
@@ -55,7 +60,11 @@ const Navigation = ({
             >
               Saved articles
             </NavLink>
-            <button className={`nav__logout-button nav__button_${theme}`}>
+            <button
+              className={`nav__logout-button nav__button_${theme}`}
+              onClick={handleSignout}
+            >
+              {userData.name}
               Username
               <img
                 src={color}

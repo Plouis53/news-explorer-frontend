@@ -17,12 +17,78 @@ import { addArticle, removeArticle } from "../utils/mainApi";
 function App() {
   const [activeModal, setActiveModal] = React.useState("");
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  // const [currentUser, setCurrentUser] = React.useState({});
-  // const [token, setToken] = React.useState("");
+  const [currentUser, setCurrentUser] = React.useState({});
+  const [token, setToken] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [activeSearch, setActiveSearch] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
   const [isSearchLoading, setIsSearchLoading] = React.useState(true);
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const [keyword, setKeyword] = React.useState("");
+
+  const navigate = useNavigate();
+
+  const handleSignin = (email, password) => {
+    auth
+      .signIn(email, password)
+      .then((data) => {
+        if (data.token) {
+          auth
+            .checkToken(data.token)
+            .then((res) => {
+              return res;
+            })
+            .then((data) => {
+              setCurrentUser(data);
+            })
+            .then(() => {
+              setIsLoggedIn(true);
+            })
+            .then(() => {
+              navigate("/saved-articles");
+            })
+            .catch((err) => console.log(err));
+        }
+      })
+      .then(() => {
+        closeModal();
+      })
+      .catch((err) => {
+        console.log(err);
+        setErrorMessage("Username or password is incorrect");
+        setIsLoading(false);
+      });
+  };
+
+  const handleRegister = (email, password, name) => {
+    setIsLoading(true);
+
+    auth
+      .signUp(email, password, name)
+      .then((res) => {
+        console.log(res);
+        if (res) {
+          setActiveModal("success");
+        } else {
+          console.log("Something went wrong.");
+        }
+      })
+      .then(() => {
+        setActiveModal("success");
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setErrorMessage("This email is already in use");
+        setIsLoading(false);
+      });
+  };
+
+  const handleSignout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser({});
+    localStorage.removeItem("jwt");
+  };
 
   const handleSigninClick = () => {
     setActiveModal("login");
@@ -44,6 +110,16 @@ function App() {
 
   const closeModal = () => {
     setActiveModal("");
+  };
+
+  const handleBook = (card) => {
+    addArticle({ keyword: keyword, ...card }, token, currentUser).catch((e) =>
+      console.log(e)
+    );
+  };
+
+  const handleDeleteClick = (id) => {
+    removeArticle(id, token).catch((e) => console.log(e));
   };
 
   const handleSearchSubmit = (input) => {
@@ -84,69 +160,95 @@ function App() {
     setIsLoading(false);
   }, []);
 
+  React.useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+
+    if (jwt) {
+      setToken(jwt);
+
+      auth
+        .checkToken(jwt)
+        .then((res) => {
+          if (res) {
+            setIsLoggedIn(true);
+          }
+          return res;
+        })
+        .then((data) => {
+          setCurrentUser(data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
+
   return (
-    <ActiveModalContext.Provider value={activeModal}>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <MainPage
-              handleSearchSubmit={handleSearchSubmit}
-              handleSigninClick={handleSigninClick}
-              activeSearch={activeSearch}
-              cards={newsCards}
-              isSearchLoading={isSearchLoading}
-              isLoggedIn={isLoggedIn}
-              handleMobileClick={handleMobileClick}
-            />
-          }
-        />
-        <Route
-          path="/saved-articles"
-          element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <SavedNews
-                isLoggedIn={isLoggedIn}
+    <CurrentUserContext.Provider value={currentUser}>
+      <ActiveModalContext.Provider value={activeModal}>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <MainPage
+                handleSearchSubmit={handleSearchSubmit}
                 handleSigninClick={handleSigninClick}
+                activeSearch={activeSearch}
+                cards={newsCards}
+                isSearchLoading={isSearchLoading}
+                isLoggedIn={isLoggedIn}
                 handleMobileClick={handleMobileClick}
+                handleSignout={handleSignout}
+                handleBook={handleBook}
+                setKeyword={setKeyword}
               />
-            </ProtectedRoute>
-          }
-        ></Route>
-      </Routes>
-      <Footer />
-      {activeModal === "login" && (
-        <LoginModal
-          closeModal={closeModal}
-          handleOutClick={handleOutClick}
-          handleSignupClick={handleSignupClick}
-          isLoading={isLoading}
-        />
-      )}
-      {activeModal === "signup" && (
-        <RegisterModal
-          closeModal={closeModal}
-          handleOutClick={handleOutClick}
-          isLoading={isLoading}
-          handleSigninClick={handleSigninClick}
-        />
-      )}
-      {activeModal === "success" && (
-        <ModalWithSuccess
-          closeModal={closeModal}
-          handleOutClick={handleOutClick}
-        />
-      )}
-      {activeModal === "mobile" && (
-        <MobileMenu
-          closeModal={closeModal}
-          handleOutClick={handleOutClick}
-          handleSigninClick={handleSigninClick}
-          isLoggedIn={isLoggedIn}
-        />
-      )}
-    </ActiveModalContext.Provider>
+            }
+          />
+          <Route
+            path="/saved-articles"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <SavedNews
+                  isLoggedIn={isLoggedIn}
+                  handleSigninClick={handleSigninClick}
+                  handleMobileClick={handleMobileClick}
+                />
+              </ProtectedRoute>
+            }
+          ></Route>
+        </Routes>
+        <Footer />
+        {activeModal === "login" && (
+          <LoginModal
+            closeModal={closeModal}
+            handleOutClick={handleOutClick}
+            handleSignupClick={handleSignupClick}
+            isLoading={isLoading}
+          />
+        )}
+        {activeModal === "signup" && (
+          <RegisterModal
+            closeModal={closeModal}
+            handleOutClick={handleOutClick}
+            isLoading={isLoading}
+            handleSigninClick={handleSigninClick}
+          />
+        )}
+        {activeModal === "success" && (
+          <ModalWithSuccess
+            closeModal={closeModal}
+            handleOutClick={handleOutClick}
+          />
+        )}
+        {activeModal === "mobile" && (
+          <MobileMenu
+            closeModal={closeModal}
+            handleOutClick={handleOutClick}
+            handleSigninClick={handleSigninClick}
+            isLoggedIn={isLoggedIn}
+          />
+        )}
+      </ActiveModalContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 

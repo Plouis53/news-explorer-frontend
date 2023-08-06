@@ -1,7 +1,7 @@
 import React from "react";
 import SearchForm from "./SearchForm";
 
-const Search = ({ handleSearchSubmit }) => {
+const Search = ({ handleSearchSubmit, setKeyword }) => {
   return (
     <section className="search">
       <h1 className="search__title">What's going on in the world?</h1>
@@ -9,7 +9,10 @@ const Search = ({ handleSearchSubmit }) => {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <SearchForm handleSearchSubmit={handleSearchSubmit} />
+      <SearchForm
+        handleSearchSubmit={handleSearchSubmit}
+        setKeyword={setKeyword}
+      />
     </section>
   );
 };
