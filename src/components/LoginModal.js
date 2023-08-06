@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 const LoginModal = ({
   closeModal,
   handleOutClick,
-  // handleLogin,
+  handleSignin,
   handleSignupClick,
   isLoading,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const buttonTexts = {
     button: isLoading ? "Saving..." : "Sign in",
@@ -20,9 +22,8 @@ const LoginModal = ({
     formState: { errors, isValid },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    closeModal();
+  const onSubmit = ({ email, password }) => {
+    handleSignin(email, password);
   };
 
   return (
@@ -34,6 +35,8 @@ const LoginModal = ({
       altButtonClick={handleSignupClick}
       handleSubmit={handleSubmit(onSubmit)}
       isValid={isValid}
+      errorMessage={errorMessage}
+      setErrorMessage={setErrorMessage}
     >
       <label className="modal__label">
         Email

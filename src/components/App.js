@@ -226,6 +226,9 @@ function App() {
             handleOutClick={handleOutClick}
             handleSignupClick={handleSignupClick}
             isLoading={isLoading}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
+            handleSignin={handleSignin}
           />
         )}
         {activeModal === "signup" && (
