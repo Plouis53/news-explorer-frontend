@@ -6,7 +6,7 @@ import ActiveModalContext from "../contexts/ActiveModalContext";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const Navigation = ({
-  onSignedinClick,
+  onSigninClick,
   theme,
   isHomeActive,
   isLoggedIn,
@@ -76,7 +76,7 @@ const Navigation = ({
         ) : (
           <button
             className={`nav__signin nav__button_${theme} nav__button`}
-            onClick={onSignedinClick}
+            onClick={onSigninClick}
           >
             Sign in
           </button>

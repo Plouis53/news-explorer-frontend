@@ -18,7 +18,7 @@ const MainPage = ({
   return (
     <>
       <Header
-        onLoginClick={handleSigninClick}
+        onSigninClick={handleSigninClick}
         theme="light"
         handleSearchSubmit={handleSearchSubmit}
         isLoggedIn={isLoggedIn}

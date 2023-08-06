@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard";
 import Preloader from "./Preloader";
 import NotFound from "./NotFound";
 
-const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
+const NewsCardList = ({ cards, isLoading, isLoggedIn, handleBook }) => {
   const [amountShown, setAmountShown] = React.useState(3);
   const [isLarge, setIsLarge] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState(false);
@@ -29,32 +29,35 @@ const NewsCardList = ({ cards, isLoading, isLoggedIn }) => {
   }, []);
 
   return (
-    <section className="news">
+    <>
       {isLoading ? (
         <Preloader />
       ) : isEmpty ? (
         <NotFound />
       ) : (
-        <>
-          <h2 className="news__header">Search Results</h2>
-          <ul className="news__cards">
-            {cards.slice(0, amountShown).map((card) => (
-              <NewsCard
-                card={card}
-                key={Math.random()}
-                isLoggedIn={isLoggedIn}
-                isSaved={false}
-              />
-            ))}
-          </ul>
-          {isLarge ? null : (
-            <button className="news__show" onClick={showMore}>
-              Show more
-            </button>
-          )}
-        </>
+        <section className="news">
+          <>
+            <h2 className="news__header">Search Results</h2>
+            <ul className="news__cards">
+              {cards.slice(0, amountShown).map((card) => (
+                <NewsCard
+                  card={card}
+                  key={Math.random()}
+                  isLoggedIn={isLoggedIn}
+                  isSaved={false}
+                  handleBook={handleBook}
+                />
+              ))}
+            </ul>
+            {isLarge ? null : (
+              <button className="news__show" onClick={showMore}>
+                Show more
+              </button>
+            )}
+          </>
+        </section>
       )}
-    </section>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 import Search from "./Search";
 
 const Header = ({
-  onLoginClick,
+  onSigninClick,
   theme,
   handleSearchSubmit,
   isLoggedIn,
@@ -15,7 +15,7 @@ const Header = ({
   return (
     <header className="header">
       <Navigation
-        onLoginClick={onLoginClick}
+        onSigninClick={onSigninClick}
         theme={theme}
         isLoggedIn={isLoggedIn}
         isHomeActive={isHomeActive}
