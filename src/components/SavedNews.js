@@ -5,7 +5,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getArticles } from "../utils/mainApi";
 
 const SavedNews = ({
-  onSignedinClick,
+  onSigninClick,
   isLoggedIn,
   handleMobileClick,
   handleSignout,
@@ -83,7 +83,7 @@ const SavedNews = ({
   return (
     <>
       <Navigation
-        onSignedinClick={onSignedinClick}
+        onSigninClick={onSigninClick}
         theme="dark"
         isHomeActive={false}
         isLoggedIn={isLoggedIn}
