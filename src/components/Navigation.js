@@ -6,7 +6,7 @@ import ActiveModalContext from "../contexts/ActiveModalContext";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const Navigation = ({
-  onLoginClick,
+  onSignedinClick,
   theme,
   isHomeActive,
   isLoggedIn,
@@ -61,14 +61,14 @@ const Navigation = ({
               Saved articles
             </NavLink>
             <button
-              className={`nav__logout-button nav__button_${theme}`}
+              className={`nav__Signout-button nav__button_${theme}`}
               onClick={handleSignout}
             >
               {userData.name}
               Username
               <img
                 src={color}
-                alt="Logout Button"
+                alt="Signout Button"
                 className="nav__logout-image"
               />
             </button>
@@ -76,7 +76,7 @@ const Navigation = ({
         ) : (
           <button
             className={`nav__signin nav__button_${theme} nav__button`}
-            onClick={onLoginClick}
+            onClick={onSignedinClick}
           >
             Sign in
           </button>

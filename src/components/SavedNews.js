@@ -1,26 +1,125 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navigation from "./Navigation";
 import NewsCardListSaved from "./NewsCardListSaved";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { getArticles } from "../utils/mainApi";
 
-const SavedNews = ({ onLoginClick, isLoggedIn, handleMobileClick }) => {
+const SavedNews = ({
+  onSignedinClick,
+  isLoggedIn,
+  handleMobileClick,
+  handleSignout,
+  token,
+  handleDeleteClick,
+}) => {
+  const currentUser = useContext(CurrentUserContext);
+  const [newsCards, setNewsCards] = React.useState([]);
+  const [keywords, setKeywords] = React.useState([]);
+
+  const keywordArray = [];
+  const keywordSortableArray = [];
+  let keywordSortedArray = [];
+  const userData = currentUser.data ? currentUser.data : { name: "" };
+
+  const countAmount = (arr) => {
+    let mp = new Map();
+
+    for (let i = 0; i < arr.length; ++i) {
+      if (mp.has(arr[i])) {
+        mp.set(arr[i], mp.get(arr[i]) + 1);
+      } else {
+        mp.set(arr[i], 1);
+      }
+    }
+
+    let keys = [];
+
+    mp.forEach((value, key) => {
+      keys.push(key);
+    });
+    keys.sort((a, b) => a - b);
+
+    keys.forEach((key) => {
+      keywordSortableArray.unshift([key, mp.get(key)]);
+    });
+
+    keywordSortedArray = keywordSortableArray.sort((a, b) => {
+      return a[1] - b[1];
+    });
+
+    if (keywordSortedArray.length >= 3) {
+      setKeywords([
+        keywordSortedArray[0][0],
+        keywordSortedArray[1][0],
+        keywordSortedArray[2][0],
+      ]);
+    } else if (keywordSortedArray.length === 2) {
+      setKeywords([keywordSortedArray[0][0], keywordSortedArray[1][0]]);
+    } else if (keywordSortedArray.length === 1) {
+      setKeywords([keywordSortedArray[0][0]]);
+    }
+
+    console.log(keywords);
+  };
+
+  React.useEffect(() => {
+    newsCards.map((card) => keywordArray.unshift(card.keyword));
+
+    countAmount(keywordArray);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newsCards]);
+
+  React.useEffect(() => {
+    getArticles(token)
+      .then((data) => {
+        setNewsCards(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Navigation
-        onLoginClick={onLoginClick}
+        onSignedinClick={onSignedinClick}
         theme="dark"
         isHomeActive={false}
         isLoggedIn={isLoggedIn}
         handleMobileClick={handleMobileClick}
+        handleSignout={handleSignout}
       />
       <section className="saved">
-        <div className="saved__container">
-          <p className="saved__title">Saved Articles</p>
-          <h2 className="saved__header">Username, you have X saved articles</h2>
-          <p className="saved__words">
-            By keywords: <span className="saved__bold">x, y, and Z others</span>
-          </p>
-        </div>
-        <NewsCardListSaved isLoggedIn={isLoggedIn} />
+        {newsCards.length === 0 ? (
+          <h2 className="saved__header">Save some cards to see them here!</h2>
+        ) : (
+          <>
+            <div className="saved__container">
+              <p className="saved__title">Saved Articles</p>
+              <h2 className="saved__header">{`${userData.name} you have ${
+                newsCards.length
+              } saved article${newsCards.length === 1 ? "" : "s"}`}</h2>
+              <p className="saved__words">
+                By keywords:{" "}
+                <span className="saved__bold">
+                  {keywords.length === 3
+                    ? `${keywords[0]}, ${keywords[1]}, and ${keywords[2]}`
+                    : keywords.length === 2
+                    ? `${keywords[0]} and ${keywords[1]}`
+                    : keywords.length === 1
+                    ? `${keywords[0]}`
+                    : null}
+                </span>
+              </p>
+            </div>
+            <NewsCardListSaved
+              isLoggedIn={isLoggedIn}
+              newsCards={newsCards}
+              handleDeleteClick={handleDeleteClick}
+            />
+          </>
+        )}
       </section>
     </>
   );

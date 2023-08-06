@@ -211,6 +211,9 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   handleSigninClick={handleSigninClick}
                   handleMobileClick={handleMobileClick}
+                  handleSignout={handleSignout}
+                  token={token}
+                  handleDeleteClick={handleDeleteClick}
                 />
               </ProtectedRoute>
             }
