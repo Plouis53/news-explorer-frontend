@@ -9,6 +9,8 @@ const ModalWithForm = ({
   handleSubmit,
   altButtonClick,
   isValid,
+  errorMessage,
+  setErrorMessage,
 }) => {
   if (!buttonText.other) {
     buttonText.other = null;
@@ -18,8 +20,13 @@ const ModalWithForm = ({
     handleSubmit();
   }, []);
 
+  React.useEffect(() => {
+    setErrorMessage("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div className="modal" onClick={onOutClick}> 
+    <div className="modal" onClick={onOutClick}>
       <form className="modal__form" onSubmit={handleSubmit}>
         <fieldset className="modal__fieldset">
           <button
@@ -30,6 +37,7 @@ const ModalWithForm = ({
           />
           <h2 className="modal__header">{title}</h2>
           {children}
+          <span className="modal__errors-signup">{errorMessage}</span>
           <button
             className="modal__main"
             type="submit"
