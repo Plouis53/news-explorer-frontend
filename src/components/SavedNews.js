@@ -73,7 +73,7 @@ const SavedNews = ({
   React.useEffect(() => {
     getArticles(token)
       .then((data) => {
-        setNewsCards(data);
+        setNewsCards([...new Map(data.map((v) => [v.title, v])).values()]);
       })
       .catch((err) => {
         console.log(err);
@@ -121,6 +121,7 @@ const SavedNews = ({
               isLoggedIn={isLoggedIn}
               newsCards={newsCards}
               handleDeleteClick={handleDeleteClick}
+              setNewsCards={setNewsCards}
             />
           </>
         )}

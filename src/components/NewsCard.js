@@ -7,11 +7,15 @@ const NewsCard = ({
   isSaved,
   handleBook,
   handleDeleteClick,
+  handleSignupClick,
+  setNewsCards,
+  newsCards,
 }) => {
   const [isShown, setIsShown] = React.useState(false);
   const [isClicked, setIsClicked] = React.useState(false);
   const [hasImage, setHasImage] = React.useState(true);
   const [isVisible, setIsVisible] = React.useState(true);
+  const [isBooked, setIsBooked] = React.useState(false);
 
   const onEnter = () => {
     setIsShown(true);
@@ -22,13 +26,23 @@ const NewsCard = ({
   };
 
   const onBookClick = () => {
-    setIsClicked(true);
-    handleBook(card);
+    setIsClicked(!isClicked);
+    handleBook(card, isBooked, card._id);
+    setIsBooked(!isBooked);
   };
 
   const handleDelete = () => {
     handleDeleteClick(card._id);
+    console.log(card._id);
     setIsVisible(false);
+    setNewsCards(
+      newsCards.filter((c) => {
+        if (c._id === card._id) {
+          return false;
+        }
+        return true;
+      })
+    );
   };
 
   React.useEffect(() => {
@@ -37,7 +51,6 @@ const NewsCard = ({
     } else {
       setHasImage(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -89,11 +102,15 @@ const NewsCard = ({
             ) : (
               <button
                 className={`card__book  ${
-                  isClicked ? "card__book-clicked" : null
+                  isClicked
+                    ? "card__book-clicked"
+                    : isLoggedIn
+                    ? "card__book-active"
+                    : null
                 }`}
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
-                onClick={isLoggedIn ? (isClicked ? null : onBookClick) : null}
+                onClick={isLoggedIn ? onBookClick : handleSignupClick}
               />
             )}
           </div>
