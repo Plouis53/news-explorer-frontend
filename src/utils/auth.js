@@ -30,7 +30,7 @@ export const signIn = (email, password) => {
     });
 };
 
-export const checkToken = (token) => {
+export const checkTokenValidity = (token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {

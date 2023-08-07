@@ -34,7 +34,7 @@ function App() {
       .then((data) => {
         if (data.token) {
           auth
-            .checkToken(data.token)
+            .checkTokenValidity(data.token)
             .then((res) => {
               return res;
             })
@@ -167,7 +167,7 @@ function App() {
       setToken(jwt);
 
       auth
-        .checkToken(jwt)
+        .checkTokenValidity(jwt)
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
