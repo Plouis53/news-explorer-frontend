@@ -207,6 +207,7 @@ function App() {
                 handleSignout={handleSignout}
                 handleBook={handleBook}
                 setKeyword={setKeyword}
+                handleSignupClick={handleSignupClick}
               />
             }
           />
