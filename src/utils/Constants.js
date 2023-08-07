@@ -1,3 +1,8 @@
+export const baseUrl =
+  "https://my-json-server.typicode.com/Plouis53/news-explorer-frontend";
+
+export const APIkey = "03163e8f2a6b45419e69c39fbacf5fe2";
+
 export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -17,10 +22,7 @@ export const getCurrentDate = () => {
   return currentDate.toLocaleString();
 };
 
-export const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.newsexplorer.mooo.com"
-    : "http://localhost:3000";
-
-
-    
+// export const baseUrl =
+//   process.env.NODE_ENV === "production"
+//     ? "https://api.newsexplorer.mooo.com"
+//     : "http://localhost:3000";

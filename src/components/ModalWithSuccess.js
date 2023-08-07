@@ -5,6 +5,7 @@ const ModalWithSuccess = ({
   closeModal,
   handleOutClick,
   handleSigninClick,
+  handleSignupSuccess,
 }) => {
   return (
     <div className="modal__container-confirm" onClick={handleOutClick}>
@@ -20,7 +21,13 @@ const ModalWithSuccess = ({
         <h3 className="modal__confirm-title">
           Registration successfully completed!
         </h3>
-        <button className="modal__confirm-signin" onClick={handleSigninClick}>
+        <button
+          className="modal__confirm-signin"
+          onClick={() => {
+            handleSigninClick();
+            handleSignupSuccess();
+          }}
+        >
           Sign in
         </button>
       </div>

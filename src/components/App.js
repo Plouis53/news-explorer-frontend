@@ -51,7 +51,7 @@ function App() {
         }
       })
       .then(() => {
-        closeModal();
+        handleCloseModal();
       })
       .catch((err) => {
         console.log(err);
@@ -61,6 +61,7 @@ function App() {
   };
 
   const handleRegister = (email, password, name) => {
+    console.log("signup");
     setIsLoading(true);
 
     auth
@@ -69,13 +70,11 @@ function App() {
         console.log(res);
         if (res) {
           setActiveModal("success");
+          setIsLoading(false); // Move the setIsLoading here, so it won't be set twice
         } else {
           console.log("Something went wrong.");
+          setIsLoading(false); // Also set setIsLoading here in the error case
         }
-      })
-      .then(() => {
-        setActiveModal("success");
-        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -94,6 +93,10 @@ function App() {
     setActiveModal("login");
   };
 
+  const handleSignupSuccess = () => {
+    setActiveModal("login");
+  };
+
   const handleSignupClick = () => {
     setActiveModal("signup");
   };
@@ -104,11 +107,15 @@ function App() {
 
   const handleOutClick = (evt) => {
     if (evt.target === evt.currentTarget) {
-      closeModal();
+      handleCloseModal();
     }
   };
 
-  const closeModal = () => {
+  // const handleCreateModal = () => {
+  //   setActiveModal("create");
+  // };
+
+  const handleCloseModal = () => {
     setActiveModal("");
   };
 
@@ -141,7 +148,7 @@ function App() {
   React.useEffect(() => {
     const closeWithEsc = (evt) => {
       if (evt.key === "Escape") {
-        closeModal();
+        handleCloseModal();
       }
     };
 
@@ -222,7 +229,7 @@ function App() {
         <Footer />
         {activeModal === "login" && (
           <LoginModal
-            closeModal={closeModal}
+            closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSignupClick={handleSignupClick}
             isLoading={isLoading}
@@ -233,7 +240,7 @@ function App() {
         )}
         {activeModal === "signup" && (
           <RegisterModal
-            closeModal={closeModal}
+            closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             isLoading={isLoading}
             handleSigninClick={handleSigninClick}
@@ -244,14 +251,15 @@ function App() {
         )}
         {activeModal === "success" && (
           <ModalWithSuccess
-            closeModal={closeModal}
+            closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSigninClick={handleSigninClick}
+            handleSignupSuccess={handleSignupSuccess}
           />
         )}
         {activeModal === "mobile" && (
           <MobileMenu
-            closeModal={closeModal}
+            closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSigninClick={handleSigninClick}
             isLoggedIn={isLoggedIn}
