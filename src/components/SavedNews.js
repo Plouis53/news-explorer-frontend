@@ -15,6 +15,7 @@ const SavedNews = ({
   const currentUser = useContext(CurrentUserContext);
   const [newsCards, setNewsCards] = React.useState([]);
   const [keywords, setKeywords] = React.useState([]);
+  const [keywordsAmount, setKeywordsAmount] = React.useState(1);
 
   const keywordArray = [];
   const keywordSortableArray = [];
@@ -53,6 +54,7 @@ const SavedNews = ({
         keywordSortedArray[1][0],
         keywordSortedArray[2][0],
       ]);
+      setKeywordsAmount(keywordSortedArray.length);
     } else if (keywordSortedArray.length === 2) {
       setKeywords([keywordSortedArray[0][0], keywordSortedArray[1][0]]);
     } else if (keywordSortedArray.length === 1) {
@@ -66,7 +68,6 @@ const SavedNews = ({
     newsCards.map((card) => keywordArray.unshift(card.keyword));
 
     countAmount(keywordArray);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newsCards]);
 
   React.useEffect(() => {
@@ -77,7 +78,6 @@ const SavedNews = ({
       .catch((err) => {
         console.log(err);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -104,7 +104,11 @@ const SavedNews = ({
                 By keywords:{" "}
                 <span className="saved__bold">
                   {keywords.length === 3
-                    ? `${keywords[0]}, ${keywords[1]}, and ${keywords[2]}`
+                    ? `${keywords[0]}, ${keywords[1]}, and ${
+                        keywordsAmount > 3
+                          ? keywordsAmount - 2 + " more"
+                          : keywords[2]
+                      }`
                     : keywords.length === 2
                     ? `${keywords[0]} and ${keywords[1]}`
                     : keywords.length === 1
