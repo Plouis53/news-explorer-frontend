@@ -2,7 +2,7 @@ import React from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
-const LoginModal = ({
+const SiginModal = ({
   closeModal,
   handleOutClick,
   handleSignin,
@@ -83,4 +83,4 @@ const LoginModal = ({
   );
 };
 
-export default LoginModal;
+export default SiginModal;

@@ -19,7 +19,6 @@ const MobileMenu = ({
     } else {
       setLoggedIn("loggedout");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="menu" onClick={handleOutClick}>

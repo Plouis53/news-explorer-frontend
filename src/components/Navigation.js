@@ -39,7 +39,7 @@ const Navigation = ({
       <NavLink to="/" className="nav__logo nav__link-active">
         News Explorer
       </NavLink>
-      {activeModal === "signup" || activeModal === "login" ? null : (
+      {activeModal === "signup" || activeModal === "signin" ? null : (
         <button
           className={`nav__mobile nav__mobile_${theme}`}
           onClick={handleMobileClick}

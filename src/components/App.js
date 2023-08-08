@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import LoginModal from "./LoginModal";
+import SiginModal from "./SigninModal";
 import RegisterModal from "./RegisterModal";
 import ModalWithSuccess from "./ModalWithSuccess";
 import ProtectedRoute from "./ProtectedRoute";
@@ -90,7 +90,7 @@ function App() {
   };
 
   const handleSigninClick = () => {
-    setActiveModal("login");
+    setActiveModal("signin");
   };
 
   // const handleSignupSuccess = () => {
@@ -228,8 +228,8 @@ function App() {
           ></Route>
         </Routes>
         <Footer />
-        {activeModal === "login" && (
-          <LoginModal
+        {activeModal === "signin" && (
+          <SiginModal
             closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSignupClick={handleSignupClick}
