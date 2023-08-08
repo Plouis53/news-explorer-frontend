@@ -69,7 +69,7 @@ const Navigation = ({
               <img
                 src={color}
                 alt="Signout Button"
-                className="nav__logout-image"
+                className="nav__signout-image"
               />
             </button>
           </>
