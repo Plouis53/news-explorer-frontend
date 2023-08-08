@@ -13,6 +13,7 @@ export const signUp = (email, password, name) => {
 };
 
 export const signIn = (email, password) => {
+  console.log(baseUrl);
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
@@ -21,7 +22,10 @@ export const signIn = (email, password) => {
     },
     body: JSON.stringify({ email, password }),
   })
-    .then((res) => checkResponse(res))
+    .then((res) => {
+      console.log(res);
+      return checkResponse(res);
+    })
     .then((data) => {
       if (data) {
         localStorage.setItem("jwt", data.token);

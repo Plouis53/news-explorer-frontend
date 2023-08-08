@@ -93,9 +93,9 @@ function App() {
     setActiveModal("login");
   };
 
-  const handleSignupSuccess = () => {
-    setActiveModal("login");
-  };
+  // const handleSignupSuccess = () => {
+  //   setActiveModal("login");
+  // };
 
   const handleSignupClick = () => {
     setActiveModal("signup");
@@ -255,7 +255,7 @@ function App() {
             closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSigninClick={handleSigninClick}
-            handleSignupSuccess={handleSignupSuccess}
+            // handleSignupSuccess={handleSignupSuccess}
           />
         )}
         {activeModal === "mobile" && (

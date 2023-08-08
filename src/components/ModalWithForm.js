@@ -22,8 +22,15 @@ const ModalWithForm = ({
 
   React.useEffect(() => {
     setErrorMessage("");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // 1. you press submit button
+  // 2. form sees this submit event and run onSubmit
+  // 3. browser overtakes your js, detects a form was submitted
+  // 4. browser handles your form as it wants and do not care about your code
+  // solution: event.preventDefault();
+
+  // submit -> parent => parent -> parent => useForm custom hook. Somewhere between should be preventDefault
 
   return (
     <div className="modal" onClick={onOutClick}>
