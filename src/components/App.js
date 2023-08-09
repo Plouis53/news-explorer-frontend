@@ -25,63 +25,107 @@ function App() {
   const [isSearchLoading, setIsSearchLoading] = React.useState(true);
   const [errorMessage, setErrorMessage] = React.useState("");
   const [keyword, setKeyword] = React.useState("");
+  // const history = useHistory();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleSignin = (email, password) => {
+  const handleSignin = ({ email, password }) => {
+    setIsLoading(true);
+
     auth
-      .signIn(email, password)
+      .signIn({ email, password })
       .then((data) => {
         if (data.token) {
-          auth
-            .checkTokenValidity(data.token)
-            .then((res) => {
-              return res;
-            })
-            .then((data) => {
-              setCurrentUser(data);
-            })
-            .then(() => {
-              setIsLoggedIn(true);
-            })
-            .then(() => {
-              // navigate("/saved-articles");
-            })
-            .catch((err) => console.log(err));
+          return auth.checkTokenValidity(data.token);
         }
       })
-      .then(() => {
+      .then((response) => {
+        setCurrentUser(response.data);
         handleCloseModal();
+        setIsLoggedIn(true);
+        // history.push("/saved-articles");
       })
-      .catch((err) => {
-        console.log(err);
-        setErrorMessage("Username or password is incorrect");
+      .catch((error) => console.log(error))
+      .finally(() => {
         setIsLoading(false);
       });
   };
 
+  // const handleSignin = (email, password) => {
+  //   auth
+  //     .signIn(email, password)
+  //     .then((data) => {
+  //       if (data.token) {
+  //         auth
+  //           .checkTokenValidity(data.token)
+  //           .then((res) => {
+  //             return res;
+  //           })
+  //           .then((data) => {
+  //             setCurrentUser(data);
+  //           })
+  //           .then(() => {
+  //             setIsLoggedIn(true);
+  //           })
+  //           .then(() => {
+  //             // navigate("/saved-articles");
+  //           })
+  //           .catch((err) => console.log(err));
+  //       }
+  //     })
+  //     .then(() => {
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setErrorMessage("Username or password is incorrect");
+  //       setIsLoading(false);
+  //     });
+  // };
+
   const handleRegister = (email, password, name) => {
-    console.log("signup");
     setIsLoading(true);
 
     auth
       .signUp(email, password, name)
-      .then((res) => {
-        console.log(res);
-        if (res) {
-          setActiveModal("success");
-          setIsLoading(false); // Move the setIsLoading here, so it won't be set twice
+      .then((response) => {
+        if (response) {
+          setCurrentUser(response.data);
+          handleSignin(response);
+          handleCloseModal();
         } else {
-          console.log("Something went wrong.");
-          setIsLoading(false); // Also set setIsLoading here in the error case
+          console.log("User registration failed:", response.error);
         }
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => console.log(error))
+      .finally(() => {
         setErrorMessage("This email is already in use");
         setIsLoading(false);
       });
   };
+
+  // const handleRegister = (email, password, name) => {
+  //   console.log("signup");
+  //   setIsLoading(true);
+
+  //   auth
+  //     .signUp(email, password, name)
+  //     .then((res) => {
+  //       console.log(res);
+  //       if (res) {
+  //         setActiveModal("success");
+  //         setIsLoading(false); // Move the setIsLoading here, so it won't be set twice
+  //       } else {
+  //         console.log("Something went wrong.");
+  //         setIsLoading(false); // Also set setIsLoading here in the error case
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setErrorMessage("This email is already in use");
+  //       setIsLoading(false);
+  //     });
+  // };
 
   const handleSignout = () => {
     setIsLoggedIn(false);

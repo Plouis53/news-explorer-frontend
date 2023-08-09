@@ -14,10 +14,10 @@ const SignModal = ({
   const [emailValue, setEmail] = useState("");
   const [passwordValue, setPassword] = useState("");
 
-  // const buttonClasses = {
-  //   mainButton: "modal__login",
-  //   altButton: "modal__other",
-  // };
+  const buttonClasses = {
+    mainButton: "modal__login",
+    altButton: "modal__other",
+  };
   const buttonTexts = {
     button: isLoading ? "Saving..." : "Sign in",
     other: "or Sign up",
