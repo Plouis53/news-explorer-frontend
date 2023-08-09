@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 
 const SignModal = ({
   onClose,
@@ -11,7 +10,6 @@ const SignModal = ({
   isLoading,
   errorMessage,
   setErrorMessage,
-  isValid,
 }) => {
   const [emailValue, setEmail] = useState("");
   const [passwordValue, setPassword] = useState("");
@@ -27,6 +25,10 @@ const SignModal = ({
     button: isLoading ? "Saving..." : "Sign in",
     other: "or Sign up",
   };
+
+  const {
+    formState: { errors, isValid },
+  } = useForm();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

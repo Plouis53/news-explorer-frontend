@@ -297,9 +297,10 @@ function App() {
             handleOutClick={handleOutClick}
             isLoading={isLoading}
             handleSigninClick={handleSigninClick}
-            handleRegister={handleRegister}
-            // errorMessage={errorMessage}
-            // setErrorMessage={setErrorMessage}
+            handleSignup={handleRegister}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
+       
           />
         )}
         {activeModal === "success" && (
