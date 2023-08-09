@@ -3,8 +3,7 @@
 @import url(./blocks/footer.css);
 @import url(./blocks/header.css);
 @import url(./blocks/menu.css);
-@import url(./blocks/modalform.css);
-@import url(./blocks/modalforms.css);
+@import url(./blocks/modalwithform.css);
 @import url(./blocks/modalsucess.css);
 @import url(./blocks/newscard.css);
 @import url(./blocks/notfound.css);
