@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 
 const SignModal = ({
-  handleCloseModal,
+  onClose,
   handleOutClick,
   handleSignin,
   handleRegisterClick,
@@ -13,6 +13,9 @@ const SignModal = ({
 }) => {
   const [emailValue, setEmail] = useState("");
   const [passwordValue, setPassword] = useState("");
+
+  console.log(handleRegisterClick);
+  console.log(onClose);
 
   const buttonClasses = {
     mainButton: "modal__login",
@@ -49,12 +52,12 @@ const SignModal = ({
   return (
     <ModalWithForm
       title="Sign in"
-      // name="Login"
-      onClose={handleCloseModal}
+      name="Signin"
+      onClose={onClose}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
       handleSubmit={handleSubmit}
-      // buttonClass={buttonClasses}
+      buttonClass={buttonClasses}
       altButtonClick={handleRegisterClick}
       isValid={isValid}
       errorMessage={errorMessage}
