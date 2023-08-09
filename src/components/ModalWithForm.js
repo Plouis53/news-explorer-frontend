@@ -17,10 +17,6 @@ const ModalWithForm = ({
   }
 
   React.useEffect(() => {
-    handleSubmit();
-  }, []);
-
-  React.useEffect(() => {
     setErrorMessage("");
   }, []);
 

@@ -45,7 +45,7 @@ function App() {
               setIsLoggedIn(true);
             })
             .then(() => {
-              navigate("/saved-articles");
+              // navigate("/saved-articles");
             })
             .catch((err) => console.log(err));
         }
@@ -217,7 +217,7 @@ function App() {
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <SavedNews
                   isLoggedIn={isLoggedIn}
-                  // handleSigninClick={handleSigninClick} //review this later
+                  onSigninClick={handleSigninClick} //review this later
                   handleMobileClick={handleMobileClick}
                   handleSignout={handleSignout}
                   token={token}
@@ -255,7 +255,6 @@ function App() {
             closeModal={handleCloseModal}
             handleOutClick={handleOutClick}
             handleSigninClick={handleSigninClick}
-            // handleSignupSuccess={handleSignupSuccess}
           />
         )}
         {activeModal === "mobile" && (
