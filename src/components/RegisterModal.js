@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
-
 const RegisterModal = ({
   onClose,
   handleOutClick,
