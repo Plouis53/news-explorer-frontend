@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 const FormValidation = () => {
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(true);
 
