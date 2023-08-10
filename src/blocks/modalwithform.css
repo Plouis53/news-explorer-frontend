@@ -72,10 +72,6 @@
   height: 40px;
 }
 
-.modal__close {
-  background-image: url(../images/close.svg);
-}
-
 .modal__close:hover {
   opacity: 0.6;
   cursor: pointer;
@@ -254,33 +250,27 @@
 /*----Logout----*/
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .modal__confirm {
-    max-width: 343px;
-  }
-
   .modal__container-form {
     align-items: flex-end;
   }
 
-  .modal__form {
-    align-items: center;
-    width: 320px;
-    height: 560px;
-    top: 56px;
-    border: 1px;
-  }
-
   .modal__fieldset {
     width: 320px;
-    height: 445px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border: none;
+    height: 545px;
+    border-radius: 10px;
     display: flex;
   }
 
+  .modal__button {
+    top: -40px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+  }
+
   .modal__header {
-    margin: 18px 10px 0 6px;
+    margin: 28px 0 0 16px;
   }
 
   .modal__errors-signup {
@@ -291,11 +281,33 @@
   .modal__main {
     width: 288px;
     height: 44px;
-    margin: 15px 16px 16px 16px;
+    margin: 5px 16px 16px 16px;
   }
 
   .modal__other {
-    margin: 6px auto 0 auto;
+    margin: 16px auto 0 auto;
+  }
+
+  .modal__label {
+    width: 100px;
+    margin: 24px 0 0 16px;
+  }
+
+  .modal__input {
+    width: 288px;
+    margin: 8px 16px 0 0;
+  }
+
+  .modal__errors {
+    margin: 3px 0 0 16px;
+  }
+
+  .modal__text {
+    margin: 24px 0 0 16px;
+  }
+
+  .modal__inputs_container {
+    margin: 14px 0 0 16px;
   }
 }
 
