@@ -5,7 +5,7 @@ import logout from "../images/logoutWhite.svg";
 
 const MobileMenu = ({
   closeModal,
-  handleClick,
+  // handleClick,
   handleOutClick,
   handleSigninClick,
   // handleRegister,

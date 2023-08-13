@@ -304,7 +304,7 @@ function App() {
                     onSigninClick={handleSigninClick} //review this later
                     handleMobileClick={handleMobileClick}
                     handleSignout={handleSignout}
-                    token={token}
+                    // token={token}
                     handleDeleteClick={handleDeleteClick}
                   />
                 </ProtectedRoute>
@@ -348,6 +348,7 @@ function App() {
               handleOutClick={handleOutClick}
               handleSigninClick={handleSigninClick}
               isLoggedIn={isLoggedIn}
+              handleSignout={handleSignout}
             />
           )}
         </SavedCardsContext.Provider>
