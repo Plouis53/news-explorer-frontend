@@ -26,14 +26,15 @@ const NewsCard = ({
   };
 
   const onBookClick = () => {
-    setIsClicked(!isClicked);
-    handleBook(card, isBooked, card._id);
+    handleBook(card, isBooked);
+    // setIsClicked(!isClicked);
+    // handleBook(card, isBooked, card._id);
     setIsBooked(!isBooked);
   };
 
   const handleDelete = () => {
-    handleDeleteClick(card._id);
-    console.log(card._id);
+    handleDeleteClick(card._id, card);
+    // console.log(card._id);
     setIsVisible(false);
     setNewsCards(
       newsCards.filter((c) => {
@@ -46,12 +47,19 @@ const NewsCard = ({
   };
 
   React.useEffect(() => {
-    if (card.urlToImage === true || card.image === true) {
-      setHasImage(true);
-    } else {
-      setHasImage(false);
+    if (card.urlToImage === null || card.image === null) {
+      card.urlToImage =
+        "https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png";
+      card.image =
+        "https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png";
     }
   }, []);
+
+  React.useEffect(() => {
+    if (newsCards.some((c) => c.link === card.url || c.link === card.link)) {
+      setIsBooked(true);
+    }
+  }, [newsCards]);
 
   return (
     <>
@@ -63,7 +71,12 @@ const NewsCard = ({
               className="card__link"
               target="_blank"
             >
-              {hasImage ? (
+              <img
+                src={card.urlToImage ? card.urlToImage : card.image}
+                alt={`${card.title}`}
+                className="card__image"
+              />
+              {/* {hasImage ? (
                 <h3 className="card__placeholder">Image could not be found</h3>
               ) : (
                 <img
@@ -71,7 +84,7 @@ const NewsCard = ({
                   alt={`${card.title}`}
                   className="card__image"
                 />
-              )}
+              )} */}
             </NavLink>
             {isLoggedIn ? null : (
               <p
@@ -102,7 +115,7 @@ const NewsCard = ({
             ) : (
               <button
                 className={`card__book  ${
-                  isClicked
+                  isBooked
                     ? "card__book-clicked"
                     : isLoggedIn
                     ? "card__book-active"
