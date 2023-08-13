@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import NewsCard from "./NewsCard";
 import Preloader from "./Preloader";
 import NotFound from "./NotFound";
+import SavedCardsContext from "../contexts/SavedCardsContext";
 
 const NewsCardList = ({
   cards,
@@ -10,9 +11,11 @@ const NewsCardList = ({
   handleBook,
   handleSignupClick,
 }) => {
+  const savedCards = useContext(SavedCardsContext);
   const [amountShown, setAmountShown] = React.useState(3);
   const [isLarge, setIsLarge] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState(false);
+  const [newsCards, setNewsCards] = React.useState([]);
 
   const showMore = () => {
     setAmountShown(amountShown + 3);
@@ -35,6 +38,10 @@ const NewsCardList = ({
     }
   }, [cards]);
 
+  React.useEffect(() => {
+    setNewsCards(savedCards);
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -53,6 +60,7 @@ const NewsCardList = ({
                 isSaved={false}
                 handleBook={handleBook}
                 handleSignupClick={handleSignupClick}
+                newsCards={newsCards}
               />
             ))}
           </ul>
