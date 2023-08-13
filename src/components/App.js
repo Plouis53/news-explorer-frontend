@@ -26,6 +26,7 @@ function App() {
   const [isSearchLoading, setIsSearchLoading] = React.useState(true);
   const [errorMessage, setErrorMessage] = React.useState("");
   const [keyword, setKeyword] = React.useState("");
+  const [savedCards, setSavedCards] = React.useState([]);
 
   const navigate = useNavigate();
 
@@ -171,14 +172,39 @@ function App() {
     setActiveModal("");
   };
 
-  const handleBook = (card) => {
-    addArticle({ keyword: keyword, ...card }, token, currentUser).catch((e) =>
-      console.log(e)
-    );
+  const checkDuplicate = (card) => {
+    if (!savedCards.some((c) => c.link === card.url)) {
+      addArticle({ keyword: keyword, ...card }, token, currentUser)
+        .then((data) => {
+          savedCards.push(data);
+        })
+        .catch((e) => console.log(e));
+    }
   };
 
-  const handleDeleteClick = (id) => {
-    removeArticle(id, token).catch((e) => console.log(e));
+  const checkDelete = (card) => {
+    let article = savedCards.find((c) => c.link === card.url);
+
+    if (article !== undefined) {
+      handleDeleteClick(article._id, card);
+    }
+  };
+
+  const handleBook = (card, isBooked) => {
+    isBooked ? checkDelete(card) : checkDuplicate(card);
+  };
+
+  const handleDeleteClick = (id, card) => {
+    removeArticle(id, token)
+      .then(() => {
+        savedCards.splice(
+          savedCards.findIndex(
+            (c) => c.link === card.link || c.link === card.url
+          ),
+          1
+        );
+      })
+      .catch((e) => console.log(e));
   };
 
   const handleSearchSubmit = (input) => {
@@ -236,6 +262,11 @@ function App() {
         .then((data) => {
           setCurrentUser(data);
         })
+        .then(() => {
+          getArticles(jwt).then((data) => {
+            setSavedCards(data);
+          });
+        })
         .catch((err) => console.log(err));
     }
   }, []);
@@ -243,81 +274,83 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <ActiveModalContext.Provider value={activeModal}>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <MainPage
-                handleSearchSubmit={handleSearchSubmit}
-                handleSigninClick={handleSigninClick}
-                activeSearch={activeSearch}
-                cards={newsCards}
-                isSearchLoading={isSearchLoading}
-                isLoggedIn={isLoggedIn}
-                handleMobileClick={handleMobileClick}
-                handleSignout={handleSignout}
-                handleBook={handleBook}
-                setKeyword={setKeyword}
-                handleSignupClick={handleRegisterClick}
-              />
-            }
-          />
-          <Route
-            path="/saved-articles"
-            element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <SavedNews
+        <SavedCardsContext.Provider value={savedCards}>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <MainPage
+                  handleSearchSubmit={handleSearchSubmit}
+                  handleSigninClick={handleSigninClick}
+                  activeSearch={activeSearch}
+                  cards={newsCards}
+                  isSearchLoading={isSearchLoading}
                   isLoggedIn={isLoggedIn}
-                  onSigninClick={handleSigninClick} //review this later
                   handleMobileClick={handleMobileClick}
                   handleSignout={handleSignout}
-                  token={token}
-                  handleDeleteClick={handleDeleteClick}
+                  handleBook={handleBook}
+                  setKeyword={setKeyword}
+                  handleSignupClick={handleRegisterClick}
                 />
-              </ProtectedRoute>
-            }
-          ></Route>
-        </Routes>
-        <Footer />
-        {activeModal === "signin" && (
-          <SiginModal
-            onClose={handleCloseModal}
-            handleOutClick={handleOutClick}
-            // handleSignupClick={handleSignupClick}
-            isLoading={isLoading}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
-            handleSignin={handleSignin}
-            handleRegisterClick={handleRegisterClick}
-          />
-        )}
-        {activeModal === "signup" && (
-          <RegisterModal
-            onClose={handleCloseModal}
-            handleOutClick={handleOutClick}
-            isLoading={isLoading}
-            handleSigninClick={handleSigninClick}
-            handleSignup={handleRegister}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
-          />
-        )}
-        {activeModal === "success" && (
-          <ModalWithSuccess
-            closeModal={handleCloseModal}
-            handleOutClick={handleOutClick}
-            handleSigninClick={handleSigninClick}
-          />
-        )}
-        {activeModal === "mobile" && (
-          <MobileMenu
-            closeModal={handleCloseModal}
-            handleOutClick={handleOutClick}
-            handleSigninClick={handleSigninClick}
-            isLoggedIn={isLoggedIn}
-          />
-        )}
+              }
+            />
+            <Route
+              path="/saved-articles"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <SavedNews
+                    isLoggedIn={isLoggedIn}
+                    onSigninClick={handleSigninClick} //review this later
+                    handleMobileClick={handleMobileClick}
+                    handleSignout={handleSignout}
+                    token={token}
+                    handleDeleteClick={handleDeleteClick}
+                  />
+                </ProtectedRoute>
+              }
+            ></Route>
+          </Routes>
+          <Footer />
+          {activeModal === "signin" && (
+            <SiginModal
+              onClose={handleCloseModal}
+              handleOutClick={handleOutClick}
+              // handleSignupClick={handleSignupClick}
+              isLoading={isLoading}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
+              handleSignin={handleSignin}
+              handleRegisterClick={handleRegisterClick}
+            />
+          )}
+          {activeModal === "signup" && (
+            <RegisterModal
+              onClose={handleCloseModal}
+              handleOutClick={handleOutClick}
+              isLoading={isLoading}
+              handleSigninClick={handleSigninClick}
+              handleSignup={handleRegister}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
+            />
+          )}
+          {activeModal === "success" && (
+            <ModalWithSuccess
+              closeModal={handleCloseModal}
+              handleOutClick={handleOutClick}
+              handleSigninClick={handleSigninClick}
+            />
+          )}
+          {activeModal === "mobile" && (
+            <MobileMenu
+              closeModal={handleCloseModal}
+              handleOutClick={handleOutClick}
+              handleSigninClick={handleSigninClick}
+              isLoggedIn={isLoggedIn}
+            />
+          )}
+        </SavedCardsContext.Provider>
       </ActiveModalContext.Provider>
     </CurrentUserContext.Provider>
   );
