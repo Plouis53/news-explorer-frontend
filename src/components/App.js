@@ -12,7 +12,8 @@ import MobileMenu from "./MobileMenu";
 import ActiveModalContext from "../contexts/ActiveModalContext";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
-import { addArticle, removeArticle } from "../utils/mainApi";
+import { addArticle, getArticles, removeArticle } from "../utils/mainApi";
+import SavedCardsContext from "../contexts/SavedCardsContext";
 
 function App() {
   const [activeModal, setActiveModal] = React.useState("");
@@ -300,7 +301,6 @@ function App() {
             handleSignup={handleRegister}
             errorMessage={errorMessage}
             setErrorMessage={setErrorMessage}
-       
           />
         )}
         {activeModal === "success" && (
