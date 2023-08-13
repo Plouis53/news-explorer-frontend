@@ -9,7 +9,6 @@ const SavedNews = ({
   isLoggedIn,
   handleMobileClick,
   handleSignout,
-  token,
   handleDeleteClick,
 }) => {
   const currentUser = useContext(CurrentUserContext);
