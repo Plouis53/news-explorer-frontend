@@ -5,13 +5,19 @@ import logout from "../images/logoutWhite.svg";
 
 const MobileMenu = ({
   closeModal,
-  // handleClick,
+  handleClick,
   handleOutClick,
   handleSigninClick,
   // handleRegister,
   isLoggedIn,
+  handleSignout,
 }) => {
   const [loggedIn, setLoggedIn] = React.useState("");
+
+  const handleSignoutClick = () => {
+    handleSignout();
+    closeModal();
+  };
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -57,7 +63,10 @@ const MobileMenu = ({
               >
                 Saved articles
               </NavLink>
-              <button className="menu__logout-button" onClick={closeModal}>
+              <button
+                className="menu__logout-button"
+                onClick={handleSignoutClick}
+              >
                 Username
                 <img
                   src={logout}
