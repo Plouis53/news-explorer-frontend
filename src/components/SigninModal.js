@@ -54,6 +54,10 @@ const SigninModal = ({
           required
           {...register("email", {
             required: "Email is required.",
+            maxLength: {
+              value: 30,
+              message: "Maximum length is 30 characters",
+            },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: "Invalid email address.",
@@ -70,8 +74,14 @@ const SigninModal = ({
           className="modal__input"
           placeholder="Password"
           required
-          {...register("password", { required: "Password is required." })}
           type="password"
+          {...register("password", {
+            required: "Password is required.",
+            minLength: {
+              value: 8,
+              message: "Minimum length is 8 characters",
+            },
+          })}
         />
       </label>
       {errors.password && (

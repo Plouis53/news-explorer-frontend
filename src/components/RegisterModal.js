@@ -54,6 +54,10 @@ const RegisterModal = ({
           required
           {...register("email", {
             required: "Email is required.",
+            maxLength: {
+              value: 30,
+              message: "Maximum length is 30 characters",
+            },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: "Invalid email address.",
@@ -70,8 +74,14 @@ const RegisterModal = ({
           className="modal__input"
           placeholder="Password"
           required
-          {...register("password", { required: "Password is required." })}
           type="password"
+          {...register("password", {
+            required: "Password is required.",
+            minLength: {
+              value: 8,
+              message: "Minimum length is 8 characters",
+            },
+          })}
         />
       </label>
       {errors.password && (
@@ -83,8 +93,17 @@ const RegisterModal = ({
           className="modal__input"
           placeholder="Enter your username"
           required
-          {...register("name", { required: "Name is required." })}
-          type="text"
+          {...register("name", {
+            required: "Name is required.",
+            minLength: {
+              value: 2,
+              message: "Minimum length is 2 characters",
+            },
+            maxLength: {
+              value: 30,
+              message: "Maximum length is 30 characters",
+            },
+          })}
         />
       </label>
       {errors.name && (
