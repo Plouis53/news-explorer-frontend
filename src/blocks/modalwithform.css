@@ -127,6 +127,21 @@
   text-align: center;
 }
 
+.modal__error-message {
+  width: 200px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 17px 115px 8px 115px;
+  color: #ff0000;
+  text-align: center;
+  /* display: block;
+  color: red;
+  font-size: 12px;
+  margin-top: 4px; */
+}
+
 .modal__main {
   width: 358px;
   height: 64px;

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
-const SigninModal = ({
+const SignModal = ({
   onClose,
   handleOutClick,
   handleSignin,
@@ -11,47 +11,26 @@ const SigninModal = ({
   errorMessage,
   setErrorMessage,
 }) => {
-  const [emailValue, setEmail] = useState("");
-  const [passwordValue, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm();
 
-  console.log(handleRegisterClick);
-  console.log(onClose);
+  const onSubmit = (data) => {
+    // Handle your form submission here
+    handleSignin(data);
+  };
 
   const buttonClasses = {
     mainButton: "modal__login",
     altButton: "modal__other",
   };
+
   const buttonTexts = {
     button: isLoading ? "Saving..." : "Sign in",
     other: "or Sign up",
   };
-
-  const {
-    formState: { errors, isValid },
-  } = useForm();
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    if (!emailValue || !passwordValue) {
-      return;
-    }
-    const user = { email: emailValue, password: passwordValue };
-    handleSignin(user);
-  };
-
-  const onEmailChange = (evt) => {
-    setEmail(evt.target.value);
-  };
-
-  const onPasswordChange = (evt) => {
-    setPassword(evt.target.value);
-  };
-
-  React.useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, []);
 
   return (
     <ModalWithForm
@@ -60,7 +39,7 @@ const SigninModal = ({
       onClose={onClose}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
-      handleSubmit={handleSubmit}
+      handleSubmit={handleSubmit(onSubmit)}
       buttonClass={buttonClasses}
       altButtonClick={handleRegisterClick}
       isValid={isValid}
@@ -74,32 +53,133 @@ const SigninModal = ({
           type="email"
           placeholder="Email"
           required
-          name="email"
-          id="inputEmail"
-          minLength="1"
-          maxLength="30"
-          value={emailValue}
-          onChange={onEmailChange}
+          {...register("email", { required: true })}
         />
       </label>
+      {errors.email && (
+        <span className="modal__error-message">Email is required.</span>
+      )}
       <label className="modal__label">
         Password
         <input
           className="modal__input"
           placeholder="Password"
           required
-          name="password"
-          id="inputPassword"
+          {...register("password", { required: true })}
           type="password"
-          value={passwordValue}
-          onChange={onPasswordChange}
         />
       </label>
+      {errors.password && (
+        <span className="modal__error-message">Password is required.</span>
+      )}
     </ModalWithForm>
   );
 };
 
-export default SigninModal;
+export default SignModal;
+
+// 81323 import React, { useState } from "react";
+// import ModalWithForm from "./ModalWithForm";
+// import { useForm } from "react-hook-form";
+
+// const SigninModal = ({
+//   onClose,
+//   handleOutClick,
+//   handleSignin,
+//   handleRegisterClick,
+//   isLoading,
+//   errorMessage,
+//   setErrorMessage,
+// }) => {
+//   const [emailValue, setEmail] = useState("");
+//   const [passwordValue, setPassword] = useState("");
+
+//   console.log(handleRegisterClick);
+//   console.log(onClose);
+
+//   const buttonClasses = {
+//     mainButton: "modal__login",
+//     altButton: "modal__other",
+//   };
+//   const buttonTexts = {
+//     button: isLoading ? "Saving..." : "Sign in",
+//     other: "or Sign up",
+//   };
+
+//   const {
+//     formState: { errors, isValid },
+//   } = useForm();
+
+//   const handleSubmit = (evt) => {
+//     evt.preventDefault();
+
+//     if (!emailValue || !passwordValue) {
+//       return;
+//     }
+//     const user = { email: emailValue, password: passwordValue };
+//     handleSignin(user);
+//   };
+
+//   const onEmailChange = (evt) => {
+//     setEmail(evt.target.value);
+//   };
+
+//   const onPasswordChange = (evt) => {
+//     setPassword(evt.target.value);
+//   };
+
+//   React.useEffect(() => {
+//     setEmail("");
+//     setPassword("");
+//   }, []);
+
+//   return (
+//     <ModalWithForm
+//       title="Sign in"
+//       name="Signin"
+//       onClose={onClose}
+//       buttonText={buttonTexts}
+//       onOutClick={handleOutClick}
+//       handleSubmit={handleSubmit}
+//       buttonClass={buttonClasses}
+//       altButtonClick={handleRegisterClick}
+//       isValid={isValid}
+//       errorMessage={errorMessage}
+//       setErrorMessage={setErrorMessage}
+//     >
+//       <label className="modal__label">
+//         Email
+//         <input
+//           className="modal__input"
+//           type="email"
+//           placeholder="Email"
+//           required
+//           name="email"
+//           id="inputEmail"
+//           minLength="1"
+//           maxLength="30"
+//           value={emailValue}
+//           onChange={onEmailChange}
+//         />
+//       </label>
+//       <label className="modal__label">
+//         Password
+//         <input
+//           className="modal__input"
+//           placeholder="Password"
+//           required
+//           name="password"
+//           id="inputPassword"
+//           type="password"
+//           value={passwordValue}
+//           onChange={onPasswordChange}
+//         />
+//       </label>
+//     </ModalWithForm>
+//   );
+// };
+
+// export default SigninModal;
 
 // 8823import React, { useState, useCallback } from "react";
 // import ModalWithForm from "./ModalWithForm";
