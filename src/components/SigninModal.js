@@ -2,7 +2,7 @@ import React from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
-const SignModal = ({
+const SigninModal = ({
   onClose,
   handleOutClick,
   handleSignin,
@@ -18,7 +18,6 @@ const SignModal = ({
   } = useForm();
 
   const onSubmit = (data) => {
-    // Handle your form submission here
     handleSignin(data);
   };
 
@@ -53,11 +52,17 @@ const SignModal = ({
           type="email"
           placeholder="Email"
           required
-          {...register("email", { required: true })}
+          {...register("email", {
+            required: "Email is required.",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address.",
+            },
+          })}
         />
       </label>
       {errors.email && (
-        <span className="modal__error-message">Email is required.</span>
+        <span className="modal__error-message">{errors.email.message}</span>
       )}
       <label className="modal__label">
         Password
@@ -65,18 +70,18 @@ const SignModal = ({
           className="modal__input"
           placeholder="Password"
           required
-          {...register("password", { required: true })}
+          {...register("password", { required: "Password is required." })}
           type="password"
         />
       </label>
       {errors.password && (
-        <span className="modal__error-message">Password is required.</span>
+        <span className="modal__error-message">{errors.password.message}</span>
       )}
     </ModalWithForm>
   );
 };
 
-export default SignModal;
+export default SigninModal;
 
 // 81323 import React, { useState } from "react";
 // import ModalWithForm from "./ModalWithForm";
