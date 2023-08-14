@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import SiginModal from "./SigninModal";
+import SigninModal from "./SigninModal";
 import RegisterModal from "./RegisterModal";
 import ModalWithSuccess from "./ModalWithSuccess";
 import ProtectedRoute from "./ProtectedRoute";
@@ -313,7 +313,7 @@ function App() {
           </Routes>
           <Footer />
           {activeModal === "signin" && (
-            <SiginModal
+            <SigninModal
               onClose={handleCloseModal}
               handleOutClick={handleOutClick}
               // handleSignupClick={handleSignupClick}

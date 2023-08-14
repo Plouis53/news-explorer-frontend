@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
-const SignModal = ({
+const SigninModal = ({
   onClose,
   handleOutClick,
   handleSignin,
@@ -99,7 +99,7 @@ const SignModal = ({
   );
 };
 
-export default SignModal;
+export default SigninModal;
 
 // 8823import React, { useState, useCallback } from "react";
 // import ModalWithForm from "./ModalWithForm";
