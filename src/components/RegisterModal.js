@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ModalWithForm from "./ModalWithForm";
 import { useForm } from "react-hook-form";
 
@@ -11,9 +11,15 @@ const RegisterModal = ({
   errorMessage,
   setErrorMessage,
 }) => {
-  const [emailValue, setEmail] = useState("");
-  const [passwordValue, setPassword] = useState("");
-  const [nameValue, setName] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    handleSignup(data);
+  };
 
   const buttonClasses = {
     mainButton: "modal__login",
@@ -25,38 +31,6 @@ const RegisterModal = ({
     other: "Sign in",
   };
 
-  const {
-    formState: { errors, isValid },
-  } = useForm();
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    if (!emailValue || !passwordValue) {
-      return;
-    }
-    const user = { email: emailValue, password: passwordValue };
-    handleSignup(user);
-  };
-
-  const onEmailChange = (evt) => {
-    setEmail(evt.target.value);
-  };
-
-  const onPasswordChange = (evt) => {
-    setPassword(evt.target.value);
-  };
-
-  const onNameChange = (evt) => {
-    setName(evt.target.value);
-  };
-
-  React.useEffect(() => {
-    setEmail("");
-    setPassword("");
-    setName("");
-  }, []);
-
   return (
     <ModalWithForm
       title="Sign up"
@@ -64,7 +38,7 @@ const RegisterModal = ({
       onClose={onClose}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
-      handleSubmit={handleSubmit}
+      handleSubmit={handleSubmit(onSubmit)}
       buttonClass={buttonClasses}
       altButtonClick={handleSigninClick}
       isValid={isValid}
@@ -78,40 +52,44 @@ const RegisterModal = ({
           type="email"
           placeholder="Email"
           required
-          name="email"
-          id="inputEmail"
-          minLength="1"
-          maxLength="30"
-          value={emailValue}
-          onChange={onEmailChange}
+          {...register("email", {
+            required: "Email is required.",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address.",
+            },
+          })}
         />
       </label>
+      {errors.email && (
+        <span className="modal__error-message">{errors.email.message}</span>
+      )}
       <label className="modal__label">
         Password
         <input
           className="modal__input"
           placeholder="Password"
           required
-          name="password"
-          id="inputPassword"
+          {...register("password", { required: "Password is required." })}
           type="password"
-          value={passwordValue}
-          onChange={onPasswordChange}
         />
       </label>
+      {errors.password && (
+        <span className="modal__error-message">{errors.password.message}</span>
+      )}
       <label className="modal__label">
         Name
         <input
           className="modal__input"
           placeholder="Enter your username"
           required
-          name="name"
-          id="inputName"
+          {...register("name", { required: "Name is required." })}
           type="text"
-          value={nameValue}
-          onChange={onNameChange}
         />
       </label>
+      {errors.name && (
+        <span className="modal__error-message">{errors.name.message}</span>
+      )}
     </ModalWithForm>
   );
 };
