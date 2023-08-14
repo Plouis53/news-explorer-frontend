@@ -78,7 +78,7 @@ const SigninModal = ({
           {...register("password", {
             required: "Password is required.",
             minLength: {
-              value: 8,
+              value: 4,
               message: "Minimum length is 8 characters",
             },
           })}
