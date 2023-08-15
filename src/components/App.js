@@ -56,9 +56,9 @@ function App() {
   //     });
   // };
 
-  const handleSignin = (email, password) => {
+  const handleSignin = (data) => {
     auth
-      .signIn(email, password)
+      .signIn(data)
       .then((data) => {
         if (data.token) {
           auth

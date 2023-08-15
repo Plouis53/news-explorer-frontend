@@ -18,6 +18,7 @@ const SigninModal = ({
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     handleSignin(data);
   };
 

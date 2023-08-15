@@ -12,15 +12,14 @@ export const signUp = (email, password, name) => {
     .then((res) => res);
 };
 
-export const signIn = (email, password) => {
-  console.log(baseUrl);
+export const signIn = (data) => {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify(data),
   })
     .then((res) => {
       console.log(res);
