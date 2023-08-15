@@ -3,7 +3,7 @@
 
 //   "http://localhost:3000";
 
-export const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3000";
 
 export const APIkey = "03163e8f2a6b45419e69c39fbacf5fe2";
 
