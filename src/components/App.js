@@ -34,13 +34,14 @@ function App() {
 
   // const navigate = useNavigate();
 
-  // const handleSignin = ({ email, password }) => {
+  // const handleSignin = (data) => {
   //   setIsLoading(true);
 
   //   auth
-  //     .signIn({ email, password })
+  //     .signIn(data)
   //     .then((data) => {
   //       if (data.token) {
+  //         localStorage.setItem("jwt", data.token);
   //         return auth.checkTokenValidity(data.token);
   //       }
   //     })
@@ -48,10 +49,11 @@ function App() {
   //       setCurrentUser(response.data);
   //       handleCloseModal();
   //       setIsLoggedIn(true);
-  //       history.push("/saved-articles");
+  //       navigate("/saved-articles");
   //     })
   //     .catch((error) => console.log(error))
   //     .finally(() => {
+  //       setErrorMessage("Username or password is incorrect");
   //       setIsLoading(false);
   //     });
   // };
@@ -89,27 +91,6 @@ function App() {
       });
   };
 
-  // 8823const handleRegister = (email, password, name) => {
-  //   setIsLoading(true);
-
-  //   auth
-  //     .signUp(email, password, name)
-  //     .then((response) => {
-  //       if (response) {
-  //         setCurrentUser(response.data);
-  //         handleSignin(response);
-  //         handleCloseModal();
-  //       } else {
-  //         console.log("User registration failed:", response.error);
-  //       }
-  //     })
-  //     .catch((error) => console.log(error))
-  //     .finally(() => {
-  //       setErrorMessage("This email is already in use");
-  //       setIsLoading(false);
-  //     });
-  // };
-
   const handleRegister = (email, password, name) => {
     console.log("signup");
     setIsLoading(true);
@@ -141,15 +122,8 @@ function App() {
 
   const handleSigninClick = () => {
     setActiveModal("signin");
+    localStorage.getItem("jwt");
   };
-
-  // const handleSignupSuccess = () => {
-  //   setActiveModal("login");
-  // };
-
-  // const handleSignupClick = () => {
-  //   setActiveModal("signup");
-  // };
 
   const handleRegisterClick = () => {
     setActiveModal("signup");
