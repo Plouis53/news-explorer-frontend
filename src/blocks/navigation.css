@@ -181,7 +181,7 @@
   }
 
   .nav__logo {
-    margin: 16px 0 16px 16px;
+    /* margin: 16px 0 16px 16px; */
     font-size: 16px;
     line-height: 1.5em;
   }

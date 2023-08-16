@@ -61,6 +61,7 @@ function App() {
       .signIn(data)
       .then((data) => {
         if (data.token) {
+          localStorage.setItem("jwt", data.token);
           auth
             .checkTokenValidity(data.token)
             .then((res) => {

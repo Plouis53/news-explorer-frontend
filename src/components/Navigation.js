@@ -65,7 +65,7 @@ const Navigation = ({
               onClick={handleSignout}
             >
               {userData.name}
-              Username
+              {/* Username */}
               <img
                 src={color}
                 alt="Signout Button"

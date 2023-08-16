@@ -18,7 +18,7 @@ const RegisterModal = ({
   } = useForm();
 
   const onSubmit = (data) => {
-    handleSignup(data);
+    handleSignup(data.email, data.password, data.name);
   };
 
   const buttonClasses = {

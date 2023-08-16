@@ -1,6 +1,7 @@
 import { baseUrl, checkResponse } from "./constants";
 
 export const signUp = (email, password, name) => {
+  console.log(email, password, name);
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {

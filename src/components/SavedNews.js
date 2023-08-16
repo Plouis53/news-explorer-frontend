@@ -35,7 +35,7 @@ const SavedNews = ({
 
     let keys = [];
 
-    mp.forEach((value, key) => {
+    mp.forEach((_value, key) => {
       keys.push(key);
     });
     keys.sort((a, b) => a - b);
