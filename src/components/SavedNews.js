@@ -60,8 +60,6 @@ const SavedNews = ({
     } else if (keywordSortedArray.length === 1) {
       setKeywords([keywordSortedArray[0][0]]);
     }
-
-    console.log(keywords);
   };
 
   React.useEffect(() => {
