@@ -34,6 +34,7 @@ export const signIn = (data) => {
 };
 
 export const checkTokenValidity = (token) => {
+  console.log("Fetching user data...");
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -41,6 +42,28 @@ export const checkTokenValidity = (token) => {
       authorization: `Bearer ${token}`,
     },
   })
-    .then((res) => checkResponse(res))
-    .then((data) => data);
+    .then((res) => {
+      console.log("Response status:", res.status);
+      return checkResponse(res);
+    })
+    .then((data) => {
+      console.log("User data:", data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      throw error;
+    });
 };
+
+// export const checkTokenValidity = (token) => {
+//   return fetch(`${baseUrl}/users/me`, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       authorization: `Bearer ${token}`,
+//     },
+//   })
+//     .then((res) => checkResponse(res))
+//     .then((data) => data);
+// };
