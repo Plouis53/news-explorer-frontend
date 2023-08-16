@@ -27,4 +27,4 @@ export const getCurrentDate = () => {
 export const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.newsquest.mooo.com"
-    : "http://localhost:3000";
+    : "http://localhost:3001";
