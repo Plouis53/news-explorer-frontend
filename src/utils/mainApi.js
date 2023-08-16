@@ -1,4 +1,4 @@
-import { baseUrl, checkResponse } from "./constant";
+import { baseUrl, checkResponse } from "./constants";
 
 export const getArticles = (token) => {
   return fetch(`${baseUrl}/articles`, {

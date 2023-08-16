@@ -1,4 +1,4 @@
-import { getCurrentDate, getLastWeek, checkResponse } from "./constant";
+import { getCurrentDate, getLastWeek, checkResponse } from "./constants";
 
 export const getNews = (input) => {
   return fetch(
