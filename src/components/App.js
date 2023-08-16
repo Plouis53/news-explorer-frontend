@@ -7,12 +7,12 @@ import ModalWithSuccess from "./ModalWithSuccess";
 import ProtectedRoute from "./ProtectedRoute";
 import SavedNews from "./SavedNews";
 import MainPage from "./MainPage";
-import { getNews } from "../utils/newsApi";
+import { getNews } from "../util/newsApi";
 import MobileMenu from "./MobileMenu";
 import ActiveModalContext from "../contexts/ActiveModalContext";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import * as auth from "../utils/auth";
-import { addArticle, getArticles, removeArticle } from "../utils/mainApi";
+import * as auth from "../util/auth";
+import { addArticle, getArticles, removeArticle } from "../util/mainApi";
 import SavedCardsContext from "../contexts/SavedCardsContext";
 
 function App() {
