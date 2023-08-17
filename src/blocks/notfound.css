@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 80px 0 0 0;
 }
 
 .not__image {
@@ -30,11 +31,13 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .not {
     max-width: 320px;
+    margin: 32px 0 0 0;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .not {
     max-width: 768px;
+    margin: 40px 0 0 0;
   }
 }
