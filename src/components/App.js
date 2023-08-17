@@ -79,6 +79,9 @@ function App() {
               navigate("/saved-articles");
             })
             .catch((err) => console.log(err));
+          getArticles(data.token).then((data) => {
+            setSavedCards(data);
+          });
         }
       })
       .then(() => {

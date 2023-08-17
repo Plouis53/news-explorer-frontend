@@ -209,7 +209,7 @@
     left: 16px;
   }
 
-  .card__popout-active {
+  .card__modal-active {
     top: 16px;
     left: 16px;
     width: 180px;

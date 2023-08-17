@@ -70,7 +70,7 @@ const SavedNews = ({
 
   React.useEffect(() => {
     setNewsCards([...new Map(savedCards.map((v) => [v.title, v])).values()]);
-  }, []);
+  }, [savedCards]);
 
   return (
     <>
