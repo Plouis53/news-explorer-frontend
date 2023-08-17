@@ -127,16 +127,22 @@ const NewsCard = ({
               />
             )}
           </div>
-          <p className="card__date">
-            {(card.publishedAt ? card.publishedAt : card.date).slice(0, 10)}
-          </p>
-          <h3 className="card__title">{card.title}</h3>
-          <p className="card__description">
-            {card.description ? card.description : card.text}
-          </p>
-          <h4 className="card__publisher">
-            {card.source.name ? card.source.name : card.source}
-          </h4>
+          <NavLink
+            to={card.url ? card.url : card.link}
+            className="card__text-link"
+            target="_blank"
+          >
+            <p className="card__date">
+              {(card.publishedAt ? card.publishedAt : card.date).slice(0, 10)}
+            </p>
+            <h3 className="card__title">{card.title}</h3>
+            <p className="card__description">
+              {card.description ? card.description : card.text}
+            </p>
+            <h4 className="card__publisher">
+              {card.source.name ? card.source.name : card.source}
+            </h4>
+          </NavLink>
         </div>
       ) : null}
     </>
