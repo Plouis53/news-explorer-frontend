@@ -19,7 +19,8 @@
     "start": " set PORT=3001 &&   react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r ./build/* PLouis53@newsqquest.mooo.com:/home/plouis53/frontend"
   },
   "eslintConfig": {
     "extends": [
