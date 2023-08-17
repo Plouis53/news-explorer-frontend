@@ -121,6 +121,9 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser({});
     localStorage.removeItem("jwt");
+    setActiveSearch(false);
+    setKeyword("");
+    setSavedCards([]);
   };
 
   const handleSigninClick = () => {
