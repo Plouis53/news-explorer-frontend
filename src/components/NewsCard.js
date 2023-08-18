@@ -12,8 +12,8 @@ const NewsCard = ({
   newsCards,
 }) => {
   const [isShown, setIsShown] = React.useState(false);
-  const [isClicked, setIsClicked] = React.useState(false);
-  const [hasImage, setHasImage] = React.useState(true);
+  // const [isClicked, setIsClicked] = React.useState(false);
+  // const [hasImage, setHasImage] = React.useState(true);
   const [isVisible, setIsVisible] = React.useState(true);
   const [isBooked, setIsBooked] = React.useState(false);
 
