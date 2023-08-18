@@ -18,7 +18,7 @@ export const addArticle = (card) => {
       authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
     body: JSON.stringify({
-      keyword: card.keyword || " /",
+      keyword: card.keyword || " ADD KEYWORD",
       title: card.title,
       text: card.description,
       date: card.publishedAt.slice(0, 10),
