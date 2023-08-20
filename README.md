@@ -14,3 +14,5 @@ Welcome to our news app! With our powerful search function, you can easily find 
 - Responsive web design
 
 [Front-End Link to Project](https://github.com/Plouis53/news-explorer-frontend.git)
+
+[Back-End Link to Project](https://github.com/Plouis53/news-explorer-backend.git)
