@@ -27,9 +27,7 @@ const NewsCardSaved = ({ card, isLoggedIn }) => {
           )}
         </NavLink>
         <p className="card__keyword">Keyword</p>
-        <p
-          className={isShown ? "card__popout-active" : "card__popout-inactive "}
-        >
+        <p className={isShown ? "card__modal-active" : "card__modal-inactive "}>
           Remove from saved
         </p>
         <button

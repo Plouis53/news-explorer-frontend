@@ -72,6 +72,7 @@ const NewsCard = ({
                 src={card.urlToImage ? card.urlToImage : card.image}
                 alt={`${card.title}`}
                 className="card__image"
+                onLoad={() => console.log("Image loaded")}
               />
             </NavLink>
             {isLoggedIn ? null : (
@@ -128,7 +129,8 @@ const NewsCard = ({
               {card.description ? card.description : card.text}
             </p>
             <h4 className="card__publisher">
-              {card.source.name ? card.source.name : card.source}
+              {card.source && card.source.name ? card.source.name : card.source}
+              {/* {card.source.name ? card.source.name : card.source} */}
             </h4>
           </NavLink>
         </div>
