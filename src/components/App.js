@@ -30,34 +30,6 @@ function App() {
 
   const navigate = useNavigate();
 
-  // const history = useHistory();
-
-  // const navigate = useNavigate();
-
-  // const handleSignin = (data) => {
-  //   setIsLoading(true);
-
-  //   auth
-  //     .signIn(data)
-  //     .then((data) => {
-  //       if (data.token) {
-  //         localStorage.setItem("jwt", data.token);
-  //         return auth.checkTokenValidity(data.token);
-  //       }
-  //     })
-  //     .then((response) => {
-  //       setCurrentUser(response.data);
-  //       handleCloseModal();
-  //       setIsLoggedIn(true);
-  //       navigate("/saved-articles");
-  //     })
-  //     .catch((error) => console.log(error))
-  //     .finally(() => {
-  //       setErrorMessage("Username or password is incorrect");
-  //       setIsLoading(false);
-  //     });
-  // };
-
   const handleSignin = (data) => {
     auth
       .signIn(data)
@@ -144,10 +116,6 @@ function App() {
       handleCloseModal();
     }
   };
-
-  // const handleCreateModal = () => {
-  //   setActiveModal("create");
-  // };
 
   const handleCloseModal = () => {
     setActiveModal("");
@@ -279,13 +247,12 @@ function App() {
             <Route
               path="/saved-articles"
               element={
-                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <ProtectedRoute isLoggedIn={isLoggedIn} children={undefined}>
                   <SavedNews
                     isLoggedIn={isLoggedIn}
-                    onSigninClick={handleSigninClick} //review this later
+                    onSigninClick={handleSigninClick}
                     handleMobileClick={handleMobileClick}
                     handleSignout={handleSignout}
-                    // token={token}
                     handleDeleteClick={handleDeleteClick}
                   />
                 </ProtectedRoute>
@@ -297,7 +264,6 @@ function App() {
             <SigninModal
               onClose={handleCloseModal}
               handleOutClick={handleOutClick}
-              // handleSignupClick={handleSignupClick}
               isLoading={isLoading}
               errorMessage={errorMessage}
               setErrorMessage={setErrorMessage}

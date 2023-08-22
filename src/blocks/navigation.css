@@ -181,7 +181,7 @@
   }
 
   .nav__logo {
-    /* margin: 16px 0 16px 16px; */
+    margin: 16px 0 16px 16px;
     font-size: 16px;
     line-height: 1.5em;
   }
@@ -196,18 +196,11 @@
     width: 24px;
     height: 24px;
     background-color: transparent;
+    border-left: 2px solid black;
     border: none;
     padding: 0;
     margin: 16px 16px 0 16px;
   }
-
-  /* .nav__burger_light {
-    background-image: url(../images/mobileWhite.svg);
-  }
-
-  .nav__burger_dark {
-    background-image: url(../images/mobileBlack.svg);
-  } */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {

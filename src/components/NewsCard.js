@@ -27,14 +27,11 @@ const NewsCard = ({
 
   const onBookClick = () => {
     handleBook(card, isBooked);
-    // setIsClicked(!isClicked);
-    // handleBook(card, isBooked, card._id);
     setIsBooked(!isBooked);
   };
 
   const handleDelete = () => {
     handleDeleteClick(card._id, card);
-    // console.log(card._id);
     setIsVisible(false);
     setNewsCards(
       newsCards.filter((c) => {
@@ -76,15 +73,6 @@ const NewsCard = ({
                 alt={`${card.title}`}
                 className="card__image"
               />
-              {/* {hasImage ? (
-                <h3 className="card__placeholder">Image could not be found</h3>
-              ) : (
-                <img
-                  src={card.urlToImage ? card.urlToImage : card.image}
-                  alt={`${card.title}`}
-                  className="card__image"
-                />
-              )} */}
             </NavLink>
             {isLoggedIn ? null : (
               <p

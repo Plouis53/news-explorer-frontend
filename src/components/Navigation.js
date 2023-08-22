@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import logout from "../images/logout.svg";
 import logoutWhite from "../images/logoutWhite.svg";
+// import MobileWhite from "../images/mobileWhite.svg";
 import ActiveModalContext from "../contexts/ActiveModalContext";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
@@ -42,6 +43,7 @@ const Navigation = ({
       {activeModal === "signup" || activeModal === "signin" ? null : (
         <button
           className={`nav__mobile nav__mobile_${theme}`}
+          // src={MobileWhite}
           onClick={handleMobileClick}
         />
       )}
@@ -65,7 +67,6 @@ const Navigation = ({
               onClick={handleSignout}
             >
               {userData.name}
-              {/* Username */}
               <img
                 src={color}
                 alt="Signout Button"

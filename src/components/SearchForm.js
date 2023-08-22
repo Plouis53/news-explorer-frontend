@@ -11,7 +11,7 @@ const SearchForm = ({ handleSearchSubmit, setKeyword }) => {
   const [buttonColor, setButtonColor] = React.useState({});
 
   const onSubmit = (data) => {
-    setKeyword(data.searchs);
+    setKeyword(data.searches);
     handleSearchSubmit(data.searches);
     setButtonColor({
       backgroundColor: "#2a65cc",

@@ -57,14 +57,4 @@ export const checkTokenValidity = (token) => {
     });
 };
 
-// export const checkTokenValidity = (token) => {
-//   return fetch(`${baseUrl}/users/me`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//       authorization: `Bearer ${token}`,
-//     },
-//   })
-//     .then((res) => checkResponse(res))
-//     .then((data) => data);
-// };
+
