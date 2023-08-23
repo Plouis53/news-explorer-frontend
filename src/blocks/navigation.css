@@ -24,6 +24,7 @@
   line-height: 24px; /* 120% */
   margin: 30px 0 26px 104px;
   user-select: none;
+  text-decoration: none;
 }
 
 .nav__logo:hover {
