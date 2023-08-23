@@ -122,7 +122,13 @@ const NewsCard = ({
             target="_blank"
           >
             <p className="card__date">
-              {(card.publishedAt ? card.publishedAt : card.date)?.slice(0, 10)}
+              {new Date(
+                card.publishedAt ? card.publishedAt : card.date
+              ).toLocaleString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
             </p>
             <h3 className="card__title">{card.title}</h3>
             <p className="card__description">

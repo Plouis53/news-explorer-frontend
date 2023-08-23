@@ -1,5 +1,4 @@
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
   width: 400px;
   height: 576px;
@@ -183,14 +182,23 @@
 }
 
 .card__publisher {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b6bcbf;
+  margin: auto 0 24px 24px;
+  text-transform: uppercase; 
+  align-self: flex-end;
+  letter-spacing: 0.4000000059604645px;
+  /* font-family: "Roboto Slab", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25em;
   color: #b6bcbf;
   margin: auto 0 24px 24px;
   width: fit-content;
-  justify-self: flex-end;
+  justify-self: flex-end; */
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
