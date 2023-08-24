@@ -46,6 +46,7 @@
 
 .nav__link-inactive:visited {
   color: #b6bcbf;
+  color: #000;
 }
 
 .nav__mobile {
@@ -173,6 +174,22 @@
   margin: 0 0 0 5px;
   width: 24px;
   height: 24px;
+}
+
+.nav__articles.nav__highlight-active_light {
+  color: white;
+}
+
+.nav__articles.nav__highlight-inactive_light {
+  color: #b6bcbf;
+}
+
+.nav__articles.nav__highlight-active_dark {
+  color: black;
+}
+
+.nav__articles.nav__highlight-inactive_dark {
+  color: #b6bcbf;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

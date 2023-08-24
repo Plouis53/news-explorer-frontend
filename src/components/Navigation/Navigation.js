@@ -46,9 +46,9 @@ const Navigation = ({
               to="/saved-articles"
               className={`nav__articles nav__link ${
                 isHomeActive
-                  ? "nav__highlight-inactive"
-                  : "nav__highlight-active"
-              }_${theme} nav__link-inactive`}
+                  ? `nav__highlight-inactive_${theme}`
+                  : `nav__highlight-active_${theme}`
+              } nav__link-inactive`}
             >
               Saved articles
             </NavLink>
