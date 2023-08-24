@@ -30,35 +30,35 @@ function App() {
   const [savedCards, setSavedCards] = React.useState([]);
 
   const navigate = useNavigate();
+  
+  const handleCloseModal = () => {
+    setActiveModal("");
+  };
 
-  const handleSignin = (data) => {
+  const handleSignin = (signinData) => {
     auth
-      .signIn(data)
+      .signIn(signinData)
       .then((data) => {
         if (data.token) {
           localStorage.setItem("jwt", data.token);
           auth
             .checkTokenValidity(data.token)
-            .then((res) => {
-              return res;
-            })
-            .then((data) => {
-              setCurrentUser(data);
+            .then((userData) => {
+              setCurrentUser(userData);
             })
             .then(() => {
               setIsLoggedIn(true);
             })
             .then(() => {
               navigate("/saved-articles");
+              // Show your success modal here
+              setActiveModal("successModal");
             })
             .catch((err) => console.log(err));
-          getArticles(data.token).then((data) => {
-            setSavedCards(data);
+          getArticles(data.token).then((articlesData) => {
+            setSavedCards(articlesData);
           });
         }
-      })
-      .then(() => {
-        handleCloseModal();
       })
       .catch((err) => {
         console.log(err);
@@ -66,6 +66,7 @@ function App() {
         setIsLoading(false);
       });
   };
+  
 
   const handleRegister = (email, password, name) => {
     console.log("signup");
@@ -118,32 +119,16 @@ function App() {
     }
   };
 
-  const handleCloseModal = () => {
-    setActiveModal("");
-  };
-
   const checkDuplicate = (card) => {
     if (!savedCards.some((c) => c.link === card.url)) {
-      addArticle({ keyword: keyword, ...card }, token, currentUser)
+      addArticle({ keyword, ...card }, token, currentUser)
         .then((data) => {
           savedCards.push(data);
         })
         .catch((e) => console.log(e));
     }
   };
-
-  const checkDelete = (card) => {
-    let article = savedCards.find((c) => c.link === card.url);
-
-    if (article !== undefined) {
-      handleDeleteClick(article._id, card);
-    }
-  };
-
-  const handleBook = (card, isBooked) => {
-    isBooked ? checkDelete(card) : checkDuplicate(card);
-  };
-
+  
   const handleDeleteClick = (id, card) => {
     removeArticle(id, token)
       .then(() => {
@@ -156,7 +141,22 @@ function App() {
       })
       .catch((e) => console.log(e));
   };
-
+  const checkDelete = (card) => {
+    const article = savedCards.find((c) => c.link === card.url);
+  
+    if (article !== undefined) {
+      handleDeleteClick(article._id, card);
+    }
+  };
+  
+  const handleBook = (card, isBooked) => {
+    if (isBooked) {
+      checkDelete(card);
+    } else {
+      checkDuplicate(card);
+    }
+  };
+  
   const handleSearchSubmit = (input) => {
     setActiveSearch(true);
     setIsSearchLoading(true);
