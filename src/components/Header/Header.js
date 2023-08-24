@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "./Navigation";
-import Search from "./Search";
+import Navigation from "../Navigation/Navigation";
+import Search from "../Search/Search";
 
 const Header = ({
   onSigninClick,
@@ -12,8 +12,12 @@ const Header = ({
   handleSignout,
   setKeyword,
 }) => {
+  const headerModifiers = {
+    theme,
+    "home-active": isHomeActive,
+  };
   return (
-    <header className="header">
+    <header className="header" data-modifiers={headerModifiers}>
       <Navigation
         onSigninClick={onSigninClick}
         theme={theme}

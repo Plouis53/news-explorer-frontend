@@ -91,23 +91,23 @@
   border-radius: 8px;
   padding: 0;
   border: none;
-  background-image: url(../images/bookmark.svg);
+  background-image: url(../../images/bookmark.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .card__book-active:hover {
-  background-image: url(../images/filledBookmark.svg);
+  background-image: url(../../images/filledBookmark.svg);
   cursor: pointer;
 }
 
 .card__book-clicked {
-  background-image: url(../images/filledBookmark.svg);
+  background-image: url(../../images/filledBookmark.svg);
 }
 
 .card__book-clicked:hover {
   cursor: pointer;
-  background-image: url(../images/blackBookmark.svg);
+  background-image: url(../../images/blackBookmark.svg);
 }
 
 .card__delete {
@@ -120,7 +120,7 @@
   border-radius: 8px;
   padding: 0;
   border: none;
-  background-image: url(../images/trash.svg);
+  background-image: url(../../images/trash.svg);
   background-repeat: no-repeat;
   background-position: center;
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import Main from "./Main";
-import NewsCardList from "./NewsCardList";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
 const MainPage = ({
   handleSigninClick,

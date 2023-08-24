@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import Navigation from "./Navigation";
-import NewsCardListSaved from "./NewsCardListSaved";
-import CurrentUserContext from "../contexts/CurrentUserContext";
-import SavedCardsContext from "../contexts/SavedCardsContext";
+import Navigation from "../Navigation/Navigation";
+import NewsCardListSaved from "../NewsCardListSaved/NewsCardListSaved";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
 
 const SavedNews = ({
   onSigninClick,

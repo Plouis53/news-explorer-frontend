@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import closeIcon from "../images/close.svg";
-import logout from "../images/logoutWhite.svg";
+import closeIcon from "../../images/close.svg";
+import logout from "../../images/logoutWhite.svg";
 
 const MobileMenu = ({
   closeModal,

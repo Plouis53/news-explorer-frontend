@@ -1,19 +1,19 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import SigninModal from "./SigninModal";
-import RegisterModal from "./RegisterModal";
-import ModalWithSuccess from "./ModalWithSuccess";
-import ProtectedRoute from "./ProtectedRoute";
-import SavedNews from "./SavedNews";
-import MainPage from "./MainPage";
-import { getNews } from "../utils/newsApi";
-import MobileMenu from "./MobileMenu";
-import ActiveModalContext from "../contexts/ActiveModalContext";
-import CurrentUserContext from "../contexts/CurrentUserContext";
-import * as auth from "../utils/auth";
-import { addArticle, getArticles, removeArticle } from "../utils/mainApi";
-import SavedCardsContext from "../contexts/SavedCardsContext";
+import SigninModal from "../SigninModal/SigninModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import ModalWithSuccess from "../ModalWithSuccess/ModalWithSuccess";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import SavedNews from "../SavedNews/SavedNews";
+import MainPage from "../MainPage/MainPage";
+import { getNews } from "../../utils/newsApi";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import ActiveModalContext from "../../contexts/ActiveModalContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import * as auth from "../../utils/auth";
+import { addArticle, getArticles, removeArticle } from "../../utils/mainApi";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
 
 function App() {
   const [activeModal, setActiveModal] = React.useState("");

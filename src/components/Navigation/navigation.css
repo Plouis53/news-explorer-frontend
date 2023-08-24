@@ -193,7 +193,7 @@
 
   .nav__mobile {
     display: flex;
-    background-image: url(../images/mobileWhite.svg);
+    background-image: url(../../images/mobileWhite.svg);
     width: 24px;
     height: 24px;
     background-color: transparent;
@@ -204,11 +204,11 @@
   }
 
   .nav__mobile_light {
-    background-image: url(../images/mobileWhite.svg);
+    background-image: url(../../images/mobileWhite.svg);
   }
 
   .nav__mobile_dark {
-    background-image: url(../images/mobileBlack.svg);
+    background-image: url(../../images/mobileBlack.svg);
   }
 }
 

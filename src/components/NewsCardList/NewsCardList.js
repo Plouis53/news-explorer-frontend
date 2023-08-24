@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import NewsCard from "./NewsCard";
-import Preloader from "./Preloader";
-import NotFound from "./NotFound";
-import SavedCardsContext from "../contexts/SavedCardsContext";
+import NewsCard from "../NewsCard/NewsCard";
+import Preloader from "../Preloader/Preloader";
+import NotFound from "../NotFound/NotFound";
+import SavedCardsContext from "../../contexts/SavedCardsContext";
 
 const NewsCardList = ({
   cards,

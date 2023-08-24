@@ -1,12 +1,12 @@
 import React from "react";
-import ModalWithForm from "./ModalWithForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "react-hook-form";
 
-const SigninModal = ({
+const RegisterModal = ({
   onClose,
   handleOutClick,
-  handleSignin,
-  handleRegisterClick,
+  handleSigninClick,
+  handleSignup,
   isLoading,
   errorMessage,
   setErrorMessage,
@@ -18,8 +18,7 @@ const SigninModal = ({
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    handleSignin(data);
+    handleSignup(data.email, data.password, data.name);
   };
 
   const buttonClasses = {
@@ -28,20 +27,20 @@ const SigninModal = ({
   };
 
   const buttonTexts = {
-    button: isLoading ? "Saving..." : "Sign in",
-    other: "or Sign up",
+    button: isLoading ? "Saving..." : "Sign up",
+    other: "Sign in",
   };
 
   return (
     <ModalWithForm
-      title="Sign in"
-      name="Signin"
+      title="Sign up"
+      name="Signup"
       onClose={onClose}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
       handleSubmit={handleSubmit(onSubmit)}
       buttonClass={buttonClasses}
-      altButtonClick={handleRegisterClick}
+      altButtonClick={handleSigninClick}
       isValid={isValid}
       errorMessage={errorMessage}
       setErrorMessage={setErrorMessage}
@@ -88,8 +87,30 @@ const SigninModal = ({
       {errors.password && (
         <span className="modal__error-message">{errors.password.message}</span>
       )}
+      <label className="modal__label">
+        Name
+        <input
+          className="modal__input"
+          placeholder="Enter your username"
+          required
+          {...register("name", {
+            required: "Name is required.",
+            minLength: {
+              value: 2,
+              message: "Minimum length is 2 characters",
+            },
+            maxLength: {
+              value: 30,
+              message: "Maximum length is 30 characters",
+            },
+          })}
+        />
+      </label>
+      {errors.name && (
+        <span className="modal__error-message">{errors.name.message}</span>
+      )}
     </ModalWithForm>
   );
 };
 
-export default SigninModal;
+export default RegisterModal;

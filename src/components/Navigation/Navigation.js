@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import logout from "../images/logout.svg";
-import logoutWhite from "../images/logoutWhite.svg";
-import ActiveModalContext from "../contexts/ActiveModalContext";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import logout from "../../images/logout.svg";
+import logoutWhite from "../../images/logoutWhite.svg";
+import ActiveModalContext from "../../contexts/ActiveModalContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const Navigation = ({
   onSigninClick,
