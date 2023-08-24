@@ -1,6 +1,7 @@
 import React from "react";
-import Footer from "../Footer/Footer";
 import { Route, Routes, useNavigate } from "react-router-dom";
+
+import Footer from "../Footer/Footer";
 import SigninModal from "../SigninModal/SigninModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ModalWithSuccess from "../ModalWithSuccess/ModalWithSuccess";
