@@ -6,7 +6,6 @@ const ModalWithSuccess = ({
   handleOutClick,
   handleSigninClick,
 }) => {
-  return (
     <div className="modal__container-confirm" onClick={handleOutClick}>
       <div className="modal__confirm">
         <button type="button" className="modal__button" aria-label="Close">
@@ -30,7 +29,6 @@ const ModalWithSuccess = ({
         </button>
       </div>
     </div>
-  );
 };
 
 export default ModalWithSuccess;

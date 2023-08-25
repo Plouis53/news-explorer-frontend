@@ -12,10 +12,10 @@ const ModalWithForm = ({
   errorMessage,
   isValid,
 }) => {
-  if (!buttonText.other) {
-    buttonText.other = null;
-  }
-
+  const updatedButtonText = {
+    ...buttonText,
+    other: null
+  };
   return (
     <div className="modal__container-form" onClick={onOutClick}>
       <form className="modal__form" onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ const ModalWithForm = ({
             id="addSave"
             disabled={!isValid}
           >
-            {buttonText.button}
+           {updatedButtonText.submit}
           </button>
           <button
             className="modal__other"

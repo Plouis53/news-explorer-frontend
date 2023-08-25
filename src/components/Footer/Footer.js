@@ -5,7 +5,6 @@ import Github from "../../images/github.svg";
 import Linkedin from "../../images/linkedin.svg";
 
 const Footer = () => {
-  return (
     <footer className="footer">
       <p className="footer__copyright">© 2023 Supersite, Powered by News API</p>
       <div className="footer__right">
@@ -46,7 +45,6 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
 };
 
 export default Footer;

@@ -16,7 +16,7 @@ const MainPage = ({
   setKeyword,
   handleSignupClick,
 }) => {
-  return (
+  
     <>
       <Header
         onSigninClick={handleSigninClick}
@@ -39,7 +39,7 @@ const MainPage = ({
       )}
       <Main />
     </>
-  );
+ 
 };
 
 export default MainPage;
