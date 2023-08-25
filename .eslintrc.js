@@ -1,17 +1,24 @@
 module.exports = {
-  env: {
-    browser: true,
-    commonjs: true,
-    es2021: true,
-  },
-  // update the extensions
-  extends: ["eslint:recommended", "airbnb-base", "prettier"],
-  overrides: [],
-  parserOptions: {
-    ecmaVersion: 2022, // Change this to a valid ECMAScript version
-  },
-  rules: {
-    "no-underscore-dangle": ["error", { allow: ["_id"] }],
-    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
-  },
-};
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "react/prop-types": [0],
+      "react/no-unescaped-entities": [0]
+    }
+}
