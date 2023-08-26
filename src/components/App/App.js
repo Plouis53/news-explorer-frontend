@@ -1,38 +1,38 @@
-import React from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import React from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
-import Footer from "../Footer/Footer";
-import SigninModal from "../SigninModal/SigninModal";
-import RegisterModal from "../RegisterModal/RegisterModal";
-import ModalWithSuccess from "../ModalWithSuccess/ModalWithSuccess";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import SavedNews from "../SavedNews/SavedNews";
-import MainPage from "../MainPage/MainPage";
-import { getNews } from "../../utils/newsApi";
-import MobileMenu from "../MobileMenu/MobileMenu";
-import ActiveModalContext from "../../contexts/ActiveModalContext";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
-import * as auth from "../../utils/auth";
-import { addArticle, getArticles, removeArticle } from "../../utils/mainApi";
-import SavedCardsContext from "../../contexts/SavedCardsContext";
+import Footer from '../Footer/Footer';
+import SigninModal from '../SigninModal/SigninModal';
+import RegisterModal from '../RegisterModal/RegisterModal';
+import ModalWithSuccess from '../ModalWithSuccess/ModalWithSuccess';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import SavedNews from '../SavedNews/SavedNews';
+import MainPage from '../MainPage/MainPage';
+import { getNews } from '../../utils/newsApi';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import ActiveModalContext from '../../contexts/ActiveModalContext';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
+import * as auth from '../../utils/auth';
+import { addArticle, getArticles, removeArticle } from '../../utils/mainApi';
+import SavedCardsContext from '../../contexts/SavedCardsContext';
 
 function App() {
-  const [activeModal, setActiveModal] = React.useState("");
+  const [activeModal, setActiveModal] = React.useState('');
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
-  const [token, setToken] = React.useState("");
+  const [token, setToken] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
   const [activeSearch, setActiveSearch] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
   const [isSearchLoading, setIsSearchLoading] = React.useState(true);
-  const [errorMessage, setErrorMessage] = React.useState("");
-  const [keyword, setKeyword] = React.useState("");
+  const [errorMessage, setErrorMessage] = React.useState('');
+  const [keyword, setKeyword] = React.useState('');
   const [savedCards, setSavedCards] = React.useState([]);
 
   const navigate = useNavigate();
-  
+
   const handleCloseModal = () => {
-    setActiveModal("");
+    setActiveModal('');
   };
 
   const handleSignin = (signinData) => {
@@ -40,7 +40,7 @@ function App() {
       .signIn(signinData)
       .then((data) => {
         if (data.token) {
-          localStorage.setItem("jwt", data.token);
+          localStorage.setItem('jwt', data.token);
           auth
             .checkTokenValidity(data.token)
             .then((userData) => {
@@ -50,9 +50,9 @@ function App() {
               setIsLoggedIn(true);
             })
             .then(() => {
-              navigate("/saved-articles");
+              navigate('/saved-articles');
               // Show your success modal here
-              setActiveModal("successModal");
+              setActiveModal('successModal');
             })
             .catch((err) => console.log(err));
           getArticles(data.token).then((articlesData) => {
@@ -62,14 +62,13 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        setErrorMessage("Username or password is incorrect");
+        setErrorMessage('Username or password is incorrect');
         setIsLoading(false);
       });
   };
-  
 
   const handleRegister = (email, password, name) => {
-    console.log("signup");
+    console.log('signup');
     setIsLoading(true);
 
     auth
@@ -77,16 +76,16 @@ function App() {
       .then((res) => {
         console.log(res);
         if (res) {
-          setActiveModal("success");
+          setActiveModal('success');
           setIsLoading(false); // Move the setIsLoading here, so it won't be set twice
         } else {
-          console.log("Something went wrong.");
+          console.log('Something went wrong.');
           setIsLoading(false); // Also set setIsLoading here in the error case
         }
       })
       .catch((err) => {
         console.log(err);
-        setErrorMessage("This email is already in use");
+        setErrorMessage('This email is already in use');
         setIsLoading(false);
       });
   };
@@ -94,23 +93,23 @@ function App() {
   const handleSignout = () => {
     setIsLoggedIn(false);
     setCurrentUser({});
-    localStorage.removeItem("jwt");
+    localStorage.removeItem('jwt');
     setActiveSearch(false);
-    setKeyword("");
+    setKeyword('');
     setSavedCards([]);
   };
 
   const handleSigninClick = () => {
-    setActiveModal("signin");
-    localStorage.getItem("jwt");
+    setActiveModal('signin');
+    localStorage.getItem('jwt');
   };
 
   const handleRegisterClick = () => {
-    setActiveModal("signup");
+    setActiveModal('signup');
   };
 
   const handleMobileClick = () => {
-    setActiveModal("mobile");
+    setActiveModal('mobile');
   };
 
   const handleOutClick = (evt) => {
@@ -128,14 +127,12 @@ function App() {
         .catch((e) => console.log(e));
     }
   };
-  
+
   const handleDeleteClick = (id, card) => {
     removeArticle(id, token)
       .then(() => {
         savedCards.splice(
-          savedCards.findIndex(
-            (c) => c.link === card.link || c.link === card.url
-          ),
+          savedCards.findIndex((c) => c.link === card.link || c.link === card.url),
           1
         );
       })
@@ -143,12 +140,12 @@ function App() {
   };
   const checkDelete = (card) => {
     const article = savedCards.find((c) => c.link === card.url);
-  
+
     if (article !== undefined) {
       handleDeleteClick(article._id, card);
     }
   };
-  
+
   const handleBook = (card, isBooked) => {
     if (isBooked) {
       checkDelete(card);
@@ -156,7 +153,7 @@ function App() {
       checkDuplicate(card);
     }
   };
-  
+
   const handleSearchSubmit = (input) => {
     setActiveSearch(true);
     setIsSearchLoading(true);
@@ -175,15 +172,15 @@ function App() {
 
   React.useEffect(() => {
     const closeWithEsc = (evt) => {
-      if (evt.key === "Escape") {
+      if (evt.key === 'Escape') {
         handleCloseModal();
       }
     };
 
-    window.addEventListener("keydown", closeWithEsc);
+    window.addEventListener('keydown', closeWithEsc);
 
     return () => {
-      window.removeEventListener("keydown", closeWithEsc);
+      window.removeEventListener('keydown', closeWithEsc);
     };
   }, []);
 
@@ -196,7 +193,7 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    const jwt = localStorage.getItem("jwt");
+    const jwt = localStorage.getItem('jwt');
 
     if (jwt) {
       setToken(jwt);
@@ -248,7 +245,7 @@ function App() {
             <Route
               path="/saved-articles"
               element={
-                <ProtectedRoute isLoggedIn={isLoggedIn} children={undefined}>
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <SavedNews
                     isLoggedIn={isLoggedIn}
                     onSigninClick={handleSigninClick}
@@ -261,7 +258,7 @@ function App() {
             ></Route>
           </Routes>
           <Footer />
-          {activeModal === "signin" && (
+          {activeModal === 'signin' && (
             <SigninModal
               onClose={handleCloseModal}
               handleOutClick={handleOutClick}
@@ -272,7 +269,7 @@ function App() {
               handleRegisterClick={handleRegisterClick}
             />
           )}
-          {activeModal === "signup" && (
+          {activeModal === 'signup' && (
             <RegisterModal
               onClose={handleCloseModal}
               handleOutClick={handleOutClick}
@@ -283,14 +280,14 @@ function App() {
               setErrorMessage={setErrorMessage}
             />
           )}
-          {activeModal === "success" && (
+          {activeModal === 'success' && (
             <ModalWithSuccess
               closeModal={handleCloseModal}
               handleOutClick={handleOutClick}
               handleSigninClick={handleSigninClick}
             />
           )}
-          {activeModal === "mobile" && (
+          {activeModal === 'mobile' && (
             <MobileMenu
               closeModal={handleCloseModal}
               handleOutClick={handleOutClick}

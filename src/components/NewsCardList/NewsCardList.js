@@ -1,26 +1,15 @@
-import React, { useContext } from "react";
-import NewsCard from "../NewsCard/NewsCard";
-import Preloader from "../Preloader/Preloader";
-import NotFound from "../NotFound/NotFound";
-import SavedCardsContext from "../../contexts/SavedCardsContext";
+import React, { useContext } from 'react';
+import NewsCard from '../NewsCard/NewsCard';
+import Preloader from '../Preloader/Preloader';
+import NotFound from '../NotFound/NotFound';
+import SavedCardsContext from '../../contexts/SavedCardsContext';
 
-const NewsCardList = ({
-  cards,
-  isLoading,
-  isLoggedIn,
-  handleBook,
-  handleSignupClick,
-}) => {
+const NewsCardList = ({ cards, isLoading, isLoggedIn, handleBook, handleSignupClick }) => {
   const savedCards = useContext(SavedCardsContext);
   const [amountShown, setAmountShown] = React.useState(3);
   const [isLarge, setIsLarge] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState(false);
   const [newsCards, setNewsCards] = React.useState([]);
-
-  const showMore = () => {
-    setAmountShown(amountShown + 3);
-    checkIsLarge();
-  };
 
   const checkIsLarge = () => {
     if (amountShown >= 99) {
@@ -28,6 +17,11 @@ const NewsCardList = ({
     } else {
       setIsLarge(false);
     }
+  };
+
+  const showMore = () => {
+    setAmountShown(amountShown + 3);
+    checkIsLarge();
   };
 
   React.useEffect(() => {
@@ -44,11 +38,9 @@ const NewsCardList = ({
 
   return (
     <>
-      {isLoading ? (
-        <Preloader />
-      ) : isEmpty ? (
-        <NotFound />
-      ) : (
+      {isLoading && <Preloader />}
+      {!isLoading && isEmpty && <NotFound />}
+      {!isLoading && !isEmpty && (
         <section className="news">
           <h2 className="news__header">Search Results</h2>
           <ul className="news__cards">
@@ -64,7 +56,7 @@ const NewsCardList = ({
               />
             ))}
           </ul>
-          {isLarge ? null : (
+          {!isLarge && (
             <button className="news__show" onClick={showMore}>
               Show more
             </button>

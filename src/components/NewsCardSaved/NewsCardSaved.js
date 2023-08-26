@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const NewsCardSaved = ({ card, isLoggedIn }) => {
+const NewsCardSaved = ({ card }) => {
   const [isShown, setIsShown] = React.useState(false);
 
   const onEnter = () => {
@@ -19,22 +19,14 @@ const NewsCardSaved = ({ card, isLoggedIn }) => {
           {!card.urlToImage ? (
             <h3 className="card__placeholder">Image could not be found</h3>
           ) : (
-            <img
-              src={card.urlToImage}
-              alt={`${card.title}`}
-              className="card__image"
-            />
+            <img src={card.urlToImage} alt={`${card.title}`} className="card__image" />
           )}
         </NavLink>
         <p className="card__keyword">Keyword</p>
-        <p className={isShown ? "card__modal-active" : "card__modal-inactive "}>
+        <p className={isShown ? 'card__modal-active' : 'card__modal-inactive '}>
           Remove from saved
         </p>
-        <button
-          className="card__delete"
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-        />
+        <button className="card__delete" onMouseEnter={onEnter} onMouseLeave={onLeave} />
       </div>
       <p className="card__date">{card.publishedAt.slice(0, 10)}</p>
       <h3 className="card__title">{card.title}</h3>
