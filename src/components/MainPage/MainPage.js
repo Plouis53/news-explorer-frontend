@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../Header/Header";
-import Main from "../Main/Main";
-import NewsCardList from "../NewsCardList/NewsCardList";
+import React from 'react';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import NewsCardList from '../NewsCardList/NewsCardList';
 
 const MainPage = ({
   handleSigninClick,
@@ -14,9 +14,9 @@ const MainPage = ({
   handleSignout,
   handleBook,
   setKeyword,
-  handleSignupClick,
+  handleSignupClick
 }) => {
-  
+  return (
     <>
       <Header
         onSigninClick={handleSigninClick}
@@ -39,7 +39,7 @@ const MainPage = ({
       )}
       <Main />
     </>
- 
+  );
 };
 
 export default MainPage;
