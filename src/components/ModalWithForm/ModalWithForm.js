@@ -1,5 +1,5 @@
-import React from "react";
-import closeIcon from "../../images/close.svg";
+import React from 'react';
+import closeIcon from '../../images/close.svg';
 
 const ModalWithForm = ({
   title,
@@ -10,7 +10,7 @@ const ModalWithForm = ({
   handleSubmit,
   altButtonClick,
   errorMessage,
-  isValid,
+  isValid
 }) => {
   const updatedButtonText = {
     ...buttonText,
@@ -20,12 +20,7 @@ const ModalWithForm = ({
     <div className="modal__container-form" onClick={onOutClick}>
       <form className="modal__form" onSubmit={handleSubmit}>
         <fieldset className="modal__fieldset">
-          <button
-            className="modal__button"
-            type="button"
-            aria-label="Close"
-            onClick={onClose}
-          >
+          <button className="modal__button" type="button" aria-label="Close" onClick={onClose}>
             <img
               className="modal__close"
               alt="modal-close-button"
@@ -43,13 +38,9 @@ const ModalWithForm = ({
             id="addSave"
             disabled={!isValid}
           >
-           {updatedButtonText.submit}
+            {updatedButtonText.button}
           </button>
-          <button
-            className="modal__other"
-            type="button"
-            onClick={altButtonClick}
-          >
+          <button className="modal__other" type="button" onClick={altButtonClick}>
             or <span className="modal__color">{buttonText.other}</span>
           </button>
         </fieldset>
