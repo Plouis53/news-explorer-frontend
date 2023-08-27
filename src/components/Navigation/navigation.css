@@ -61,7 +61,7 @@
 .nav__button {
   font-weight: 500;
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -69,7 +69,7 @@
 .nav__home {
   color: var(--main-white, #fff);
   text-align: center;
-  font-family: Roboto;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -135,7 +135,7 @@
   border: none;
   font-weight: 500;
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
@@ -157,7 +157,7 @@
   height: 48px;
   margin: 19px 0 0 32px;
   background-color: transparent;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33em;
