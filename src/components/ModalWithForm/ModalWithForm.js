@@ -20,19 +20,19 @@ const ModalWithForm = ({
     <div className="modal__container-form" onClick={onOutClick}>
       <form className="modal__form" onSubmit={handleSubmit}>
         <fieldset className="modal__fieldset">
-          <button className="modal__button" type="button" aria-label="Close" onClick={onClose}>
-            <img
-              className="modal__close"
-              alt="modal-close-button"
-              src={closeIcon}
-              id="addModal-close"
-            />
+          <button
+            className="modal__close-button"
+            type="button"
+            aria-label="Close"
+            onClick={onClose}
+          >
+            <img alt="modal-close-button" src={closeIcon} id="addModal-close" />
           </button>
-          <h2 className="modal__header">{title}</h2>
+          <h2 className="modal__title">{title}</h2>
           {children}
           <span className="modal__errors-signup">{errorMessage}</span>
           <button
-            className="modal__main"
+            className="modal__submit-button"
             type="submit"
             aria-label="Save"
             id="addSave"
@@ -40,8 +40,8 @@ const ModalWithForm = ({
           >
             {updatedButtonText.button}
           </button>
-          <button className="modal__other" type="button" onClick={altButtonClick}>
-            or <span className="modal__color">{buttonText.other}</span>
+          <button className="modal__other-button" type="button" onClick={altButtonClick}>
+            or <span className="modal__color-text">{buttonText.other}</span>
           </button>
         </fieldset>
       </form>

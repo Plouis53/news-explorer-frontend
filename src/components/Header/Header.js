@@ -1,6 +1,6 @@
-import React from "react";
-import Navigation from "../Navigation/Navigation";
-import Search from "../Search/Search";
+import React from 'react';
+import Navigation from '../Navigation/Navigation';
+import Search from '../Search/Search';
 
 const Header = ({
   onSigninClick,
@@ -10,14 +10,18 @@ const Header = ({
   isHomeActive,
   handleMobileClick,
   handleSignout,
-  setKeyword,
+  setKeyword
 }) => {
   const headerModifiers = {
-    theme,
-    "home-active": isHomeActive,
+    theme: `theme-${theme}`,
+    'home-active': isHomeActive ? 'home-active' : ''
   };
+  const headerClasses = Object.keys(headerModifiers)
+    .map((modifier) => headerModifiers[modifier])
+    .join(' ');
+
   return (
-    <header className="header" data-modifiers={headerModifiers}>
+    <header className={`header ${headerClasses}`}>
       <Navigation
         onSigninClick={onSigninClick}
         theme={theme}

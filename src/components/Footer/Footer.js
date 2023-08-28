@@ -14,18 +14,18 @@ const Footer = () => {
             <button className="footer__button footer__text">Home</button>
           </NavLink>
           <NavLink to="https://practicum.com" className="footer__link" target="_blank">
-            <button className="footer__text footer__button">TripleTen</button>
+            <button className="footer__button footer__text">TripleTen</button>
           </NavLink>
         </div>
         <div className="footer__icons">
           <NavLink to="https://github.com/Plouis53" className="footer__icon" target="_blank">
-            <button className="footer__button footer__github">
-              <img alt="Github logo" src={Github} className="footer__github" />
+            <button className="footer__button footer__icon-button">
+              <img alt="Github logo" src={Github} className="footer__icon-image" />
             </button>
           </NavLink>
           <NavLink to="https://www.linkedin.com/in/phillippe-pmpisintech/" target="_blank">
-            <button className="footer__linkedIn footer__button">
-              <img src={Linkedin} alt="LinkedIn logo" className="footer__linkedIn" />
+            <button className="footer__button footer__icon-button">
+              <img src={Linkedin} alt="LinkedIn logo" className="footer__icon-image" />
             </button>
           </NavLink>
         </div>

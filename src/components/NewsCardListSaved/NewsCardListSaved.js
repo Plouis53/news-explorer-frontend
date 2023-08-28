@@ -1,12 +1,7 @@
-import React from "react";
-import NewsCard from "../NewsCard/NewsCard";
+import React from 'react';
+import NewsCard from '../NewsCard/NewsCard';
 
-const NewsCardListSaved = ({
-  isLoggedIn,
-  newsCards,
-  handleDeleteClick,
-  setNewsCards,
-}) => {
+const NewsCardListSaved = ({ isLoggedIn, newsCards, handleDeleteClick, setNewsCards }) => {
   return (
     <section className="news">
       <ul className="news__cards">

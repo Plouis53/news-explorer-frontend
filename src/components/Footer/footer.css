@@ -7,7 +7,7 @@
 
 .footer__copyright {
   margin: 32px 0 26px 106px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375em;
@@ -36,7 +36,7 @@
 }
 
 .footer__text {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.33em;
@@ -48,7 +48,7 @@
   opacity: 0.6;
 }
 
-.footer__github {
+/* .footer__github {
   width: 24px;
   height: 24px;
 }
@@ -56,14 +56,14 @@
 .footer__github:hover {
   cursor: pointer;
   opacity: 0.6;
-}
+} */
 
-.footer__linkedIn {
+.footer__icon-image {
   width: 24px;
   height: 24px;
 }
 
-.footer__linkedIn:hover {
+.footer__icon-image:hover {
   cursor: pointer;
   opacity: 0.6;
 }

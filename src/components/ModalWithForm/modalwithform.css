@@ -1,19 +1,5 @@
-.modal {
-  z-index: 1;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 0;
-  display: flex;
-  opacity: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal__container-confirm {
+/*----modalwithforms----*/
+.modal__container-form {
   z-index: 1;
   position: fixed;
   bottom: 0;
@@ -28,7 +14,160 @@
   align-items: center;
 }
 
-.modal__container-form {
+.modal__form {
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+}
+
+.modal__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 430px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0.3);
+}
+
+.modal__close-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: -36px;
+  right: -36px;
+  width: 40px;
+  height: 40px;
+}
+
+.modal__close-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* .modal__close-icon {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: -36px;
+  right: -36px;
+  width: 40px;
+  height: 40px;
+} */
+
+.modal__title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2em;
+  color: #1a1b22;
+  width: fit-content;
+  margin: 36px 0 0 36px;
+}
+
+.modal__errors-signup {
+  width: 200px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 17px 115px 8px 115px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.modal__submit-button {
+  width: 358px;
+  height: 64px;
+  background-color: #2f71e5;
+  margin: 20px 35px 0 35px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33em;
+  text-align: center;
+  color: white;
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+}
+
+.modal__submit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.modal__submit-button:disabled {
+  background-color: #e6e8e8;
+  color: #b6bcbf;
+}
+
+.modal__submit-button:disabled:hover {
+  opacity: 1;
+  cursor: default;
+}
+
+.modal__other-button {
+  width: 226px;
+  margin: 16px 102px 28px 102px;
+  padding: 0;
+  border: none;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.modal__other-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.modal__other-button:disabled {
+  background-color: #e6e8e8;
+  color: #b6bcbf;
+}
+
+.modal__other-button:disabled:hover {
+  opacity: 1;
+  cursor: default;
+}
+
+.modal__color-text {
+  color: #2f71e5;
+}
+
+/* .modal {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+} */
+/*----^modalwithforms^----*/
+
+/*----modalwithsucess----*/
+.modal__container-confirm {
   z-index: 1;
   position: fixed;
   bottom: 0;
@@ -54,28 +193,7 @@
   flex-direction: column;
 }
 
-.modal__form {
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-}
-
-.modal__fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  width: 430px;
-  background-color: white;
-  border-radius: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0.3);
-}
-
-.modal__button {
+.modal__close-icon {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 0;
@@ -86,26 +204,20 @@
   height: 40px;
 }
 
-.modal__close:hover {
-  opacity: 0.6;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 .modal__confirm-title {
   font-weight: 900;
   font-size: 24px;
   line-height: 1.17em;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #000;
   width: 315px;
   margin: 43px 0 0 36px;
 }
 
-.modal__confirm-signin {
+.modal__confirm-signin-button {
   border: none;
   color: #2f71e5;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22em;
@@ -114,36 +226,15 @@
   text-align: left;
 }
 
-.modal__confirm-signin:hover {
+.modal__confirm-signin-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-
-.modal__header {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 1.2em;
-  color: #1a1b22;
-  width: fit-content;
-  margin: 36px 0 0 36px;
-}
-
-.modal__errors-signup {
-  width: 200px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.2em;
-  margin: 17px 115px 8px 115px;
-  color: #ff0000;
-  text-align: center;
-}
+/*----^modalwithsucess^----*/
 
 .modal__error-message {
   width: 200px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.2em;
@@ -152,68 +243,9 @@
   text-align: center;
 }
 
-.modal__main {
-  width: 358px;
-  height: 64px;
-  background-color: #2f71e5;
-  margin: 20px 35px 0 35px;
-  padding: 0;
-  border: none;
-  border-radius: 4px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.33em;
-  text-align: center;
-  color: white;
-  border-radius: 100px;
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
-}
-
-.modal__main:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-.modal__main:disabled {
-  background-color: #e6e8e8;
-  color: #b6bcbf;
-}
-
-.modal__main:disabled:hover {
-  opacity: 1;
-  cursor: default;
-}
-
-.modal__other {
-  width: 226px;
-  margin: 16px 102px 28px 102px;
-  padding: 0;
-  border: none;
-  background-color: white;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.2em;
-  text-align: center;
-}
-
-.modal__other:hover {
-  cursor: pointer;
-}
-
-.modal__color {
-  color: #2f71e5;
-}
-
-.modal__color:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
+/*----signin and register modal----*/
 .modal__label {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -222,9 +254,8 @@
   margin: 22px 0 0 36px;
 }
 
-/*----8/9/23----*/
 .modal__input {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -246,33 +277,16 @@
   margin: 0;
 }
 
-.modal__errors {
+.modal__error-message {
   width: 200px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.2em;
   margin: 3px 0 0 36px;
   color: #ff0000;
 }
-.modal__text {
-  margin: 24px 0 0 28px;
-  font-size: 16px;
-  line-height: 125%;
-  font-weight: 700;
-}
-
-.modal__input_button {
-  margin: 0;
-}
-
-.modal__label_multiple {
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: 8px;
-}
-
-/*----Logout----*/
+/*----^signin and register modal^----*/
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .modal__container-form {
@@ -286,15 +300,7 @@
     display: flex;
   }
 
-  .modal__button {
-    top: -40px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
-    background-size: 100%;
-  }
-
-  .modal__header {
+  .modal__title {
     margin: 28px 0 0 16px;
   }
 
@@ -303,13 +309,13 @@
     margin: 17px 16px 8px 16px;
   }
 
-  .modal__main {
+  .modal__submit-button {
     width: 288px;
     height: 44px;
     margin: 5px 16px 16px 16px;
   }
 
-  .modal__other {
+  .modal__other-button {
     margin: 16px auto 0 auto;
   }
 
@@ -325,14 +331,6 @@
 
   .modal__errors {
     margin: 3px 0 0 16px;
-  }
-
-  .modal__text {
-    margin: 24px 0 0 16px;
-  }
-
-  .modal__inputs_container {
-    margin: 14px 0 0 16px;
   }
 }
 

@@ -53,7 +53,6 @@ const NewsCardList = ({ cards, isLoading, isLoggedIn, handleBook, handleSignupCl
                 handleBook={handleBook}
                 handleSignupClick={handleSignupClick}
                 newsCards={newsCards}
-                p
               />
             ))}
           </ul>

@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NewsCard = ({
   card,
@@ -9,11 +9,9 @@ const NewsCard = ({
   handleDeleteClick,
   handleSignupClick,
   setNewsCards,
-  newsCards,
+  newsCards
 }) => {
   const [isShown, setIsShown] = React.useState(false);
-  // const [isClicked, setIsClicked] = React.useState(false);
-  // const [hasImage, setHasImage] = React.useState(true);
   const [isVisible, setIsVisible] = React.useState(true);
   const [isBooked, setIsBooked] = React.useState(false);
 
@@ -46,9 +44,9 @@ const NewsCard = ({
   React.useEffect(() => {
     if (card.urlToImage === null || card.image === null) {
       card.urlToImage =
-        "https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png";
+        'https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png';
       card.image =
-        "https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png";
+        'https://cdn.discordapp.com/attachments/486264193402798080/1116950882626588783/image.png';
     }
   }, []);
 
@@ -63,35 +61,23 @@ const NewsCard = ({
       {isVisible ? (
         <div className="card">
           <div className="card__container">
-            <NavLink
-              to={card.url ? card.url : card.link}
-              className="card__link"
-              target="_blank"
-            >
+            <NavLink to={card.url ? card.url : card.link} className="card__link" target="_blank">
               <img
                 src={card.urlToImage ? card.urlToImage : card.image}
                 alt={`${card.title}`}
                 className="card__image"
-                onLoad={() => console.log("Image loaded")}
+                onLoad={() => console.log('Image loaded')}
               />
             </NavLink>
             {isLoggedIn ? null : (
-              <p
-                className={
-                  isShown ? "card__modal-active" : "card__modal-inactive "
-                }
-              >
+              <p className={isShown ? 'card__modal-active' : 'card__modal-inactive '}>
                 Sign in to save articles
               </p>
             )}
             {isSaved ? (
               <>
                 <p className="card__keyword">{card.keyword}</p>
-                <p
-                  className={
-                    isShown ? "card__modal-active" : "card__modal-inactive "
-                  }
-                >
+                <p className={isShown ? 'card__modal-active' : 'card__modal-inactive '}>
                   Remove from saved
                 </p>
                 <button
@@ -104,11 +90,7 @@ const NewsCard = ({
             ) : (
               <button
                 className={`card__book  ${
-                  isBooked
-                    ? "card__book-clicked"
-                    : isLoggedIn
-                    ? "card__book-active"
-                    : null
+                  isBooked ? 'card__book-clicked' : isLoggedIn ? 'card__book-active' : null
                 }`}
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
@@ -116,24 +98,16 @@ const NewsCard = ({
               />
             )}
           </div>
-          <NavLink
-            to={card.url ? card.url : card.link}
-            className="card__text-link"
-            target="_blank"
-          >
+          <NavLink to={card.url ? card.url : card.link} className="card__text-link" target="_blank">
             <p className="card__date">
-              {new Date(
-                card.publishedAt ? card.publishedAt : card.date
-              ).toLocaleString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
+              {new Date(card.publishedAt ? card.publishedAt : card.date).toLocaleString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
               })}
             </p>
             <h3 className="card__title">{card.title}</h3>
-            <p className="card__description">
-              {card.description ? card.description : card.text}
-            </p>
+            <p className="card__description">{card.description ? card.description : card.text}</p>
             <h4 className="card__publisher">
               {card.source && card.source.name ? card.source.name : card.source}
               {/* {card.source.name ? card.source.name : card.source} */}

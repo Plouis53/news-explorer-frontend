@@ -1,6 +1,6 @@
-import React from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { useForm } from 'react-hook-form';
 
 const SigninModal = ({
   onClose,
@@ -9,12 +9,12 @@ const SigninModal = ({
   handleRegisterClick,
   isLoading,
   errorMessage,
-  setErrorMessage,
+  setErrorMessage
 }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid }
   } = useForm();
 
   const onSubmit = (data) => {
@@ -23,13 +23,13 @@ const SigninModal = ({
   };
 
   const buttonClasses = {
-    mainButton: "modal__login",
-    altButton: "modal__other",
+    mainButton: 'modal__login',
+    altButton: 'modal__other'
   };
 
   const buttonTexts = {
-    button: isLoading ? "Saving..." : "Sign in",
-    other: "or Sign up",
+    button: isLoading ? 'Saving...' : 'Sign in',
+    other: ' Sign up'
   };
 
   return (
@@ -53,22 +53,20 @@ const SigninModal = ({
           type="email"
           placeholder="Email"
           required
-          {...register("email", {
-            required: "Email is required.",
+          {...register('email', {
+            required: 'Email is required.',
             maxLength: {
               value: 30,
-              message: "Maximum length is 30 characters",
+              message: 'Maximum length is 30 characters'
             },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Invalid email address.",
-            },
+              message: 'Invalid email address.'
+            }
           })}
         />
       </label>
-      {errors.email && (
-        <span className="modal__error-message">{errors.email.message}</span>
-      )}
+      {errors.email && <span className="modal__error-message">{errors.email.message}</span>}
       <label className="modal__label">
         Password
         <input
@@ -76,18 +74,16 @@ const SigninModal = ({
           placeholder="Password"
           required
           type="password"
-          {...register("password", {
-            required: "Password is required.",
+          {...register('password', {
+            required: 'Password is required.',
             minLength: {
               value: 4,
-              message: "Minimum length is 8 characters",
-            },
+              message: 'Minimum length is 8 characters'
+            }
           })}
         />
       </label>
-      {errors.password && (
-        <span className="modal__error-message">{errors.password.message}</span>
-      )}
+      {errors.password && <span className="modal__error-message">{errors.password.message}</span>}
     </ModalWithForm>
   );
 };
