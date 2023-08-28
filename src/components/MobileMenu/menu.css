@@ -14,7 +14,7 @@
   align-items: flex-start;
 }
 
-.menu__container-logged {
+.menu__container-loggin {
   margin: 16px 6px 0 0;
   width: 320px;
   height: 285px;
@@ -26,14 +26,12 @@
   flex-direction: column;
 }
 
-.menu__container-loggedout {
+.menu__container {
   margin: 16px 6px 0 0;
   width: 320px;
   height: 230px;
   background-color: #1a1b22;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  position: absolute;
+
   display: flex;
   flex-direction: column;
 }
@@ -52,12 +50,12 @@
   color: #fff;
   font-weight: 500;
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .menu__logo {
   margin: 16px 16px 16px 16px;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5em;
@@ -95,7 +93,7 @@
   color: #fff;
   font-weight: 500;
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -114,7 +112,7 @@
   height: 48px;
   margin: 20px 16px 0 16px;
   background-color: transparent;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33em;
@@ -130,16 +128,22 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .menu__container {
-    background-color: #1a1b22;
-    margin: 16px 6px 0 0;
+  .menu__home {
+    margin-top: 5px;
+  }
+
+  .menu__articles {
+    margin-top: 5px;
+  }
+
+  .menu__logout-button {
+    margin: 10px 6px 10px 6px;
+    outline: auto;
   }
 
   .menu__close {
     position: absolute;
     right: 15px;
-    top: 30px; 
+    top: 30px;
   }
-
-  
 }

@@ -1,7 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import closeIcon from "../../images/close.svg";
-import logout from "../../images/logoutWhite.svg";
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import closeIcon from '../../images/close.svg';
+import logout from '../../images/logoutWhite.svg';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 const MobileMenu = ({
   closeModal,
@@ -10,9 +11,12 @@ const MobileMenu = ({
   handleSigninClick,
   // handleRegister,
   isLoggedIn,
-  handleSignout,
+  handleSignout
 }) => {
-  const [loggedIn, setLoggedIn] = React.useState("");
+  const [loggedIn, setLoggedIn] = React.useState('');
+  const currentUser = useContext(CurrentUserContext);
+
+  const userData = currentUser.data ? currentUser.data : { name: '' };
 
   const handleSignoutClick = () => {
     handleSignout();
@@ -21,9 +25,9 @@ const MobileMenu = ({
 
   React.useEffect(() => {
     if (isLoggedIn) {
-      setLoggedIn("loggedin");
+      setLoggedIn('loggedin');
     } else {
-      setLoggedIn("loggedout");
+      setLoggedIn('loggedout');
     }
   }, []);
   return (
@@ -31,11 +35,7 @@ const MobileMenu = ({
       <div className={`menu__container-${loggedIn}`}>
         <div className="menu__container">
           <div className="menu__over">
-            <NavLink
-              to="/"
-              className="menu__logo menu__link"
-              onClick={closeModal}
-            >
+            <NavLink to="/" className="menu__logo menu__link" onClick={closeModal}>
               News Explorer
             </NavLink>
             <button type="button" className="menu__button" aria-label="Close">
@@ -47,11 +47,7 @@ const MobileMenu = ({
               />
             </button>
           </div>
-          <NavLink
-            to="/"
-            className="menu__home menu__link"
-            onClick={closeModal}
-          >
+          <NavLink to="/" className="menu__home menu__link" onClick={closeModal}>
             Home
           </NavLink>
           {isLoggedIn ? (
@@ -63,16 +59,9 @@ const MobileMenu = ({
               >
                 Saved articles
               </NavLink>
-              <button
-                className="menu__logout-button"
-                onClick={handleSignoutClick}
-              >
-                Username
-                <img
-                  src={logout}
-                  alt="Logout Button"
-                  className="menu__logout-image"
-                />
+              <button className="menu__logout-button" onClick={handleSignoutClick}>
+                {userData.name}
+                <img src={logout} alt="Logout Button" className="menu__logout-image" />
               </button>
             </>
           ) : (
