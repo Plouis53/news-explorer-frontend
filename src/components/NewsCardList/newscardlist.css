@@ -38,25 +38,8 @@
   padding: 0;
   margin: 24px auto 40px auto;
   background-color: #fff;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
-
-/* .news__show {
-  width: 288px;
-  height: 64px;
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.33em;
-  color: #1a1b22;
-  border-radius: 100px;
-  border: none;
-  padding: 0;
-  margin: 64px auto 80px auto;
-  background-color: #fff;
-  border: 1px solid #000;
-} */
 
 .news__show:hover {
   opacity: 0.8;
