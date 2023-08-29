@@ -181,15 +181,15 @@
 }
 
 .card__publisher {
-  /* width: 192px; */
-  height: 20px;
-  top: 890px;
-  left: 56px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto slab';
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #b6bcbf;
+  /* width: 121px; */
+  height: 20px;
+  top: 1298px;
+  left: 126px;
   margin: 24px 0 24px 24px;
   text-transform: uppercase;
   align-self: flex-end;
