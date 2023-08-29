@@ -42,7 +42,8 @@ const MobileMenu = ({
 
   return (
     <div className="menu" onClick={handleOutClick}>
-      <div className={`menu__container-${isLoggedIn ? 'loggedin' : 'loggedout'}`}>
+      <div className={`menu__container ${isLoggedIn ? 'menu__container-loggedin' : ''}`}>
+        {/* <div className={`menu__container-${isLoggedIn ? 'loggedin' : 'loggedout'}`}> */}
         <div className="menu__container">
           <div className="menu__over">
             <NavLink to="/" className="menu__logo menu__link" onClick={closeModal}>

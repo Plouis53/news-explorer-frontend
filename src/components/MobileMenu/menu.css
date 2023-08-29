@@ -10,14 +10,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
+  margin-top: 20px;
 }
 
-.menu__container-loggin {
-  margin: 16px 6px 0 0;
+.menu__container-loggedin {
+  /* margin: 16px 6px 0 0; */
   width: 320px;
-  height: 285px;
+  /* height: 285px; */
   background-color: #1a1b22;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -31,7 +32,6 @@
   width: 320px;
   height: 230px;
   background-color: #1a1b22;
-
   display: flex;
   flex-direction: column;
 }
@@ -54,7 +54,7 @@
 }
 
 .menu__logo {
-  margin: 16px 16px 16px 16px;
+  margin: 20px 16px 16px 16px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -142,8 +142,7 @@
   }
 
   .menu__close {
-    position: absolute;
     right: 15px;
-    top: 30px;
+    top: 40px;
   }
 }

@@ -1,5 +1,5 @@
 .news {
-  padding: 80px 104px 0 104px;
+  padding: 40px 104px 0 104px;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 
 .news__cards {
   display: grid;
-  margin: 64px 0 62px 0;
+  /* margin: 64px 0 62px 0; */
   gap: 16px;
   padding: 0;
   grid-template-columns: repeat(3, 400px);
@@ -49,7 +49,7 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .news {
     padding: 32px 16px 0 16px;
-    margin: 0;
+    flex-direction: column;
   }
 
   .news__header {

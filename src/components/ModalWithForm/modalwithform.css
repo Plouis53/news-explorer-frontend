@@ -295,9 +295,15 @@
 
   .modal__fieldset {
     width: 320px;
-    height: 545px;
+    height: 560px;
     border-radius: 10px;
     display: flex;
+  }
+
+  .modal__form {
+    width: 320px;
+    height: 536px;
+    border: 1px;
   }
 
   .modal__title {
