@@ -4,16 +4,14 @@
 
 .saved__container {
   margin: 0 104px 0 104px;
-  width: 768px;
-  padding-bottom: 26px;
 }
 
 .saved__title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  line-height: 1.33em;
-  font-weight: 400;
   color: rgba(26, 27, 34, 0.5);
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33em;
 }
 
 .saved__header {
@@ -25,15 +23,14 @@
 }
 
 .saved__words {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.33em;
-  margin-bottom: 16px;
+  font-size: 18;
+  line-height: 24px;
 }
 
 .saved__bold {
-  font-family: 'Roboto, slab';
+  /* font-family: 'Roboto, slab'; */
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
@@ -43,7 +40,6 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .saved {
-    max-width: 320px;
     margin: 8px 0 0 0;
   }
 
@@ -54,10 +50,6 @@
   .saved__title {
     width: 288px;
     height: 24px;
-    /* top: 64px;
-    left: 16px;
-    font-size: 12px;
-    line-height: 24px; */
     letter-spacing: 0px;
     text-align: left;
   }
@@ -73,10 +65,6 @@
     line-height: 34px;
     letter-spacing: 0px;
     text-align: left;
-
-    /* font-size: 30px;
-    line-height: 1.133em;
-    margin: 16px 0 0 0; */
   }
 
   .saved__words {
@@ -85,9 +73,6 @@
     height: 48px;
     top: 222px;
     left: 15px;
-    /* line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left; */
   }
 }
 

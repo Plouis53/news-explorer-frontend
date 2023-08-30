@@ -294,14 +294,13 @@
   }
 
   .modal__fieldset {
-    width: 320px;
     height: 560px;
     border-radius: 10px;
     display: flex;
+    width: 215px;
   }
 
   .modal__form {
-    width: 320px;
     height: 536px;
     border: 1px;
   }
@@ -339,6 +338,3 @@
     margin: 3px 0 0 16px;
   }
 }
-
-/* @media screen and (min-width: 823px) and (max-width: 1440px) {
-  } */

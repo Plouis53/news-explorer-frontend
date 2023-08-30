@@ -1,5 +1,5 @@
 .page {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   position: relative;
   margin: 0 auto 0 auto;
   background-color: #ffffff;
@@ -8,12 +8,12 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .page {
-    max-width: 320px;
+    /* max-width: 320px; */
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .page {
-    max-width: 768px;
+    /* max-width: 768px; */
   }
 }

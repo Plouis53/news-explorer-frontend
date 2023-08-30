@@ -85,7 +85,6 @@ const SavedNews = ({
         ) : (
           <>
             <section className="saved__container">
-              {' '}
               <p className="saved__title">Saved Articles</p>
               <h2 className="saved__header">{`${userData.name} you have ${
                 newsCards.length
@@ -119,55 +118,3 @@ const SavedNews = ({
 };
 
 export default SavedNews;
-
-//   return (
-//     <>
-//       <Navigation
-//         onSigninClick={onSigninClick}
-//         theme="dark"
-//         isHomeActive={false}
-//         isLoggedIn={isLoggedIn}
-//         handleMobileClick={handleMobileClick}
-//         handleSignout={handleSignout}
-//       />
-//       <section className="saved">
-//         {newsCards.length === 0 ? (
-//           <h2 className="saved__header">Save some cards to see them here!</h2>
-//         ) : (
-//           <>
-//             <div className="saved__container">
-//               <p className="saved__title">Saved Articles</p>
-//               <h2 className="saved__header">{`${userData.name} you have ${
-//                 newsCards.length
-//               } saved article${newsCards.length === 1 ? "" : "s"}`}</h2>
-//               <p className="saved__words">
-//                 By keywords:{" "}
-//                 <span className="saved__bold">
-//                   {keywords.length === 3
-//                     ? `${keywords[0]}, ${keywords[1]}, and ${
-//                         keywordsAmount > 3
-//                           ? keywordsAmount - 2 + " more"
-//                           : keywords[2]
-//                       }`
-//                     : keywords.length === 2
-//                     ? `${keywords[0]} and ${keywords[1]}`
-//                     : keywords.length === 1
-//                     ? `${keywords[0]}`
-//                     : null}
-//                 </span>
-//               </p>
-//             </div>
-//             <NewsCardListSaved
-//               isLoggedIn={isLoggedIn}
-//               newsCards={newsCards}
-//               handleDeleteClick={handleDeleteClick}
-//               setNewsCards={setNewsCards}
-//             />
-//           </>
-//         )}
-//       </section>
-//     </>
-//   );
-// };
-
-// export default SavedNews;

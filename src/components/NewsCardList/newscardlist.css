@@ -1,5 +1,5 @@
 .news {
-  padding: 40px 104px 0 104px;
+  padding: 80px 104px 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,8 @@
 
 .news__cards {
   display: grid;
-  /* margin: 64px 0 62px 0; */
+  grid-gap: 16px;
+  margin: 64px 0 62px 0;
   gap: 16px;
   padding: 0;
   grid-template-columns: repeat(3, 400px);

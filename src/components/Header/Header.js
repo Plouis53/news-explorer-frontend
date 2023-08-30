@@ -22,6 +22,7 @@ const Header = ({
 
   return (
     <header className={`header ${headerClasses}`}>
+      {/* <header className="header"> */}
       <Navigation
         onSigninClick={onSigninClick}
         theme={theme}

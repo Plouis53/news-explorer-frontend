@@ -11,7 +11,7 @@
 }
 
 .card__container {
-  position: relative;
+  /* position: relative; */
 }
 
 .card__link {
@@ -180,13 +180,13 @@
   -webkit-box-orient: vertical;
 }
 
-.card__publisher {
+/* .card__publisher {
   font-family: 'Roboto slab';
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #b6bcbf;
-  /* width: 121px; */
+  width: 121px;
   height: 20px;
   top: 1298px;
   left: 126px;
@@ -194,6 +194,22 @@
   text-transform: uppercase;
   align-self: flex-end;
   letter-spacing: 0.4000000059604645px;
+} */
+
+.card__publisher {
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b6bcbf;
+  height: 20px;
+  margin: 24px 0 24px 24px;
+  text-transform: uppercase;
+  align-self: flex-end;
+  letter-spacing: 0.4000000059604645px;
+  /* Adjust positioning properties */
+  position: absolute; /* Position it absolutely within the card */
+  bottom: 0; /* Align it to the bottom */
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

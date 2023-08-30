@@ -10,15 +10,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: flex-start;
   margin-top: 20px;
 }
 
 .menu__container-loggedin {
-  /* margin: 16px 6px 0 0; */
+  margin: 16px 6px 0 0;
   width: 320px;
-  /* height: 285px; */
+  height: 285px;
   background-color: #1a1b22;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -27,11 +27,14 @@
   flex-direction: column;
 }
 
-.menu__container {
+.menu__container-loggedout {
   margin: 16px 6px 0 0;
   width: 320px;
   height: 230px;
   background-color: #1a1b22;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
   display: flex;
   flex-direction: column;
 }
@@ -40,25 +43,27 @@
   height: 56px;
   width: 320px;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-  display: flex;
+  /* display: flex; */
 }
 
 .menu__link {
-  text-decoration: none;
-  list-style-type: none;
-  display: flex;
-  color: #fff;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
-  font-family: 'Roboto', sans-serif;
+  line-height: 56px;
+  letter-spacing: 0px;
+  color: #fff;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .menu__logo {
-  margin: 20px 16px 16px 16px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 18px;
+  line-height: 56px;
+  margin: 20px 16px 16px 16px;
+  /* line-height: 1.5em; */
   user-select: none;
 }
 
@@ -96,6 +101,7 @@
   font-family: 'Roboto', sans-serif;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
+  line-height: 56px;
 }
 
 .menu__articles {
@@ -103,7 +109,7 @@
   line-height: 3em;
 }
 
-.menu__logout-button {
+.menu__signout-button {
   display: flex;
   border-radius: 100px;
   text-align: center;
@@ -111,49 +117,19 @@
   align-items: center;
   height: 48px;
   margin: 20px 16px 0 16px;
-  background-color: transparent;
+  background-color: initial;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33em;
   color: inherit;
-  padding: 0 19px 0 19px;
+  /* padding: 0 19px 0 19px; */
   color: #fff;
+  line-height: 56px;
 }
 
-.menu__logout-image {
+.menu__signout-image {
   margin: 0 0 0 5px;
   width: 24px;
   height: 24px;
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  /*?*/
-  .menu__container-loggedin,
-  .menu__container {
-    /* Adjust the top and bottom positioning */
-    top: 30px; /* Increase this value to move the popup higher */
-    bottom: auto; /* Remove the previous 'bottom' property */
-
-    /* Adjust the height and max-height *
-    height: calc(100% - 60px); /* Adjust this value as needed *
-    max-height: calc(100% - 60px); /* Adjust this value as needed */
-  }
-  .menu__home {
-    margin-top: 5px;
-  }
-
-  .menu__articles {
-    margin-top: 5px;
-  }
-
-  .menu__logout-button {
-    margin: 10px 6px 10px 6px;
-    outline: auto;
-  }
-
-  .menu__close {
-    right: 15px;
-    top: 15px;
-  }
 }
