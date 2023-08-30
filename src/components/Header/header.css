@@ -7,6 +7,7 @@
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
+  /* background: no-repeat; */
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
