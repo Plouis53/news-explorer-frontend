@@ -228,8 +228,8 @@ function App() {
               path="/"
               element={
                 <MainPage
-                  handleSearchSubmit={handleSearchSubmit}
                   handleSigninClick={handleSigninClick}
+                  handleSearchSubmit={handleSearchSubmit}
                   activeSearch={activeSearch}
                   cards={newsCards}
                   isSearchLoading={isSearchLoading}
@@ -239,20 +239,23 @@ function App() {
                   handleBook={handleBook}
                   setKeyword={setKeyword}
                   handleSignupClick={handleRegisterClick}
-                />
+                ></MainPage>
               }
             />
-            <Route path="/saved-articles">
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <SavedNews
-                  isLoggedIn={isLoggedIn}
-                  onSigninClick={handleSigninClick}
-                  handleMobileClick={handleMobileClick}
-                  handleSignout={handleSignout}
-                  handleDeleteClick={handleDeleteClick}
-                />
-              </ProtectedRoute>
-            </Route>
+            <Route
+              path="/saved-articles"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <SavedNews
+                    isLoggedIn={isLoggedIn}
+                    onSigninClick={handleSigninClick}
+                    handleMobileClick={handleMobileClick}
+                    handleSignout={handleSignout}
+                    handleDeleteClick={handleDeleteClick}
+                  />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
           <Footer />
           {activeModal === 'signin' && (

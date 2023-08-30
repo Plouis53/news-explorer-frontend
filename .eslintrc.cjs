@@ -36,6 +36,7 @@ module.exports = {
     'valid-typeof': [0], //?
     'no-control-regex': [0], //?
     'no-undef': [0], //?
-    'no-unsafe-finally': [0] //?
+    'no-unsafe-finally': [0], //?
+    'react/no-children-prop': [0] //?
   }
 };
