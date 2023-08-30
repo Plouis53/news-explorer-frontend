@@ -5,7 +5,6 @@
   "homepage": "https://newsquest.mooo.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,11 +16,15 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "start": " set PORT=3001 &&   react-scripts start",
+    "start": " set PORT=3001 && react-scripts start",
+    "lint": "npx eslint .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* PLouis53@newsquest.mooo.com:/home/plouis53/frontend"
+    "deploy": "npm run build && scp -r ./build/* PLouis53@newsquest.mooo.com:/home/plouis53/frontend",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -45,5 +48,18 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "onchange": "^7.1.0",
+    "prettier": "^3.0.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
 }

@@ -1,28 +1,27 @@
 @import url(./vendor/fonts/fonts.css);
-@import url(./blocks/about.css);
-@import url(./blocks/footer.css);
-@import url(./blocks/header.css);
-@import url(./blocks/menu.css);
-@import url(./blocks/modalwithform.css);
-@import url(./blocks/newscard.css);
-@import url(./blocks/notfound.css);
-@import url(./blocks/newscardlist.css);
-@import url(./blocks/navigation.css);
-@import url(./blocks/page.css);
-@import url(./blocks/preloader.css);
-@import url(./blocks/savednews.css);
-@import url(./blocks/search.css);
+@import url(./components/About/about.css);
+@import url(./components/Footer/footer.css);
+@import url(./components/Header/header.css);
+@import url(./components/MobileMenu/menu.css);
+@import url(./components/ModalWithForm/modalwithform.css);
+@import url(./components/NewsCard/newscard.css);
+@import url(./components/NotFound/notfound.css);
+@import url(./components/NewsCardList/newscardlist.css);
+@import url(./components/Navigation/navigation.css);
+@import url(./components/Page/page.css);
+@import url(./components/Preloader/preloader.css);
+@import url(./components/SavedNews/savednews.css);
+@import url(./components/Search/search.css);
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "Roboto", "Roboto Slab", source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: 'Roboto', 'Roboto Slab', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
