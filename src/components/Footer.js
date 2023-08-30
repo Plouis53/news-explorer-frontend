@@ -6,7 +6,9 @@ import Linkedin from "../images/linkedin.svg";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer__copyright">© 2023 Supersite, Powered by News API</p>
+      <p className="footer__copyright">
+        © 2023 Supersite, Powered by News API
+      </p>
       <div className="footer__right">
         <div className="footer__links">
           <NavLink to="/" className="footer__link">

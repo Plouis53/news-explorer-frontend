@@ -148,9 +148,9 @@ function App() {
       .then(() => {
         savedCards.splice(
           savedCards.findIndex(
-            (c) => c.link === card.link || c.link === card.url
+            (c) => c.link === card.link || c.link === card.url,
           ),
-          1
+          1,
         );
       })
       .catch((e) => console.log(e));
