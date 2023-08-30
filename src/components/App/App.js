@@ -147,28 +147,11 @@ function App() {
   };
 
   const handleBook = (card, isBooked) => {
-<<<<<<< HEAD:src/components/App.js
-    isBooked ? checkDelete(card) : checkDuplicate(card);
-  };
-
-  const handleDeleteClick = (id, card) => {
-    removeArticle(id, token)
-      .then(() => {
-        savedCards.splice(
-          savedCards.findIndex(
-            (c) => c.link === card.link || c.link === card.url,
-          ),
-          1,
-        );
-      })
-      .catch((e) => console.log(e));
-=======
     if (isBooked) {
       checkDelete(card);
     } else {
       checkDuplicate(card);
     }
->>>>>>> main:src/components/App/App.js
   };
 
   const handleSearchSubmit = (input) => {
@@ -259,20 +242,17 @@ function App() {
                 />
               }
             />
-            <Route
-              path="/saved-articles"
-              element={
-                <ProtectedRoute isLoggedIn={isLoggedIn}>
-                  <SavedNews
-                    isLoggedIn={isLoggedIn}
-                    onSigninClick={handleSigninClick}
-                    handleMobileClick={handleMobileClick}
-                    handleSignout={handleSignout}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                </ProtectedRoute>
-              }
-            ></Route>
+            <Route path="/saved-articles">
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <SavedNews
+                  isLoggedIn={isLoggedIn}
+                  onSigninClick={handleSigninClick}
+                  handleMobileClick={handleMobileClick}
+                  handleSignout={handleSignout}
+                  handleDeleteClick={handleDeleteClick}
+                />
+              </ProtectedRoute>
+            </Route>
           </Routes>
           <Footer />
           {activeModal === 'signin' && (

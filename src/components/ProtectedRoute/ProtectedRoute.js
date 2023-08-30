@@ -1,3 +1,12 @@
+// import React from 'react';
+// import { Route, Navigate } from 'react-router-dom';
+
+// function ProtectedRoute({ children, isLoggedIn }) {
+//   return <Route>{isLoggedIn ? children : <Navigate to={'/saved-articles'} />}</Route>;
+// }
+
+// export default ProtectedRoute;
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 

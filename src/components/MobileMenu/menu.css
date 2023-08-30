@@ -133,19 +133,3 @@
   width: 24px;
   height: 24px;
 }
-<<<<<<< HEAD:src/blocks/menu.css
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .menu__container {
-    background-color: #1a1b22;
-    margin: 16px 6px 0 0;
-  }
-
-  .menu__close {
-    position: absolute;
-    right: 15px;
-    top: 30px;
-  }
-}
-=======
->>>>>>> main:src/components/MobileMenu/menu.css
