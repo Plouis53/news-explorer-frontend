@@ -1,11 +1,11 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
 const SearchForm = ({ handleSearchSubmit, setKeyword }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
 
   const [buttonColor, setButtonColor] = React.useState({});
@@ -14,13 +14,13 @@ const SearchForm = ({ handleSearchSubmit, setKeyword }) => {
     setKeyword(data.searches);
     handleSearchSubmit(data.searches);
     setButtonColor({
-      backgroundColor: "#2a65cc",
+      backgroundColor: '#2a65cc'
     });
   };
 
   React.useState(() => {
     setButtonColor({
-      backgroundColor: "#2f71e5",
+      backgroundColor: '#2f71e5'
     });
   }, []);
 
@@ -32,13 +32,11 @@ const SearchForm = ({ handleSearchSubmit, setKeyword }) => {
             className="search__input"
             type="text"
             placeholder="Enter topic"
-            {...register("searches", {
-              required: "Please enter a keyword",
+            {...register('searches', {
+              required: 'Please enter a keyword'
             })}
           />
-          {errors.searches && (
-            <span className="search__errors">{errors.searches.message}</span>
-          )}
+          {errors.searches && <span className="search__errors">{errors.searches.message}</span>}
         </div>
         <button className="search__search" style={buttonColor}>
           Search

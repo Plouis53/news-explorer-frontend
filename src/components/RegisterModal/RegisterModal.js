@@ -1,6 +1,6 @@
-import React from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { useForm } from 'react-hook-form';
 
 const RegisterModal = ({
   onClose,
@@ -9,12 +9,12 @@ const RegisterModal = ({
   handleSignup,
   isLoading,
   errorMessage,
-  setErrorMessage,
+  setErrorMessage
 }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid }
   } = useForm();
 
   const onSubmit = (data) => {
@@ -22,13 +22,13 @@ const RegisterModal = ({
   };
 
   const buttonClasses = {
-    mainButton: "modal__login",
-    altButton: "modal__other",
+    mainButton: 'modal__login',
+    altButton: 'modal__other'
   };
 
   const buttonTexts = {
-    button: isLoading ? "Saving..." : "Sign up",
-    other: "Sign in",
+    button: isLoading ? 'Saving...' : 'Sign up',
+    other: 'Sign in'
   };
 
   return (
@@ -52,22 +52,20 @@ const RegisterModal = ({
           type="email"
           placeholder="Email"
           required
-          {...register("email", {
-            required: "Email is required.",
+          {...register('email', {
+            required: 'Email is required.',
             maxLength: {
               value: 30,
-              message: "Maximum length is 30 characters",
+              message: 'Maximum length is 30 characters'
             },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Invalid email address.",
-            },
+              message: 'Invalid email address.'
+            }
           })}
         />
       </label>
-      {errors.email && (
-        <span className="modal__error-message">{errors.email.message}</span>
-      )}
+      {errors.email && <span className="modal__error-message">{errors.email.message}</span>}
       <label className="modal__label">
         Password
         <input
@@ -75,40 +73,36 @@ const RegisterModal = ({
           placeholder="Password"
           required
           type="password"
-          {...register("password", {
-            required: "Password is required.",
+          {...register('password', {
+            required: 'Password is required.',
             minLength: {
               value: 4,
-              message: "Minimum length is 8 characters",
-            },
+              message: 'Minimum length is 8 characters'
+            }
           })}
         />
       </label>
-      {errors.password && (
-        <span className="modal__error-message">{errors.password.message}</span>
-      )}
+      {errors.password && <span className="modal__error-message">{errors.password.message}</span>}
       <label className="modal__label">
         Name
         <input
           className="modal__input"
           placeholder="Enter your username"
           required
-          {...register("name", {
-            required: "Name is required.",
+          {...register('name', {
+            required: 'Name is required.',
             minLength: {
               value: 2,
-              message: "Minimum length is 2 characters",
+              message: 'Minimum length is 2 characters'
             },
             maxLength: {
               value: 30,
-              message: "Maximum length is 30 characters",
-            },
+              message: 'Maximum length is 30 characters'
+            }
           })}
         />
       </label>
-      {errors.name && (
-        <span className="modal__error-message">{errors.name.message}</span>
-      )}
+      {errors.name && <span className="modal__error-message">{errors.name.message}</span>}
     </ModalWithForm>
   );
 };
