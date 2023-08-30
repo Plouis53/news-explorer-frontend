@@ -37,7 +37,7 @@ const NewsCard = ({
           return false;
         }
         return true;
-      }),
+      })
     );
   };
 
