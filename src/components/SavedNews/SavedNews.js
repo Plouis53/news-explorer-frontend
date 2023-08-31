@@ -81,7 +81,7 @@ const SavedNews = ({
       <main className="saved">
         {' '}
         {newsCards.length === 0 ? (
-          <h2 className="saved__header">Save some cards to see them here!</h2>
+          <h1 className="saved__header">Save some cards to see them here!</h1>
         ) : (
           <>
             <section className="saved__container">
