@@ -1,4 +1,5 @@
 @import url(./vendor/fonts/fonts.css);
+@import url(./components/App/app.css);
 @import url(./components/About/about.css);
 @import url(./components/Footer/footer.css);
 @import url(./components/Header/header.css);
@@ -8,7 +9,6 @@
 @import url(./components/NotFound/notfound.css);
 @import url(./components/NewsCardList/newscardlist.css);
 @import url(./components/Navigation/navigation.css);
-@import url(./components/Page/page.css);
 @import url(./components/Preloader/preloader.css);
 @import url(./components/SavedNews/savednews.css);
 @import url(./components/Search/search.css);

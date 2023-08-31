@@ -110,7 +110,6 @@ const NewsCard = ({
             <p className="card__description">{card.description ? card.description : card.text}</p>
             <h4 className="card__publisher">
               {card.source && card.source.name ? card.source.name : card.source}
-              {/* {card.source.name ? card.source.name : card.source} */}
             </h4>
           </NavLink>
         </div>

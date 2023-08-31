@@ -14,6 +14,8 @@ const NewsCardListSaved = ({ isLoggedIn, newsCards, handleDeleteClick, setNewsCa
             handleDeleteClick={handleDeleteClick}
             setNewsCards={setNewsCards}
             newsCards={newsCards}
+            handleBook={undefined}
+            handleSignupClick={undefined}
           />
         ))}
       </ul>

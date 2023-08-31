@@ -1,10 +1,10 @@
 .news {
+  background-color: #f5f6f7;
   padding: 80px 104px 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f5f6f7;
 }
 
 .news__header {
@@ -26,6 +26,7 @@
 }
 
 .news__show {
+  background-color: #fff;
   width: 288px;
   height: 64px;
   color: #000;
@@ -38,8 +39,6 @@
   border: none;
   padding: 0;
   margin: 24px auto 40px auto;
-  background-color: #fff;
-  /* border: 1px solid #000; */
 }
 
 .news__show:hover {
@@ -47,7 +46,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .news {
     padding: 32px 16px 0 16px;
     flex-direction: column;

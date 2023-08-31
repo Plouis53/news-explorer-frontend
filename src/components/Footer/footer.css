@@ -48,16 +48,6 @@
   opacity: 0.6;
 }
 
-/* .footer__github {
-  width: 24px;
-  height: 24px;
-}
-
-.footer__github:hover {
-  cursor: pointer;
-  opacity: 0.6;
-} */
-
 .footer__icon-image {
   width: 24px;
   height: 24px;
@@ -68,7 +58,7 @@
   opacity: 0.6;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .footer {
     height: 176px;
     flex-direction: column-reverse;

@@ -20,7 +20,7 @@
 }
 
 .not__paragraph {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.33em;
@@ -28,7 +28,7 @@
   text-align: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .not {
     margin: 32px 0 0 0;
   }

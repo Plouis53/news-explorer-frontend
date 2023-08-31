@@ -43,16 +43,15 @@
   height: 56px;
   width: 320px;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-  /* display: flex; */
 }
 
 .menu__link {
-  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 56px;
   letter-spacing: 0px;
-  color: #fff;
   text-decoration: none;
   list-style-type: none;
 }
@@ -63,7 +62,6 @@
   font-size: 18px;
   line-height: 56px;
   margin: 20px 16px 16px 16px;
-  /* line-height: 1.5em; */
   user-select: none;
 }
 
@@ -89,13 +87,13 @@
 }
 
 .menu__signin {
+  color: #fff;
   width: 288px;
   height: 56px;
   margin: 22px 0 24px 16px;
   border-radius: 100px;
   color: inherit;
   border: 1px solid #fff;
-  color: #fff;
   font-weight: 500;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
@@ -110,6 +108,7 @@
 }
 
 .menu__signout-button {
+  color: #fff;
   display: flex;
   border-radius: 100px;
   text-align: center;
@@ -122,9 +121,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33em;
-  color: inherit;
-  /* padding: 0 19px 0 19px; */
-  color: #fff;
+  /* color: inherit; */
   line-height: 56px;
 }
 

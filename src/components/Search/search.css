@@ -6,23 +6,33 @@
 }
 
 .search__title {
+  color: #fff;
   font-family: 'Roboto Slab', sans-serif;
   font-size: 60px;
   font-weight: 400;
-  color: #fff;
+  line-height: 64px;
+  letter-spacing: 0px;
+  text-align: left;
   width: 608px;
-  line-height: 1.0666em;
-  margin: 40px auto 0 auto;
+  height: 128px;
+  top: 160px;
+  left: 416px;
+  margin: 80px auto 0 auto;
 }
 
 .search__info {
+  color: #fff;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  line-height: 1.33em;
   font-weight: 400;
-  color: #fff;
-  margin: 32px auto 0 auto;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
   width: 608px;
+  height: 24px;
+  top: 320px;
+  left: 416px;
+  margin: 40px auto 0 auto;
 }
 
 .search__fieldset {
@@ -31,7 +41,7 @@
   height: 64px;
   border: none;
   border-radius: 100px;
-  margin: 88px auto 0 auto;
+  margin: 68px auto 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,15 +56,14 @@
 }
 
 .search__input {
-  border: none;
+  color: #000;
   font-family: 'Roboto', sans-serif;
-  width: 440px;
-  font-style: normal;
   font-size: 16px;
-  line-height: 1.375em;
+  font-weight: 400;
+  line-height: 22px;
+  /* padding: 0 0 0 25px; */
+  border: none;
   margin: 21px 0 0 24px;
-  padding: 0;
-  border-radius: 100px;
 }
 
 .search__input::placeholder {
@@ -75,6 +84,7 @@
 }
 
 .search__search {
+  color: #fff;
   border: none;
   border-radius: 100px;
   width: 168px;
@@ -85,7 +95,6 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33em;
-  color: #fff;
 }
 
 .search__search:hover {
@@ -97,20 +106,28 @@
   display: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .search {
     height: 480px;
   }
 
   .search__title {
     font-size: 36px;
-    line-height: 1.11em;
+    line-height: 40px;
+    text-align: left;
     width: 285px;
+    height: 80px;
+    top: 86px;
+    left: 19px;
     margin: 30px 19px 0 19px;
   }
 
   .search__info {
+    text-align: left;
     width: 288px;
+    height: 72px;
+    top: 182px;
+    left: 16px;
     margin: 16px 16px 0 16px;
   }
 
@@ -122,7 +139,6 @@
   }
 
   .search__input {
-    width: 260px;
     margin: 17px 16px 0 16px;
   }
 
@@ -160,27 +176,16 @@
     height: 334px;
   }
 
-  .search__title {
-    font-size: 36px;
-    line-height: 1.11em;
-    width: 452px;
-    margin: 38px auto 0 auto;
-  }
-
   .search__info {
     font-size: 18px;
     margin: 16px auto 0 auto;
-    width: 452px;
   }
 
   .search__fieldset {
-    width: 448px;
     height: 56px;
-    margin: 48px auto 0 auto;
   }
 
   .search__input {
-    width: 288px;
     margin: 17px 0 0 24px;
   }
 

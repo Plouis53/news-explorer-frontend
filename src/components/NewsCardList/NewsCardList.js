@@ -53,6 +53,8 @@ const NewsCardList = ({ cards, isLoading, isLoggedIn, handleBook, handleSignupCl
                 handleBook={handleBook}
                 handleSignupClick={handleSignupClick}
                 newsCards={newsCards}
+                handleDeleteClick={undefined}
+                setNewsCards={undefined}
               />
             ))}
           </ul>

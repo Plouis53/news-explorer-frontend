@@ -6,11 +6,7 @@ import aboutImage from '../../images/about.jpeg';
 const About = () => {
   return (
     <section className="about">
-      <NavLink
-        to="https://www.linkedin.com/in/phillippe-pmpisintech/"
-        target="_blank"
-        className="about__link"
-      >
+      <NavLink to="https://www.linkedin.com/in/phillippe-pmpisintech/" target="_blank">
         <img className="about__image" src={aboutImage} alt="Phillippe Louis" />
       </NavLink>
       <div className="about__container">

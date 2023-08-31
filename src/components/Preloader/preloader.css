@@ -1,7 +1,7 @@
 .preloader {
+  background-color: #fff;
   margin: 0;
   min-height: 200px;
-  background-color: #fff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -21,12 +21,12 @@
 }
 
 .preloader__text {
+  color: #b6bcbf;
   margin: 25px 0 0 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.33em;
-  color: #b6bcbf;
 }
 
 @keyframes spin {
