@@ -47,6 +47,14 @@
     padding-left: 40px;
     gap: 40px;
   }
+
+  .about__image {
+    width: 372px;
+    height: 372px;
+    margin-top: 61px;
+    margin-bottom: 61px;
+    margin-left: auto;
+  }
 }
 
 @media screen and (max-width: 1000px) {
