@@ -1,17 +1,14 @@
 .about {
-  align-items: center;
+  max-width: 1440px;
   display: flex;
-  gap: 56px;
-  padding-left: 104px;
-  padding-right: 104px;
+  margin: 80px 0 0 0;
 }
 
 .about__image {
-  border-radius: 50%;
-  height: 464px;
-  margin-bottom: 80px;
-  margin-top: 80px;
   width: 464px;
+  height: 464px;
+  border-radius: 400px;
+  margin: 0 0 80px 104px;
 }
 
 .about__container {
@@ -24,50 +21,90 @@
 .about__title {
   font-family: 'Roboto Slab', Arial, sans-serif;
   font-size: 40px;
+  line-height: 1.15em;
   font-weight: 400;
-  line-height: 46px;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .about__paragraph {
-  font-family: 'Roboto', Arial, sans-serif;
-  font-size: 18px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 1.33em;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1440px) {
+  .about {
+    padding-right: 40px;
+    padding-left: 40px;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 1327px) {
+  .about {
+    padding-right: 40px;
+    padding-left: 40px;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about__image {
+    width: 232px;
+    height: 232px;
+    margin-top: 61px;
+    margin-bottom: 61px;
+  }
+  .about__title {
+    margin: 0 0 16px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .about__container {
+    width: 424px;
+    margin: 0 0 0 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    margin: 40px 0 0 0;
+  }
+
+  .about__image {
+    width: 232px;
+    height: 232px;
+    margin: 21px 0 61px 40px;
+  }
+
+  .about__container {
+    width: 424px;
+    margin: 0 0 0 32px;
+  }
+
+  .about__title {
+    line-height: 1.33em;
+  }
+}
+
+@media screen and (max-width: 320px) {
   .about {
     margin: 32px 16px 0 16px;
     flex-direction: column;
+    padding-left: 1px;
   }
 
   .about__image {
     width: 272px;
     height: 272px;
-    margin: 32px auto 24px;
+    margin: 0 8px 0 8px;
   }
 
   .about__container {
     width: 288px;
-    margin: 24px 0 128px 0;
-  }
-
-  .about__title {
-    font-size: 30px;
-    line-height: 40px;
-    margin: 0 auto 16px 0;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1440px) {
-  .about {
-    margin: 40px 0 0 0;
-  }
-
-  .about__container {
-    margin: 0 0 0 32px;
+    margin: 1px 0 128px 0;
   }
 
   .about__title {

@@ -8,17 +8,24 @@
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 1440px) {
+  .header {
+    /* background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash-tablet.svg); */
+    height: 576px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header-home__title {
+    font-size: 36px;
+    line-height: 40px;
+    margin: 38px 0 16px;
+  }
+}
 @media screen and (max-width: 767px) {
   .header {
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.svg);
     /* height: 536px; */
     background-size: cover;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1440px) {
-  .header {
-    /* background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash-tablet.svg); */
-    height: 576px;
   }
 }

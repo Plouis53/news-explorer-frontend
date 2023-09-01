@@ -42,8 +42,13 @@
 }
 
 .news__show:hover {
+  background-color: #e8e8e8;
   opacity: 0.8;
   cursor: pointer;
+}
+
+.news__show:active {
+  background-color: #e8e8e8; 
 }
 
 @media screen and (max-width: 767px) {

@@ -77,30 +77,36 @@
 }
 
 .card__book {
+  /* background-color: #fff; */
   position: absolute;
   top: 24px;
   right: 24px;
   width: 40px;
   height: 40px;
-  background-color: #fff;
   border-radius: 8px;
   padding: 0;
   border: none;
   background-image: url(../../images/bookmark.svg);
   background-repeat: no-repeat;
   background-position: center;
+  transition:
+    background-color 0.3s,
+    background-image 0.3s;
 }
 
 .card__book-active:hover {
+  /* background-color: #b6bcbf; */
   background-image: url(../../images/filledBookmark.svg);
   cursor: pointer;
 }
 
 .card__book-clicked {
+  /* background-color: #b6bcbf; */
   background-image: url(../../images/filledBookmark.svg);
 }
 
 .card__book-clicked:hover {
+  /* background-color: #b6bcbf; */
   cursor: pointer;
   background-image: url(../../images/blackBookmark.svg);
 }
@@ -162,13 +168,13 @@
 }
 
 .card__description {
+  color: #1a1b22;
   margin: 16px 24px 0 24px;
   width: 352px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375em;
-  color: #1a1b22;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -177,11 +183,11 @@
 }
 
 .card__publisher {
-  font-family: 'Roboto Slab';
+  color: #b6bcbf;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  color: #b6bcbf;
   height: 20px;
   margin: 24px 0 24px 24px;
   text-transform: uppercase;

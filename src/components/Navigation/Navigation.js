@@ -35,26 +35,25 @@ const Navigation = ({
   }, []);
 
   return (
-    <div className={`nav nav_${theme}`}>
+    // <nav className={`nav nav_${theme}`}>
+    <nav className={`nav nav_theme_${theme}`}>
       <NavLink to="/" className="nav__logo nav__link-active">
         News Explorer
       </NavLink>
       {activeModal === 'signup' || activeModal === 'signin' ? null : (
         <button className={`nav__mobile nav__mobile_${theme}`} onClick={handleMobileClick} />
       )}
-      <div className="nav__right">
+      <nav className="nav__right">
         <NavLink
           to="/"
-          className={`nav__home nav__link nav__highlight-${homeClass}_${theme} nav__link-active`}
-        >
+          className={`nav__home nav__link nav__highlight-${homeClass}_${theme} nav__link-active`}>
           Home
         </NavLink>
         {isLoggedIn ? (
           <>
             <NavLink
               to="/saved-articles"
-              className={`nav__articles nav__link nav__highlight-${articleClass}_${theme} nav__link-${articleClass}`}
-            >
+              className={`nav__articles nav__link nav__highlight-${articleClass}_${theme} nav__link-${articleClass}`}>
               Saved articles
             </NavLink>
             <button className={`nav__signout-button nav__button_${theme}`} onClick={handleSignout}>
@@ -65,13 +64,12 @@ const Navigation = ({
         ) : (
           <button
             className={`nav__signin nav__button_${theme} nav__button`}
-            onClick={onSigninClick}
-          >
+            onClick={onSigninClick}>
             Sign in
           </button>
         )}
-      </div>
-    </div>
+      </nav>
+    </nav>
   );
 };
 
