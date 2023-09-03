@@ -35,7 +35,6 @@ const Navigation = ({
   }, []);
 
   return (
-    // <nav className={`nav nav_${theme}`}>
     <nav className={`nav nav_theme_${theme}`}>
       <NavLink to="/" className="nav__logo nav__link-active">
         News Explorer

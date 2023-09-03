@@ -58,7 +58,7 @@
   opacity: 0.6;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .footer {
     height: 64px;
   }
@@ -72,7 +72,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .footer {
     height: 176px;
     flex-direction: column-reverse;

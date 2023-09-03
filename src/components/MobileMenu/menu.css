@@ -130,3 +130,32 @@
   width: 24px;
   height: 24px;
 }
+
+@media screen and (max-width: 1000px) {
+  /* .menu__container-loggedin {
+    width: 100%;
+    height: auto;
+    background-color: #1a1b22;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 6px 0;
+  }
+
+  .menu__over {
+    height: 56px;
+    width: 100%;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  }
+
+  .menu__close {
+    margin: 15px;
+  }
+
+  .menu__signout-button {
+    margin-bottom: 20px;
+    padding: 16px 0;
+  } */
+}

@@ -63,9 +63,9 @@
   }
 
   .news__cards {
-    grid-template-columns: repeat(4, 224px);
+    grid-template-columns: repeat(3, 224px);
     gap: 16px 16px;
-    margin: 32px 0 0 0;
+    margin: 2px 0 0 0;
   }
 
   .news__show {
@@ -75,9 +75,18 @@
   }
 }
 
+@media screen and (max-width: 1327px) {
+  .news__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .news__cards {
-    grid-template-columns: repeat(2, 224px);
+    grid-template-columns: repeat(3, 224px);
     gap: 16px;
     margin: 32px 0 0 0;
   }
