@@ -131,8 +131,8 @@
   height: 24px;
 }
 
-@media screen and (max-width: 1000px) {
-  /* .menu__container-loggedin {
+@media screen and (max-width: 1440px) {
+  .menu__container-loggedin {
     width: 100%;
     height: auto;
     background-color: #1a1b22;
@@ -157,5 +157,5 @@
   .menu__signout-button {
     margin-bottom: 20px;
     padding: 16px 0;
-  } */
+  }
 }

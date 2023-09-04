@@ -271,7 +271,7 @@
 
   .card__date {
     height: 24px;
-    width: 144px;
+    width: 154px;
     margin: 4px 0 4px 16px;
     font-size: 18px;
     line-height: 24px;
@@ -307,60 +307,150 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .card {
-    width: 288px;
-    height: 440px;
+    width: 240px;
+    height: 400px;
+  }
+
+  .card__container {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .card__link {
-    width: 288px;
-    height: 196px;
+    width: 240px;
+    height: 140px;
   }
 
   .card__keyword {
-    top: 16px;
-    left: 16px;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
   }
 
   .card__modal-active {
-    top: 16px;
-    left: 16px;
-    width: 180px;
+    top: 8px;
+    left: 8px;
+    width: 160px;
+    font-size: 12px;
   }
 
   .card__book {
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 8px;
   }
 
   .card__delete {
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 8px;
   }
 
   .card__image {
-    width: 288px;
-    height: 196px;
+    width: 240px;
+    height: 160px; /* Adjusted height */
+    margin-right: 0;
+    margin-bottom: 8px;
   }
 
   .card__date {
-    margin: 16px 16px 0 16px;
+    margin: 8px;
+    font-size: 12px;
   }
 
   .card__title {
-    margin: 10px 16px 0 16px;
-    width: 256px;
-    font-size: 22px;
+    margin: 4px 8px 0 8px;
+    width: 224px;
+    font-size: 16px;
   }
 
   .card__description {
-    margin: 14px 16px 0 16px;
-    width: 256px;
-    -webkit-line-clamp: 3;
+    margin: 4px 8px 0 8px;
+    width: 224px;
+    -webkit-line-clamp: 2;
+    font-size: 12px;
   }
 
   .card__publisher {
-    margin: 24px 16px 16px 16px;
+    margin: 8px;
+    font-size: 12px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 240px;
+    height: 400px;
+  }
+
+  .card__container {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card__link {
+    width: 240px;
+    height: 140px;
+  }
+
+  .card__keyword {
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+  }
+
+  .card__modal-active {
+    top: 8px;
+    left: 8px;
+    width: 160px;
+    font-size: 12px;
+  }
+
+  .card__book {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card__delete {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card__image {
+    width: 240px;
+    height: 160px; /* Adjusted height */
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .card__date {
+    margin: 8px;
+    font-size: 12px;
+  }
+
+  .card__title {
+    margin: 4px 8px 0 8px;
+    width: 224px;
+    font-size: 16px;
+  }
+
+  .card__description {
+    margin: 4px 8px 0 8px;
+    width: 224px;
+    -webkit-line-clamp: 2;
+    font-size: 12px;
+  }
+
+  .card__publisher {
+    margin: 8px;
+    font-size: 12px;
+  }
+}
+
+
