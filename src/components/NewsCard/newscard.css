@@ -309,7 +309,7 @@
 
 @media screen and (max-width: 1000px) {
   .card {
-    width: 240px;
+    width: 230px;
     height: 400px;
   }
 
@@ -350,7 +350,7 @@
   }
 
   .card__image {
-    width: 240px;
+    width: 230px;
     height: 160px; /* Adjusted height */
     margin-right: 0;
     margin-bottom: 8px;
@@ -358,7 +358,7 @@
 
   .card__date {
     margin: 8px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .card__title {
@@ -431,7 +431,7 @@
 
   .card__date {
     margin: 8px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .card__title {
@@ -452,5 +452,3 @@
     font-size: 12px;
   }
 }
-
-

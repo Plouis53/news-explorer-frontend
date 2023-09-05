@@ -87,8 +87,8 @@
 @media screen and (max-width: 1000px) {
   .news__cards {
     grid-template-columns: repeat(3, 224px);
-    gap: 24px 24px;
-    margin: 32px 0 0 0;
+    gap: 20px 20px;
+    margin: 32px 10px 10px 1px;
   }
 
   .news__show {
@@ -100,8 +100,9 @@
 
 @media screen and (max-width: 768px) {
   .news {
-    /* padding: 32px 16px 0 16px; */
+    padding: 32px 23px 32px;
     flex-direction: column;
+    grid-gap: 16px;
   }
 
   .news__header {
@@ -111,13 +112,22 @@
   }
 
   .news__cards {
-    grid-template-columns: 224px;
-    margin: 24px 0 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
   }
 
   .news__show {
-    width: 288px;
+    width: 240px;
     height: 56px;
     margin: 16px auto 24px auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .news__cards {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 16px;
+    padding: 0 25px;
   }
 }

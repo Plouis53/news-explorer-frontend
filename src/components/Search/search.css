@@ -119,11 +119,11 @@
   .search__title {
     font-size: 36px;
     line-height: 40px;
-    width: 285px;
+    width: 385px;
   }
 
   .search__info {
-    width: 288px;
+    width: 385px;
     margin: 16px auto 0 auto;
   }
 }
@@ -135,7 +135,7 @@
     align-items: center;
   }
   .search__title {
-    width: 100%;
+    width: 285px;
     text-align: center;
     line-height: 40px;
   }
@@ -176,6 +176,31 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .search {
+    height: 480px;
+  }
+
+  .search__title {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: left;
+    width: 80%;
+    height: 80px;
+    margin: 30px 19px 0 19px;
+    margin: 50px 19px 0 19px;
+  }
+
+  .search__info {
+    text-align: left;
+    width: 80%;
+    height: 72px;
+    top: 182px;
+    left: 16px;
+    margin: 16px 16px 0 16px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .search {
     height: 480px;
@@ -185,20 +210,69 @@
     font-size: 36px;
     line-height: 40px;
     text-align: left;
-    width: 285px;
+    width: 60%;
     height: 80px;
-    top: 86px;
-    left: 19px;
     margin: 30px 19px 0 19px;
+    margin: 50px 19px 0 19px;
   }
 
   .search__info {
     text-align: left;
-    width: 288px;
+    width: 60%;
     height: 72px;
     top: 182px;
     left: 16px;
     margin: 16px 16px 0 16px;
+  }
+
+  .search__fieldset {
+    margin: 61px 16px 0 16px;
+    flex-direction: column;
+    width: 288px;
+    height: 56px;
+  }
+
+  .search__input {
+    margin: 17px 16px 0 16px;
+  }
+
+  .search__errors {
+    font-size: 11px;
+    margin: 0 0 0 16px;
+  }
+
+  .search__search {
+    display: none;
+  }
+
+  .search__search-mobile {
+    display: flex;
+    border: none;
+    border-radius: 100px;
+    background: #2f71e5;
+    width: 288px;
+    height: 56px;
+    padding: 0;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.33em;
+    color: #fff;
+    margin: 16px 16px 0 16px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search__title {
+    width: 285px;
+    margin: 35px 19px 0 19px;
+  }
+
+  .search__info {
+    width: 285px;
   }
 
   .search__fieldset {
@@ -239,6 +313,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  /* .search__fieldset {
+    margin: 122px 16px 0 16px;
+    flex-direction: column;
+    width: 288px;
+    height: 56px;
+  } */
 }
 
 /* @media screen and (max-width: 1000px) {

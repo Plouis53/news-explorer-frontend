@@ -10,7 +10,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
   margin-top: 20px;
 }
@@ -151,11 +151,31 @@
   }
 
   .menu__close {
-    margin: 15px;
+    margin: auto;
   }
 
   .menu__signout-button {
     margin-bottom: 20px;
     padding: 16px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .menu__container-loggedin,
+  .menu__container-loggedout {
+    max-width: 100%;
+    width: 315px;
+    left: 0;
+    right: auto;
+    margin: 16px 0;
+  }
+
+  .menu__signout-button {
+    margin-bottom: 10px;
+    padding: 10px 0;
+  }
+
+  .menu__close {
+    margin: 10px;
   }
 }
