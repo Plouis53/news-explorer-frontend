@@ -200,13 +200,15 @@
   color: #b6bcbf;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1440px) {
+@media screen and (min-width: 769px) and (max-width: 1440px) {
   .nav {
     height: 66px;
   }
 
   .nav__logo {
     margin: 22px 0 19px 40px;
+    /* margin: 30px 0 26px 104px; */
+    /* margin: 22px px 0 19px 40px; */
   }
 
   .nav__right {
@@ -249,7 +251,7 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .nav {
     height: 56px;
   }
@@ -264,7 +266,7 @@
     display: none;
   }
 
-  .nav__mobile {
+  .nav__mobile-theme {
     display: flex;
     background-image: url(../../images/mobileWhite.svg);
     width: 24px;
@@ -283,4 +285,7 @@
   .nav__mobile_dark {
     background-image: url(../../images/mobileBlack.svg);
   }
+}
+
+@media screen and (min-width: 320px) {
 }

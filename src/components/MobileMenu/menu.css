@@ -160,6 +160,18 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .menu__close {
+    margin: 18px 10px 104px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu__close {
+    margin: 18px 10px 104px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .menu__container-loggedin,
   .menu__container-loggedout {
@@ -176,6 +188,7 @@
   }
 
   .menu__close {
-    margin: 10px;
+    /* margin: 10px; */
+    margin: 18px 10px 104px;
   }
 }

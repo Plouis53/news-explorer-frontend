@@ -12,6 +12,7 @@
   .header {
     /* background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash-tablet.svg); */
     height: 576px;
+    width: auto;
   }
 }
 
