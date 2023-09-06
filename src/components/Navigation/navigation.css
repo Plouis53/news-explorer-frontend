@@ -266,7 +266,7 @@
     display: none;
   }
 
-  .nav__mobile-theme {
+  .nav__mobile {
     display: flex;
     background-image: url(../../images/mobileWhite.svg);
     width: 24px;
