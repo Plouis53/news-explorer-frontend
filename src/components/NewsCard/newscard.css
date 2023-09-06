@@ -81,7 +81,7 @@
 }
 
 .card__book {
-  /* background-color: #fff; */
+  background-color: #fff;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -99,20 +99,17 @@
 }
 
 .card__book-active:hover {
-  /* background-color: #b6bcbf; */
-  background-image: url(../../images/filledBookmark.svg);
+  background-image: url(../../images/blackBookmark.svg);
   cursor: pointer;
 }
 
 .card__book-clicked {
-  /* background-color: #b6bcbf; */
   background-image: url(../../images/filledBookmark.svg);
 }
 
 .card__book-clicked:hover {
-  /* background-color: #b6bcbf; */
   cursor: pointer;
-  background-image: url(../../images/blackBookmark.svg);
+  background-image: url(../../images/filledBookmark.svg);
 }
 
 .card__delete {
