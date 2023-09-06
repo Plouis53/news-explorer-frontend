@@ -107,9 +107,9 @@
     margin: 0 0 0 32px;
   }
 
-  /* .about__paragraph {
-    width: 400px;
-  } */
+  .about__paragraph {
+    width: 450px;
+  }
 }
 
 @media screen and (max-width: 768px) {
