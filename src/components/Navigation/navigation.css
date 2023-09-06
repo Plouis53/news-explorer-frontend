@@ -276,6 +276,7 @@
     border: none;
     padding: 0;
     margin: 16px 16px 0 16px;
+    color: black;
   }
 
   .nav__mobile_light {
@@ -285,7 +286,4 @@
   .nav__mobile_dark {
     background-image: url(../../images/mobileBlack.svg);
   }
-}
-
-@media screen and (min-width: 320px) {
 }
