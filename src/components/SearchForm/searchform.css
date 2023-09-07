@@ -1,0 +1,10 @@
+.search__form {
+  position: relative;
+  margin: 38px 0 16px;
+}
+
+@media screen and (max-width: 450px) {
+  .search__form {
+    margin: auto;
+  }
+}

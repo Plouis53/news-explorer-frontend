@@ -12,6 +12,7 @@
 @import url(./components/Preloader/preloader.css);
 @import url(./components/SavedNews/savednews.css);
 @import url(./components/Search/search.css);
+@import url(./components/SearchForm/searchform.css);
 
 body {
   margin: 0;

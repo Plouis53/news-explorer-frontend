@@ -1,6 +1,6 @@
 .header {
   background: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg);
-  max-width: 1440px;
+  /* max-width: 1440px; */
   height: 576px;
   display: flex;
   flex-shrink: 0;
@@ -26,7 +26,7 @@
 @media screen and (max-width: 767px) {
   .header {
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash-mobile.svg);
-    /* height: 536px; */
+    height: 536px;
     background-size: cover;
   }
 }

@@ -1,20 +1,30 @@
 .about {
-  max-width: 1440px;
+  align-items: center;
   display: flex;
-  margin: 80px 0 0 0;
+  /* gap: 56px; */
+  padding-left: 104px;
+  /* padding-right: 104px; */
+  /* max-width: 1440px;
+  display: flex;
+  margin: 80px 0 0 0; */
 }
 
 .about__image {
+  border-radius: 50%;
+  height: 464px;
+  margin-bottom: 180px;
+  margin-top: 80px;
   width: 464px;
+  /* width: 464px;
   height: 464px;
   border-radius: 400px;
-  /* margin: 0 0 80px auto;
+  margin: 0 0 80px auto;
   margin-bottom: 80px;
   margin-top: 80px; */
 }
 
 .about__container {
-  width: 600px;
+  /* width: 600px; */
   margin: 50px 0 0 56px;
   font-weight: 400;
   color: #1a1b22;
@@ -30,19 +40,25 @@
 }
 
 .about__paragraph {
-  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* margin: 0; */
+  /* font-family: 'Roboto Slab', Arial, sans-serif;
   font-style: normal;
   font-size: 18px;
   line-height: 1.33em;
-  /* width: 600px;
+  width: 600px;
   height: 120px; */
 }
 
-@media screen and (max-width: 1440px) {
+/* @media screen and (max-width: 1440px) {
   .about {
     padding-right: 50px;
     padding-left: 50px;
-    /* gap: 50px; */
+    gap: 50px;
   }
 
   .about__image {
@@ -51,22 +67,22 @@
   }
 
   .about__title {
-    /* width: 600px; */
+    width: 600px;
     height: 46px;
-    /* margin: 0 0 40px auto; */
+    margin: 0 0 40px auto;
   }
 
   .about__container {
     width: 600px;
-    /* margin: 50px 0 0 56px;
+    margin: 50px 0 0 56px;
     font-weight: 400;
-    color: #1a1b22; */
+    color: #1a1b22;
   }
 
-  /* .about__paragraph {
+  .about__paragraph {
     width: 288px;
-  } */
-}
+  }
+} */
 
 @media screen and (max-width: 1327px) {
   .about {
@@ -103,7 +119,7 @@
   }
 
   .about__container {
-    width: 424px;
+    width: 324px;
     margin: 0 0 0 32px;
   }
 
@@ -114,7 +130,7 @@
 
 @media screen and (max-width: 768px) {
   .about__paragraph {
-    width: 400px;
+    width: 288px;
   }
 }
 
@@ -135,7 +151,7 @@
     line-height: 40px;
   }
   .about__paragraph {
-    margin-bottom: 64px;
+    margin-bottom: 34px;
   }
 }
 
