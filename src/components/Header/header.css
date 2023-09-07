@@ -1,8 +1,11 @@
 .header {
   background: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg);
+  /* max-width: 1440px; */
+  height: 576px;
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
+  /* background-size: cover; */
 }
 
 @media screen and (max-width: 1440px) {

@@ -25,6 +25,7 @@
 
 .about__container {
   /* width: 600px; */
+  width: 55%;
   margin: 50px 0 0 56px;
   font-weight: 400;
   color: #1a1b22;
