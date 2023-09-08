@@ -274,7 +274,7 @@
 }
 /*----^signin and register modal^----*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .modal__container-form {
     align-items: flex-end;
   }
@@ -286,7 +286,8 @@
   }
 
   .modal__form {
-    height: 700px;
+    /* height: auto; */
+    height: 93%;
     border: 1px;
   }
 
