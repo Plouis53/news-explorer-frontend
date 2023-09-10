@@ -283,7 +283,7 @@
     background-image: url(../../images/mobileWhite.svg);
   }
 
-  .nav__mobile_dark {
+  .nav__mobile_theme_dark {
     background-image: url(../../images/mobileBlack.svg);
   }
 }
