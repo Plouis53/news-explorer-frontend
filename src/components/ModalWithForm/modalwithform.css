@@ -184,10 +184,18 @@
   border: none;
   padding: 0;
   position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  /* background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  position: absolute;
   top: -36px;
   right: -36px;
   width: 40px;
-  height: 40px;
+  height: 40px; */
 }
 
 .modal__confirm-title {
@@ -207,7 +215,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22em;
-  margin: 14px 0 0 36px;
+  margin: 14px 0 0 32px;
   background-color: #fff;
   text-align: left;
 }
