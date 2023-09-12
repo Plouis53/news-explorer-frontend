@@ -9,7 +9,6 @@
 }
 
 .news__header {
-  /* width: 712px; */
   font-family: 'Roboto Slab', sans-serif;
   font-size: 40px;
   line-height: 1.15em;
@@ -30,7 +29,6 @@
   padding: 0;
   /* grid-template-columns: repeat(3, 400px); */
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /* max-width: 1000px; */
 }
 
 .news__show {
