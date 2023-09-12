@@ -42,10 +42,6 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .about {
-    /* max-width: 1200px; */
-  }
-
   .about__container {
     width: 70%;
     margin: 50px 0 0 30px;
