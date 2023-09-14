@@ -21,4 +21,5 @@ export const getCurrentDate = () => currentDate.toLocaleString();
 export const baseUrl =
   process.env.NODE_ENV === 'production'
     ? 'https://api.newsquest.mooo.com'
-    : process.env.REACT_APP_BASE_URL;
+    : 'http://localhost:3001';
+// : process.env.REACT_APP_BASE_URL;
